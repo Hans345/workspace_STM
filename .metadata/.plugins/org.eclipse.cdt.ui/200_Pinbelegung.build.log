@@ -1,0 +1,17 @@
+17:52:07 **** Incremental Build of configuration Debug for project 200_Pinbelegung ****
+make -j14 all 
+arm-none-eabi-gcc "C:/Users/raphael.baumeler/workspace_STM/200_Pinbelegung/Core/Src/main.c" -mcpu=cortex-m33 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32U5A5xx -DARM_MATH_CM33 -c -I../../Core/Inc -I../../Drivers/STM32U5xx_HAL_Driver/Inc -I../../Drivers/STM32U5xx_HAL_Driver/Inc/Legacy -I../../Drivers/CMSIS/Device/ST/STM32U5xx/Include -I../../Drivers/CMSIS/Include -I"C:/Users/raphael.baumeler/workspace_STM/200_Pinbelegung/STM32CubeIDE/Daten" -I"C:/Users/raphael.baumeler/workspace_STM/200_Pinbelegung/STM32CubeIDE/FFT/Include" -I../../Middlewares/ST/ARM/DSP/Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Application/User/Core/main.d" -MT"Application/User/Core/main.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Application/User/Core/main.o"
+arm-none-eabi-gcc -o "200_Pinbelegung.elf" @"objects.list"  -l:libarm_ARMv8MMLlfsp_math.a -mcpu=cortex-m33 -T"C:\Users\raphael.baumeler\workspace_STM\200_Pinbelegung\STM32CubeIDE\STM32U5A5ZJTXQ_FLASH_MMT_TEMPLATE.ld" --specs=nosys.specs -Wl,-Map="200_Pinbelegung.map" -Wl,--gc-sections -static -L../../Middlewares/ST/ARM/DSP/Lib --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: 200_Pinbelegung.elf
+ 
+arm-none-eabi-size  200_Pinbelegung.elf 
+arm-none-eabi-objdump -h -S 200_Pinbelegung.elf  > "200_Pinbelegung.list"
+   text	   data	    bss	    dec	    hex	filename
+ 141328	  32888	 115568	 289784	  46bf8	200_Pinbelegung.elf
+Finished building: default.size.stdout
+ 
+Finished building: 200_Pinbelegung.list
+ 
+
+17:52:09 Build Finished. 0 errors, 0 warnings. (took 1s.835ms)
+
