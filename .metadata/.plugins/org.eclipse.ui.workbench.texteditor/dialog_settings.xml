@@ -3,11 +3,19 @@
 	<item key="hasShownOverlayPopupBefore" value="true"/>
 	<item key="replaceBarOpen" value="true"/>
 	<list key="replacehistory">
+		<item value="c"/>
 		<item value="y"/>
 		<item value="y_abs"/>
 		<item value="x"/>
 	</list>
 	<list key="searchhistory">
+		<item value="y"/>
+		<item value="arm_float"/>
+		<item value="arm_float_to_q15"/>
+		<item value="arm_rfft_fast_init_f32"/>
+		<item value="y_abs"/>
+		<item value="x"/>
+		<item value="#include"/>
 		<item value=".RAM5"/>
 		<item value="user"/>
 		<item value="output"/>

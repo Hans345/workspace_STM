@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<item key="LastUsedHeaderTemplate" value="Default C header template"/>
+	<item key="org.eclipse.cdt.utils.ui.controls.FileListControl" value="C:\Users\raphael.baumeler\workspace_STM\200_Pinbelegung\STM32CubeIDE\Drivers\CMSIS_DSP\PrivateInclude"/>
 	<section name="CResourceRenameRefactoringInputPage">
 		<item key="updateReferences" value="true"/>
 	</section>
