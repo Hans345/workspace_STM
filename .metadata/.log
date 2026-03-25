@@ -3438,3 +3438,9 @@ COM8
 
 !ENTRY org.eclipse.cdt.core 1 0 2026-03-25 14:03:30.204
 !MESSAGE Indexed '200_FFT' (26 sources, 99 headers) in 1.2 sec: 10’104 declarations; 45’869 references; 0 unresolved inclusions; 1 syntax errors; 2 unresolved names (0.0036%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2026-03-25 15:38:20.816
+!MESSAGE Indexed '201_Pinbelegung' (26 sources, 99 headers) in 2.62 sec: 10’104 declarations; 45’874 references; 0 unresolved inclusions; 1 syntax errors; 2 unresolved names (0.0036%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2026-03-25 16:56:18.998
+!MESSAGE Indexed '201_Pinbelegung' (45 sources, 119 headers) in 5.33 sec: 14’749 declarations; 108’676 references; 0 unresolved inclusions; 1 syntax errors; 2 unresolved names (0.0016%)

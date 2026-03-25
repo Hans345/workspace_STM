@@ -1,0 +1,14 @@
+C:/Users/raphael.baumeler/workspace_STM/201_Pinbelegung/STM32CubeIDE/FFT/complex.h:22:9:complex_add	1
+C:/Users/raphael.baumeler/workspace_STM/201_Pinbelegung/STM32CubeIDE/FFT/complex.h:32:9:complex_sub	1
+C:/Users/raphael.baumeler/workspace_STM/201_Pinbelegung/STM32CubeIDE/FFT/complex.h:42:9:complex_mul	1
+C:/Users/raphael.baumeler/workspace_STM/201_Pinbelegung/STM32CubeIDE/FFT/complex.h:52:9:complex_exp	1
+C:/Users/raphael.baumeler/workspace_STM/201_Pinbelegung/STM32CubeIDE/FFT/complex.h:62:6:scale	2
+C:/Users/raphael.baumeler/workspace_STM/201_Pinbelegung/STM32CubeIDE/FFT/complex.h:72:6:abs_val	3
+C:/Users/raphael.baumeler/workspace_STM/201_Pinbelegung/STM32CubeIDE/FFT/complex.h:85:6:make_complex	2
+C:/Users/raphael.baumeler/workspace_STM/201_Pinbelegung/STM32CubeIDE/FFT/fft.h:15:6:dft	3
+C:/Users/raphael.baumeler/workspace_STM/201_Pinbelegung/STM32CubeIDE/FFT/fft.h:40:6:fft	4
+C:/Users/raphael.baumeler/workspace_STM/201_Pinbelegung/Core/Src/main.c:91:5:main	1
+C:/Users/raphael.baumeler/workspace_STM/201_Pinbelegung/Core/Src/main.c:179:6:SystemClock_Config	4
+C:/Users/raphael.baumeler/workspace_STM/201_Pinbelegung/Core/Src/main.c:234:13:SystemPower_Config	2
+C:/Users/raphael.baumeler/workspace_STM/201_Pinbelegung/Core/Src/main.c:259:6:MPU_Config	1
+C:/Users/raphael.baumeler/workspace_STM/201_Pinbelegung/Core/Src/main.c:314:6:Error_Handler	1

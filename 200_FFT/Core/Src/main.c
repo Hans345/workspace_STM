@@ -44,7 +44,7 @@
 
 /* Private define ------------------------------------------------------------*/
 /* USER CODE BEGIN PD */
-#define N 512	// Muss 2^N sein!
+#define N 65536	// Muss 2^N sein!
 /* USER CODE END PD */
 
 /* Private macro -------------------------------------------------------------*/

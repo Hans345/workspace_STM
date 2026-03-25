@@ -1,0 +1,4 @@
+C:/Users/raphael.baumeler/workspace_STM/201_Pinbelegung/Core/Src/comp.c:31:6:MX_COMP1_Init	2
+C:/Users/raphael.baumeler/workspace_STM/201_Pinbelegung/Core/Src/comp.c:61:6:MX_COMP2_Init	2
+C:/Users/raphael.baumeler/workspace_STM/201_Pinbelegung/Core/Src/comp.c:93:6:HAL_COMP_MspInit	5
+C:/Users/raphael.baumeler/workspace_STM/201_Pinbelegung/Core/Src/comp.c:163:6:HAL_COMP_MspDeInit	5

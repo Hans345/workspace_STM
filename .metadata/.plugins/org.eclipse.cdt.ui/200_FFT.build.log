@@ -1,4 +1,4 @@
-14:08:29 **** Incremental Build of configuration Debug for project 200_FFT ****
+14:37:41 **** Incremental Build of configuration Debug for project 200_FFT ****
 make -j14 all 
 arm-none-eabi-gcc "C:/Users/raphael.baumeler/workspace_STM/200_FFT/Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal.c" -mcpu=cortex-m33 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32U5A5xx -DARM_MATH_CM33 -c -I../../Core/Inc -I"C:/Users/raphael.baumeler/workspace_STM/200_Pinbelegung/STM32CubeIDE/Drivers/CMSIS_DSP/Include" -I"C:/Users/raphael.baumeler/workspace_STM/200_Pinbelegung/STM32CubeIDE/Drivers/CMSIS_DSP/PrivateInclude" -I../../Drivers/STM32U5xx_HAL_Driver/Inc -I../../Drivers/STM32U5xx_HAL_Driver/Inc/Legacy -I../../Drivers/CMSIS/Device/ST/STM32U5xx/Include -I../../Drivers/CMSIS/Include -I../../Middlewares/ST/ARM/DSP/Inc -I"C:/Users/raphael.baumeler/workspace_STM/200_FFT/STM32CubeIDE/FFT" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32U5xx_HAL_Driver/stm32u5xx_hal.d" -MT"Drivers/STM32U5xx_HAL_Driver/stm32u5xx_hal.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32U5xx_HAL_Driver/stm32u5xx_hal.o"
 arm-none-eabi-gcc "C:/Users/raphael.baumeler/workspace_STM/200_FFT/Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_cortex.c" -mcpu=cortex-m33 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32U5A5xx -DARM_MATH_CM33 -c -I../../Core/Inc -I"C:/Users/raphael.baumeler/workspace_STM/200_Pinbelegung/STM32CubeIDE/Drivers/CMSIS_DSP/Include" -I"C:/Users/raphael.baumeler/workspace_STM/200_Pinbelegung/STM32CubeIDE/Drivers/CMSIS_DSP/PrivateInclude" -I../../Drivers/STM32U5xx_HAL_Driver/Inc -I../../Drivers/STM32U5xx_HAL_Driver/Inc/Legacy -I../../Drivers/CMSIS/Device/ST/STM32U5xx/Include -I../../Drivers/CMSIS/Include -I../../Middlewares/ST/ARM/DSP/Inc -I"C:/Users/raphael.baumeler/workspace_STM/200_FFT/STM32CubeIDE/FFT" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32U5xx_HAL_Driver/stm32u5xx_hal_cortex.d" -MT"Drivers/STM32U5xx_HAL_Driver/stm32u5xx_hal_cortex.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32U5xx_HAL_Driver/stm32u5xx_hal_cortex.o"
@@ -27,17 +27,24 @@ arm-none-eabi-gcc "C:/Users/raphael.baumeler/workspace_STM/200_FFT/Core/Src/stm3
 arm-none-eabi-gcc "C:/Users/raphael.baumeler/workspace_STM/200_FFT/Core/Src/stm32u5xx_it.c" -mcpu=cortex-m33 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32U5A5xx -DARM_MATH_CM33 -c -I../../Core/Inc -I"C:/Users/raphael.baumeler/workspace_STM/200_Pinbelegung/STM32CubeIDE/Drivers/CMSIS_DSP/Include" -I"C:/Users/raphael.baumeler/workspace_STM/200_Pinbelegung/STM32CubeIDE/Drivers/CMSIS_DSP/PrivateInclude" -I../../Drivers/STM32U5xx_HAL_Driver/Inc -I../../Drivers/STM32U5xx_HAL_Driver/Inc/Legacy -I../../Drivers/CMSIS/Device/ST/STM32U5xx/Include -I../../Drivers/CMSIS/Include -I../../Middlewares/ST/ARM/DSP/Inc -I"C:/Users/raphael.baumeler/workspace_STM/200_FFT/STM32CubeIDE/FFT" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Application/User/Core/stm32u5xx_it.d" -MT"Application/User/Core/stm32u5xx_it.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Application/User/Core/stm32u5xx_it.o"
 arm-none-eabi-gcc "../Application/User/Core/syscalls.c" -mcpu=cortex-m33 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32U5A5xx -DARM_MATH_CM33 -c -I../../Core/Inc -I"C:/Users/raphael.baumeler/workspace_STM/200_Pinbelegung/STM32CubeIDE/Drivers/CMSIS_DSP/Include" -I"C:/Users/raphael.baumeler/workspace_STM/200_Pinbelegung/STM32CubeIDE/Drivers/CMSIS_DSP/PrivateInclude" -I../../Drivers/STM32U5xx_HAL_Driver/Inc -I../../Drivers/STM32U5xx_HAL_Driver/Inc/Legacy -I../../Drivers/CMSIS/Device/ST/STM32U5xx/Include -I../../Drivers/CMSIS/Include -I../../Middlewares/ST/ARM/DSP/Inc -I"C:/Users/raphael.baumeler/workspace_STM/200_FFT/STM32CubeIDE/FFT" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Application/User/Core/syscalls.d" -MT"Application/User/Core/syscalls.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Application/User/Core/syscalls.o"
 arm-none-eabi-gcc "../Application/User/Core/sysmem.c" -mcpu=cortex-m33 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32U5A5xx -DARM_MATH_CM33 -c -I../../Core/Inc -I"C:/Users/raphael.baumeler/workspace_STM/200_Pinbelegung/STM32CubeIDE/Drivers/CMSIS_DSP/Include" -I"C:/Users/raphael.baumeler/workspace_STM/200_Pinbelegung/STM32CubeIDE/Drivers/CMSIS_DSP/PrivateInclude" -I../../Drivers/STM32U5xx_HAL_Driver/Inc -I../../Drivers/STM32U5xx_HAL_Driver/Inc/Legacy -I../../Drivers/CMSIS/Device/ST/STM32U5xx/Include -I../../Drivers/CMSIS/Include -I../../Middlewares/ST/ARM/DSP/Inc -I"C:/Users/raphael.baumeler/workspace_STM/200_FFT/STM32CubeIDE/FFT" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Application/User/Core/sysmem.d" -MT"Application/User/Core/sysmem.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Application/User/Core/sysmem.o"
+C:/Users/raphael.baumeler/workspace_STM/200_FFT/Core/Src/main.c: In function 'main':
+C:/Users/raphael.baumeler/workspace_STM/200_FFT/Core/Src/main.c:47:11: warning: unsigned conversion from 'int' to 'uint16_t' {aka 'short unsigned int'} changes value from '65536' to '0' [-Woverflow]
+   47 | #define N 65536 // Muss 2^N sein!
+      |           ^~~~~
+C:/Users/raphael.baumeler/workspace_STM/200_FFT/Core/Src/main.c:120:33: note: in expansion of macro 'N'
+  120 |   arm_rfft_fast_init_f32(&rfft, N);
+      |                                 ^
 arm-none-eabi-gcc -o "200_FFT.elf" @"objects.list"  -l:libarm_ARMv8MMLlfsp_math.a -mcpu=cortex-m33 -T"C:\Users\raphael.baumeler\workspace_STM\200_FFT\STM32CubeIDE\STM32U5A5ZJTXQ_FLASH_MMT_TEMPLATE.ld" --specs=nosys.specs -Wl,-Map="200_FFT.map" -Wl,--gc-sections -static -L../../Middlewares/ST/ARM/DSP/Lib --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 Finished building target: 200_FFT.elf
  
 arm-none-eabi-size  200_FFT.elf 
 arm-none-eabi-objdump -h -S 200_FFT.elf  > "200_FFT.list"
    text	   data	    bss	    dec	    hex	filename
- 143412	   2168	  80240	 225820	  3721c	200_FFT.elf
+ 143412	 262264	 860528	1266204	 13521c	200_FFT.elf
 Finished building: default.size.stdout
  
 Finished building: 200_FFT.list
  
 
-14:08:31 Build Finished. 0 errors, 0 warnings. (took 1s.971ms)
+14:37:43 Build Finished. 0 errors, 1 warnings. (took 2s.118ms)
 
