@@ -35,7 +35,7 @@
 
 /* Private typedef -----------------------------------------------------------*/
 /* USER CODE BEGIN PTD */
-// Komplexe Fourier Koeffizienten ck
+// Komplexe Fourier Koeffizienzen ck
 typedef struct{
 	float real;
 	float imag;

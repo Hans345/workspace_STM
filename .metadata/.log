@@ -11807,3 +11807,63 @@ org.eclipse.core.runtime.AssertionFailedException: assertion failed: The applica
 	 at org.eclipse.ui.console.IOConsoleInputStream.read(IOConsoleInputStream.java:113)
 	 at org.eclipse.cdt.dsf.gdb.internal.ui.console.GdbBasicCliConsole$InputReadJob.run(GdbBasicCliConsole.java:248)
 	 at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+!SESSION 2026-03-25 07:56:02.852 -----------------------------------------------
+eclipse.buildId=Version 2.1.1
+java.version=21.0.9
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=de_CH
+Command-line arguments:  -os win32 -ws win32 -arch x86_64
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2026-03-25 07:56:10.888
+!MESSAGE Log4j2 initialized with config file C:\Users\raphael.baumeler\workspace_STM\.metadata\.log4j2.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2026-03-25 07:56:22.898
+!MESSAGE Started RMI Server, listening on port 41337
+
+!ENTRY com.st.stm32cube.ide.mpu.remote.serial 1 1 2026-03-25 07:56:24.234
+!MESSAGE Executed PowerShell command powershell.exe -Command "Get-CimInstance -ClassName Win32_SerialPort | Select-Object -ExpandProperty DeviceID":
+COM3
+COM8
+
+
+!ENTRY com.st.stm32cube.ide.mpu.remote.serial 1 1 2026-03-25 07:56:24.234
+!MESSAGE port: COM3
+
+!ENTRY com.st.stm32cube.ide.mpu.remote.serial 1 1 2026-03-25 07:56:24.235
+!MESSAGE port: COM8
+!SESSION 2026-03-25 08:17:08.794 -----------------------------------------------
+eclipse.buildId=Version 2.1.1
+java.version=21.0.9
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=de_CH
+Command-line arguments:  -os win32 -ws win32 -arch x86_64
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2026-03-25 08:17:12.568
+!MESSAGE Log4j2 initialized with config file C:\Users\raphael.baumeler\workspace_STM\.metadata\.log4j2.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2026-03-25 08:17:20.055
+!MESSAGE Started RMI Server, listening on port 41337
+
+!ENTRY com.st.stm32cube.ide.mpu.remote.serial 1 1 2026-03-25 08:17:22.188
+!MESSAGE Executed PowerShell command powershell.exe -Command "Get-CimInstance -ClassName Win32_SerialPort | Select-Object -ExpandProperty DeviceID":
+COM3
+COM8
+
+
+!ENTRY com.st.stm32cube.ide.mpu.remote.serial 1 1 2026-03-25 08:17:22.189
+!MESSAGE port: COM3
+
+!ENTRY com.st.stm32cube.ide.mpu.remote.serial 1 1 2026-03-25 08:17:22.189
+!MESSAGE port: COM8
+
+!ENTRY org.eclipse.cdt.dsf 4 10005 2026-03-25 08:29:05.683
+!MESSAGE Request for monitor: '65^error,msg="Unable to read memory."' resulted in an error.
+!SUBENTRY 1 org.eclipse.cdt.dsf.gdb 4 10004 2026-03-25 08:29:05.683
+!MESSAGE Failed to execute MI command:
+-data-read-memory 0xe000ee08 d 1 1 4
+Error message from debugger back end:
+Unable to read memory.
+!STACK 0
+java.lang.Exception: Unable to read memory.
+	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.processMIOutput(AbstractMIControl.java:1024)
+	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.run(AbstractMIControl.java:853)

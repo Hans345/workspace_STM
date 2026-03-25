@@ -13,33 +13,33 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   CONTENTS, ALLOC, LOAD, READONLY, DATA
   4 .fini_array   00000004  0800604c  0800604c  0000704c  2**2
                   CONTENTS, ALLOC, LOAD, READONLY, DATA
-  5 .data         00010078  20000000  08006050  00008000  2**2
+  5 .data         00040078  20000000  08006050  00008000  2**2
                   CONTENTS, ALLOC, LOAD, DATA
-  6 .bss          00030158  20010078  080160c8  00018078  2**2
+  6 .bss          000c0158  20040078  080460c8  00048078  2**2
                   ALLOC
-  7 ._user_heap_stack 00012000  200401d0  080160c8  000181d0  2**0
+  7 ._user_heap_stack 00012000  201001d0  080460c8  000481d0  2**0
                   ALLOC
-  8 .ARM.attributes 00000036  00000000  00000000  00018078  2**0
+  8 .ARM.attributes 00000036  00000000  00000000  00048078  2**0
                   CONTENTS, READONLY
-  9 .debug_info   00009ea6  00000000  00000000  000180ae  2**0
+  9 .debug_info   00009ea6  00000000  00000000  000480ae  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 10 .debug_abbrev 0000214a  00000000  00000000  00021f54  2**0
+ 10 .debug_abbrev 0000214a  00000000  00000000  00051f54  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 11 .debug_aranges 00000a68  00000000  00000000  000240a0  2**3
+ 11 .debug_aranges 00000a68  00000000  00000000  000540a0  2**3
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 12 .debug_rnglists 000007b0  00000000  00000000  00024b08  2**0
+ 12 .debug_rnglists 000007b0  00000000  00000000  00054b08  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 13 .debug_macro  000356a6  00000000  00000000  000252b8  2**0
+ 13 .debug_macro  000356a6  00000000  00000000  000552b8  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 14 .debug_line   0000e04d  00000000  00000000  0005a95e  2**0
+ 14 .debug_line   0000e04d  00000000  00000000  0008a95e  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 15 .debug_str    00147ca0  00000000  00000000  000689ab  2**0
+ 15 .debug_str    00147ca0  00000000  00000000  000989ab  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 16 .comment      00000043  00000000  00000000  001b064b  2**0
+ 16 .comment      00000043  00000000  00000000  001e064b  2**0
                   CONTENTS, READONLY
- 17 .debug_frame  00002944  00000000  00000000  001b0690  2**2
+ 17 .debug_frame  00002944  00000000  00000000  001e0690  2**2
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 18 .debug_line_str 00000080  00000000  00000000  001b2fd4  2**0
+ 18 .debug_line_str 00000080  00000000  00000000  001e2fd4  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
 
 Disassembly of section .text:
@@ -56,7 +56,7 @@ Disassembly of section .text:
  8000262:	2301      	movs	r3, #1
  8000264:	7023      	strb	r3, [r4, #0]
  8000266:	bd10      	pop	{r4, pc}
- 8000268:	20010078 	.word	0x20010078
+ 8000268:	20040078 	.word	0x20040078
  800026c:	00000000 	.word	0x00000000
  8000270:	08005b90 	.word	0x08005b90
 
@@ -69,7 +69,7 @@ Disassembly of section .text:
  800027e:	f3af 8000 	nop.w
  8000282:	bd08      	pop	{r3, pc}
  8000284:	00000000 	.word	0x00000000
- 8000288:	2001007c 	.word	0x2001007c
+ 8000288:	2004007c 	.word	0x2004007c
  800028c:	08005b90 	.word	0x08005b90
 
 08000290 <__aeabi_drsub>:
@@ -2498,7 +2498,7 @@ void scale(Complex c[]) {
  8001c98:	3301      	adds	r3, #1
  8001c9a:	60fb      	str	r3, [r7, #12]
  8001c9c:	68fb      	ldr	r3, [r7, #12]
- 8001c9e:	f5b3 4f80 	cmp.w	r3, #16384	@ 0x4000
+ 8001c9e:	f5b3 3f80 	cmp.w	r3, #65536	@ 0x10000
  8001ca2:	dbc8      	blt.n	8001c36 <scale+0xe>
     }
 }
@@ -2509,7 +2509,7 @@ void scale(Complex c[]) {
  8001cac:	f85d 7b04 	ldr.w	r7, [sp], #4
  8001cb0:	4770      	bx	lr
  8001cb2:	bf00      	nop
- 8001cb4:	46800000 	.word	0x46800000
+ 8001cb4:	47800000 	.word	0x47800000
 
 08001cb8 <abs_val>:
 
@@ -2621,7 +2621,7 @@ __STATIC_FORCEINLINE arm_status arm_sqrt_f32(
  8001d78:	3301      	adds	r3, #1
  8001d7a:	61fb      	str	r3, [r7, #28]
  8001d7c:	69fb      	ldr	r3, [r7, #28]
- 8001d7e:	f5b3 4f80 	cmp.w	r3, #16384	@ 0x4000
+ 8001d7e:	f5b3 3f80 	cmp.w	r3, #65536	@ 0x10000
  8001d82:	dba0      	blt.n	8001cc6 <abs_val+0xe>
     }
 }
@@ -2679,7 +2679,7 @@ void make_complex(float x[], Complex c[])
  8001dd2:	3301      	adds	r3, #1
  8001dd4:	60fb      	str	r3, [r7, #12]
  8001dd6:	68fb      	ldr	r3, [r7, #12]
- 8001dd8:	f5b3 4f80 	cmp.w	r3, #16384	@ 0x4000
+ 8001dd8:	f5b3 3f80 	cmp.w	r3, #65536	@ 0x10000
  8001ddc:	dbdf      	blt.n	8001d9e <make_complex+0x10>
 	}
 }
@@ -2754,7 +2754,7 @@ int main(void)
  8001e1a:	480a      	ldr	r0, [pc, #40]	@ (8001e44 <main+0x58>)
  8001e1c:	f7ff ffb7 	bl	8001d8e <make_complex>
 	  fft_chatGPT(c, (int)N);
- 8001e20:	f44f 4180 	mov.w	r1, #16384	@ 0x4000
+ 8001e20:	f44f 3180 	mov.w	r1, #65536	@ 0x10000
  8001e24:	4806      	ldr	r0, [pc, #24]	@ (8001e40 <main+0x54>)
  8001e26:	f000 f867 	bl	8001ef8 <fft_chatGPT>
 	  scale(c);
@@ -2768,7 +2768,7 @@ int main(void)
  8001e38:	e7ea      	b.n	8001e10 <main+0x24>
  8001e3a:	bf00      	nop
  8001e3c:	42020800 	.word	0x42020800
- 8001e40:	20010094 	.word	0x20010094
+ 8001e40:	20040094 	.word	0x20040094
  8001e44:	20000000 	.word	0x20000000
 
 08001e48 <SystemClock_Config>:
@@ -3752,11 +3752,11 @@ LoopForever:
 	ldr	r0, =_sdata
  8002458:	20000000 	.word	0x20000000
 	ldr	r3, =_edata
- 800245c:	20010078 	.word	0x20010078
+ 800245c:	20040078 	.word	0x20040078
 	ldr	r2, =_sbss
- 8002460:	20010078 	.word	0x20010078
+ 8002460:	20040078 	.word	0x20040078
 	ldr	r3, = _ebss
- 8002464:	200401d0 	.word	0x200401d0
+ 8002464:	201001d0 	.word	0x201001d0
 
 08002468 <ADC1_2_IRQHandler>:
  * @retval : None
@@ -3923,7 +3923,7 @@ HAL_StatusTypeDef HAL_Init(void)
  800252c:	40022000 	.word	0x40022000
  8002530:	46020c00 	.word	0x46020c00
  8002534:	08005ba8 	.word	0x08005ba8
- 8002538:	20010000 	.word	0x20010000
+ 8002538:	20040000 	.word	0x20040000
 
 0800253c <HAL_InitTick>:
   *       implementation  in user file.
@@ -4071,10 +4071,10 @@ __weak HAL_StatusTypeDef HAL_InitTick(uint32_t TickPriority)
  8002612:	46bd      	mov	sp, r7
  8002614:	bd80      	pop	{r7, pc}
  8002616:	bf00      	nop
- 8002618:	20010008 	.word	0x20010008
+ 8002618:	20040008 	.word	0x20040008
  800261c:	e000e010 	.word	0xe000e010
- 8002620:	20010000 	.word	0x20010000
- 8002624:	20010004 	.word	0x20010004
+ 8002620:	20040000 	.word	0x20040000
+ 8002624:	20040004 	.word	0x20040004
 
 08002628 <HAL_IncTick>:
   * @note This function is declared as __weak to be overwritten in case of other
@@ -4100,8 +4100,8 @@ __weak void HAL_IncTick(void)
  8002640:	f85d 7b04 	ldr.w	r7, [sp], #4
  8002644:	4770      	bx	lr
  8002646:	bf00      	nop
- 8002648:	20010008 	.word	0x20010008
- 800264c:	20040094 	.word	0x20040094
+ 8002648:	20040008 	.word	0x20040008
+ 800264c:	20100094 	.word	0x20100094
 
 08002650 <HAL_GetTick>:
   * @note This function is declared as __weak to be overwritten in case of other
@@ -4121,7 +4121,7 @@ __weak uint32_t HAL_GetTick(void)
  800265c:	f85d 7b04 	ldr.w	r7, [sp], #4
  8002660:	4770      	bx	lr
  8002662:	bf00      	nop
- 8002664:	20040094 	.word	0x20040094
+ 8002664:	20100094 	.word	0x20100094
 
 08002668 <__NVIC_SetPriorityGrouping>:
            In case of a conflict between priority grouping and available
@@ -5257,7 +5257,7 @@ HAL_StatusTypeDef FLASH_WaitForLastOperation(uint32_t Timeout)
  8002c40:	bd80      	pop	{r7, pc}
  8002c42:	bf00      	nop
  8002c44:	40022020 	.word	0x40022020
- 8002c48:	2001000c 	.word	0x2001000c
+ 8002c48:	2004000c 	.word	0x2004000c
 
 08002c4c <HAL_FLASHEx_OBProgram>:
   *         - after a power reset (BOR reset or exit from Standby/Shutdown modes)
@@ -5431,7 +5431,7 @@ HAL_StatusTypeDef HAL_FLASHEx_OBProgram(FLASH_OBProgramInitTypeDef *pOBInit)
  8002d2e:	46bd      	mov	sp, r7
  8002d30:	bd80      	pop	{r7, pc}
  8002d32:	bf00      	nop
- 8002d34:	2001000c 	.word	0x2001000c
+ 8002d34:	2004000c 	.word	0x2004000c
  8002d38:	40022000 	.word	0x40022000
 
 08002d3c <HAL_FLASHEx_ConfigBBAttributes>:
@@ -5546,7 +5546,7 @@ HAL_StatusTypeDef HAL_FLASHEx_ConfigBBAttributes(FLASH_BBAttributesTypeDef *pBBA
  8002dba:	bf00      	nop
  8002dbc:	400220d0 	.word	0x400220d0
  8002dc0:	400220f0 	.word	0x400220f0
- 8002dc4:	2001000c 	.word	0x2001000c
+ 8002dc4:	2004000c 	.word	0x2004000c
 
 08002dc8 <FLASH_OB_WRPConfig>:
   *
@@ -7475,7 +7475,7 @@ HAL_StatusTypeDef HAL_PWREx_ControlVoltageScaling(uint32_t VoltageScaling)
  8003884:	4770      	bx	lr
  8003886:	bf00      	nop
  8003888:	46020800 	.word	0x46020800
- 800388c:	20010000 	.word	0x20010000
+ 800388c:	20040000 	.word	0x20040000
  8003890:	10624dd3 	.word	0x10624dd3
 
 08003894 <HAL_PWREx_GetVoltageRange>:
@@ -7613,7 +7613,7 @@ HAL_StatusTypeDef HAL_PWREx_ConfigSupply(uint32_t SupplySource)
  800393c:	f85d 7b04 	ldr.w	r7, [sp], #4
  8003940:	4770      	bx	lr
  8003942:	bf00      	nop
- 8003944:	20010000 	.word	0x20010000
+ 8003944:	20040000 	.word	0x20040000
  8003948:	10624dd3 	.word	0x10624dd3
  800394c:	46020800 	.word	0x46020800
 
@@ -8047,7 +8047,7 @@ HAL_StatusTypeDef HAL_RCC_OscConfig(const RCC_OscInitTypeDef  *pRCC_OscInitStruc
  8003c0c:	e04a      	b.n	8003ca4 <HAL_RCC_OscConfig+0x314>
  8003c0e:	bf00      	nop
  8003c10:	46020c00 	.word	0x46020c00
- 8003c14:	20010004 	.word	0x20010004
+ 8003c14:	20040004 	.word	0x20040004
  8003c18:	687b      	ldr	r3, [r7, #4]
  8003c1a:	6a5b      	ldr	r3, [r3, #36]	@ 0x24
  8003c1c:	2b00      	cmp	r3, #0
@@ -10567,8 +10567,8 @@ HAL_StatusTypeDef HAL_RCC_ClockConfig(const RCC_ClkInitTypeDef   *const pRCC_Clk
  8004b18:	46020c00 	.word	0x46020c00
  8004b1c:	40022000 	.word	0x40022000
  8004b20:	08005ba8 	.word	0x08005ba8
- 8004b24:	20010000 	.word	0x20010000
- 8004b28:	20010004 	.word	0x20010004
+ 8004b24:	20040000 	.word	0x20040000
+ 8004b28:	20040004 	.word	0x20040004
 
 08004b2c <HAL_RCC_GetSysClockFreq>:
   * @note   Each time SYSCLK changes, this function must be called to update the
@@ -10889,7 +10889,7 @@ uint32_t HAL_RCC_GetHCLKFreq(void)
  8004d56:	bf00      	nop
  8004d58:	46020c00 	.word	0x46020c00
  8004d5c:	08005ba8 	.word	0x08005ba8
- 8004d60:	20010000 	.word	0x20010000
+ 8004d60:	20040000 	.word	0x20040000
 
 08004d64 <RCC_SetFlashLatencyFromMSIRange>:
             voltage range.
@@ -11118,7 +11118,7 @@ static HAL_StatusTypeDef RCC_SetFlashLatencyFromMSIRange(uint32_t msirange)
  8004e82:	6818      	ldr	r0, [r3, #0]
  8004e84:	4770      	bx	lr
  8004e86:	bf00      	nop
- 8004e88:	20010028 	.word	0x20010028
+ 8004e88:	20040028 	.word	0x20040028
 
 08004e8c <__libc_init_array>:
  8004e8c:	b570      	push	{r4, r5, r6, lr}

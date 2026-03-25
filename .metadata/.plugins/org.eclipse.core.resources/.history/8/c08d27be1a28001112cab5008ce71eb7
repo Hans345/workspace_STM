@@ -35,7 +35,7 @@
 
 /* Private typedef -----------------------------------------------------------*/
 /* USER CODE BEGIN PTD */
-// Komplexe Fourier Koeffizienten ck
+// Komplexe Fourier Koeffizienzen ck
 typedef struct{
 	float real;
 	float imag;
@@ -45,7 +45,7 @@ typedef struct{
 
 /* Private define ------------------------------------------------------------*/
 /* USER CODE BEGIN PD */
-#define N 65536	// Muss 2^N sein!
+#define N 16384	// Muss 2^N sein!
 /* USER CODE END PD */
 
 /* Private macro -------------------------------------------------------------*/

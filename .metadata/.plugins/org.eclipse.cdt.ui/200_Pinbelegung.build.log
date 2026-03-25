@@ -1,10 +1,10 @@
-17:15:20 **** Incremental Build of configuration Debug for project 200_Pinbelegung ****
+08:34:57 **** Incremental Build of configuration Debug for project 200_Pinbelegung ****
 make -j14 all 
 arm-none-eabi-size  200_Pinbelegung.elf 
    text	   data	    bss	    dec	    hex	filename
-  24656	  65656	 270680	 360992	  58220	200_Pinbelegung.elf
+  24656	 262264	 860504	1147424	 118220	200_Pinbelegung.elf
 Finished building: default.size.stdout
  
 
-17:15:20 Build Finished. 0 errors, 0 warnings. (took 231ms)
+08:34:57 Build Finished. 0 errors, 0 warnings. (took 196ms)
 
