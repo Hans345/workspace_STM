@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;200_Pinbelegung/Daten&apos; to &apos;FFT&apos;" description="Rename resource &apos;Daten&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="Daten" name="FFT" stamp="1774433680043" updateReferences="true"/>
+</session>

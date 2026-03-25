@@ -1,10 +1,7 @@
-08:34:57 **** Incremental Build of configuration Debug for project 200_Pinbelegung ****
+11:21:24 **** Build of configuration Debug for project 200_Pinbelegung ****
 make -j14 all 
-arm-none-eabi-size  200_Pinbelegung.elf 
-   text	   data	    bss	    dec	    hex	filename
-  24656	 262264	 860504	1147424	 118220	200_Pinbelegung.elf
-Finished building: default.size.stdout
- 
+make: *** No rule to make target 'C:/Users/raphael.baumeler/workspace_STM/200_Pinbelegung/STM32CubeIDE/200_Pinbelegung/Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal.c', needed by 'Drivers/STM32U5xx_HAL_Driver/stm32u5xx_hal.o'.  Stop.
+"make -j14 all" terminated with exit code 2. Build might be incomplete.
 
-08:34:57 Build Finished. 0 errors, 0 warnings. (took 196ms)
+11:21:25 Build Failed. 1 errors, 0 warnings. (took 196ms)
 
