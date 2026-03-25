@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">&#x0A;<refactoring comment="Rename resource &apos;200_FFT2/200_FFT.ioc&apos; to &apos;200_FFT2.ioc&apos;" description="Rename resource &apos;200_FFT.ioc&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="200_FFT.ioc" name="200_FFT2.ioc" stamp="1774439294016" updateReferences="true"/>&#x0A;<refactoring comment="Rename resource &apos;200_FFT2/200_FFT.cfg&apos; to &apos;200_FFT2.cfg&apos;" description="Rename resource &apos;200_FFT.cfg&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="200_FFT.cfg" name="200_FFT2.cfg" stamp="1774439299934" updateReferences="true"/>
+</session>
