@@ -18,6 +18,12 @@
 		<item key="SmartImportRootWizardPage.STORE_NESTED_PROJECTS" value="true"/>
 		<item key="SmartImportRootWizardPage.STORE_CONFIGURE_NATURES" value="true"/>
 		<list key="org.eclipse.ui.internal.wizards.datatransfer.SmartImportRootWizardPage.knownSources">
+			<item value="C:\Users\raphael.baumeler\workspace_STM\108_Show_Timervalues"/>
+			<item value="C:\Users\raphael.baumeler\workspace_STM\104_StateMachine_Test"/>
+			<item value="C:\Users\raphael.baumeler\workspace_STM\103_Plecs_Test"/>
+			<item value="C:\Users\raphael.baumeler\workspace_STM\102_SPI_w_AND_wo_DMA_Test"/>
+			<item value="C:\Users\raphael.baumeler\workspace_STM\110_TimerSync_Test"/>
+			<item value="C:\Users\raphael.baumeler\workspace_STM\100_Display_wo_DMA_Test"/>
 			<item value="C:\Users\raphael.baumeler\workspace_STM"/>
 			<item value="C:\Users\raphael.baumeler\workspace_STM\200_Pinbelegung"/>
 			<item value="C:\Users\raphael.baumeler\workspace_STM\200_FFT"/>

@@ -52,6 +52,8 @@
 /* Private define ------------------------------------------------------------*/
 /* USER CODE BEGIN PD */
 #define N 65536	// Muss 2^N sein!
+uint16_t ADC_VAL = 0;
+float voltage = 0;
 /* USER CODE END PD */
 
 /* Private macro -------------------------------------------------------------*/
@@ -77,7 +79,14 @@ static void MPU_Config(void);
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
+void HAL_ADC_ConvCpltCallback(ADC_HandleTypeDef *hadc)
+{
+  /* Prevent unused argument(s) compilation warning */
+  UNUSED(hadc);
 
+  // GPIO Toggle
+
+}
 /* USER CODE END 0 */
 
 /**
@@ -130,8 +139,9 @@ int main(void)
   MX_TIM8_Init();
   MX_USART1_UART_Init();
   MX_USART3_UART_Init();
+  MX_TIM3_Init();
   /* USER CODE BEGIN 2 */
-  printf("Start Monitoringsystem!\n");
+  printf("Start Monitoringsystem!\r\n");
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -142,11 +152,26 @@ int main(void)
 	  HAL_GPIO_TogglePin(LD1_green_GPIO_Port, LD1_green_Pin);
 
 	  // FFT
-	  printf("Start FFT\n");
+	  /*printf("Start FFT\n");
 	  make_complex(x, c, (int)N);
 	  fft(c, (int)N);
 	  scale(c, (int)N);
-	  abs_val(c, (int)N);
+	  abs_val(c, (int)N);*/
+
+	  // ADC
+	  HAL_ADC_Start(&hadc1);
+	  if (HAL_ADC_PollForConversion(&hadc1, 100) == HAL_OK)
+	  {
+	      ADC_VAL = HAL_ADC_GetValue(&hadc1);
+	  }
+	  HAL_ADC_Stop(&hadc1);
+
+	  // Konsole
+	  voltage = (ADC_VAL/16383.0)*3.3;
+	  printf("ADC Value: %.2f\r\n", voltage);
+
+	  // Delay
+	  HAL_Delay(200);
 
     /* USER CODE END WHILE */
 

@@ -9,6 +9,10 @@
 		<item value="x"/>
 	</list>
 	<list key="searchhistory">
+		<item value="HAL_ADC_ConvCpltCallback"/>
+		<item value="weak"/>
+		<item value="HAL_ADC"/>
+		<item value="HAL_"/>
 		<item value="y"/>
 		<item value="arm_float"/>
 		<item value="arm_float_to_q15"/>
