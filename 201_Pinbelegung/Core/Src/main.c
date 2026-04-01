@@ -51,7 +51,10 @@
 
 /* Private define ------------------------------------------------------------*/
 /* USER CODE BEGIN PD */
+// FFT Anzahl Samples
 #define N 65536	// Muss 2^N sein!
+// SWV
+// #define ITM_PORT32(n) (*((volatile unsigned long *)(0xE0000000+4*n)))
 /* USER CODE END PD */
 
 /* Private macro -------------------------------------------------------------*/
@@ -135,13 +138,19 @@ int main(void)
   MX_USART1_UART_Init();
   MX_USART3_UART_Init();
   /* USER CODE BEGIN 2 */
+  // FFT Instanz
   arm_rfft_fast_init_f32(&rfft, N);
+  // SWV Port Nummer
+  // ITM_PORT32(1) = 1;
   /* USER CODE END 2 */
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
   while (1)
   {
+	  // Printf
+	  printf("Hello World\n");
+
 	  // Grüne LED
 	  HAL_GPIO_TogglePin(LD1_green_GPIO_Port, LD1_green_Pin);
 
@@ -252,6 +261,18 @@ static void SystemPower_Config(void)
 }
 
 /* USER CODE BEGIN 4 */
+// Konsolen Output via SWV
+int _write(int file, char *ptr, int len)
+{
+  (void)file;
+  int DataIdx;
+
+  for (DataIdx = 0; DataIdx < len; DataIdx++)
+  {
+    ITM_SendChar(*ptr++);
+  }
+  return len;
+}
 /* USER CODE END 4 */
 
  /* MPU Configuration */

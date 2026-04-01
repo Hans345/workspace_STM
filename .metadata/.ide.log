@@ -1,90 +1,23 @@
-2026-03-25 07:56:11,633 [INFO] Activator:176 - 
+2026-04-01 11:37:11,477 [INFO] Activator:176 - 
 
 
-2026-03-25 07:56:11,645 [INFO] Activator:177 - !SESSION log4j initialized
-2026-03-25 07:56:20,760 [INFO] LogOutputStream:77 - [STDOUT_REDIRECT] 
-2026-03-25 08:17:13,076 [INFO] Activator:176 - 
-
-
-2026-03-25 08:17:13,081 [INFO] Activator:177 - !SESSION log4j initialized
-2026-03-25 08:17:18,851 [INFO] LogOutputStream:77 - [STDOUT_REDIRECT] 
-2026-03-25 11:13:58,730 [INFO] Activator:176 - 
-
-
-2026-03-25 11:13:58,733 [INFO] Activator:177 - !SESSION log4j initialized
-2026-03-25 11:14:04,635 [INFO] LogOutputStream:77 - [STDOUT_REDIRECT] 
-2026-03-25 12:24:44,094 [INFO] Activator:176 - 
-
-
-2026-03-25 12:24:44,095 [INFO] Activator:177 - !SESSION log4j initialized
-2026-03-25 12:24:46,258 [INFO] LogOutputStream:77 - [STDOUT_REDIRECT] 
-2026-03-25 12:29:20,158 [INFO] Activator:176 - 
-
-
-2026-03-25 12:29:20,160 [INFO] Activator:177 - !SESSION log4j initialized
-2026-03-25 12:29:22,267 [INFO] LogOutputStream:77 - [STDOUT_REDIRECT] 
-2026-03-25 12:33:13,439 [INFO] Activator:176 - 
-
-
-2026-03-25 12:33:13,441 [INFO] Activator:177 - !SESSION log4j initialized
-2026-03-25 12:33:16,133 [INFO] LogOutputStream:77 - [STDOUT_REDIRECT] 
-2026-03-25 12:35:59,329 [INFO] Activator:176 - 
-
-
-2026-03-25 12:35:59,331 [INFO] Activator:177 - !SESSION log4j initialized
-2026-03-25 12:36:01,458 [INFO] LogOutputStream:77 - [STDOUT_REDIRECT] 
-2026-03-25 12:47:54,464 [INFO] Activator:176 - 
-
-
-2026-03-25 12:47:54,464 [INFO] Activator:177 - !SESSION log4j initialized
-2026-03-25 12:47:57,084 [INFO] LogOutputStream:77 - [STDOUT_REDIRECT] 
-2026-03-25 12:56:23,916 [INFO] Activator:176 - 
-
-
-2026-03-25 12:56:23,919 [INFO] Activator:177 - !SESSION log4j initialized
-2026-03-25 12:56:27,124 [INFO] LogOutputStream:77 - [STDOUT_REDIRECT] 
-2026-03-25 13:00:52,534 [INFO] Activator:176 - 
-
-
-2026-03-25 13:00:52,534 [INFO] Activator:177 - !SESSION log4j initialized
-2026-03-25 13:00:55,506 [INFO] LogOutputStream:77 - [STDOUT_REDIRECT] 
-2026-03-25 13:05:04,371 [INFO] Activator:176 - 
-
-
-2026-03-25 13:05:04,371 [INFO] Activator:177 - !SESSION log4j initialized
-2026-03-25 13:05:06,957 [INFO] LogOutputStream:77 - [STDOUT_REDIRECT] 
-2026-03-25 13:08:54,629 [INFO] Activator:176 - 
-
-
-2026-03-25 13:08:54,631 [INFO] Activator:177 - !SESSION log4j initialized
-2026-03-25 13:08:57,172 [INFO] LogOutputStream:77 - [STDOUT_REDIRECT] 
-2026-03-25 13:12:53,031 [INFO] Activator:176 - 
-
-
-2026-03-25 13:12:53,033 [INFO] Activator:177 - !SESSION log4j initialized
-2026-03-25 13:12:56,328 [INFO] LogOutputStream:77 - [STDOUT_REDIRECT] 
-2026-03-25 13:14:46,281 [INFO] Activator:176 - 
-
-
-2026-03-25 13:14:46,284 [INFO] Activator:177 - !SESSION log4j initialized
-2026-03-25 13:14:49,483 [INFO] LogOutputStream:77 - [STDOUT_REDIRECT] 
-2026-03-25 13:18:43,092 [INFO] Activator:176 - 
-
-
-2026-03-25 13:18:43,094 [INFO] Activator:177 - !SESSION log4j initialized
-2026-03-25 13:18:45,684 [INFO] LogOutputStream:77 - [STDOUT_REDIRECT] 
-2026-03-25 13:39:37,269 [INFO] Activator:176 - 
-
-
-2026-03-25 13:39:37,271 [INFO] Activator:177 - !SESSION log4j initialized
-2026-03-25 13:39:39,423 [INFO] LogOutputStream:77 - [STDOUT_REDIRECT] 
-2026-03-25 13:47:56,769 [INFO] Activator:176 - 
-
-
-2026-03-25 13:47:56,772 [INFO] Activator:177 - !SESSION log4j initialized
-2026-03-25 13:47:59,997 [INFO] LogOutputStream:77 - [STDOUT_REDIRECT] 
-2026-03-25 13:52:24,233 [INFO] Activator:176 - 
-
-
-2026-03-25 13:52:24,236 [INFO] Activator:177 - !SESSION log4j initialized
-2026-03-25 13:52:27,492 [INFO] LogOutputStream:77 - [STDOUT_REDIRECT] 
+2026-04-01 11:37:11,485 [INFO] Activator:177 - !SESSION log4j initialized
+2026-04-01 11:37:17,594 [INFO] LogOutputStream:77 - [STDOUT_REDIRECT] 
+2026-04-01 12:07:03,300 [INFO] LogOutputStream:77 - [STDOUT_REDIRECT] StartTraceHandler.execute(), success : Collect=true
+2026-04-01 12:08:38,257 [INFO] LogOutputStream:77 - [STDOUT_REDIRECT] StartTraceHandler.execute(), success : Collect=false
+2026-04-01 12:09:06,328 [INFO] LogOutputStream:77 - [STDOUT_REDIRECT] StartTraceHandler.execute(), success : Collect=true
+2026-04-01 12:10:50,810 [INFO] LogOutputStream:77 - [STDOUT_REDIRECT] StartTraceHandler.execute(), success : Collect=false
+2026-04-01 12:10:53,188 [INFO] LogOutputStream:77 - [STDOUT_REDIRECT] StartTraceHandler.execute(), success : Collect=true
+2026-04-01 12:11:29,481 [INFO] LogOutputStream:77 - [STDOUT_REDIRECT] StartTraceHandler.execute(), success : Collect=false
+2026-04-01 12:11:40,111 [INFO] LogOutputStream:77 - [STDOUT_REDIRECT] StartTraceHandler.execute(), success : Collect=true
+2026-04-01 12:12:20,901 [INFO] LogOutputStream:77 - [STDOUT_REDIRECT] StartTraceHandler.execute(), success : Collect=false
+2026-04-01 12:12:21,490 [INFO] LogOutputStream:77 - [STDOUT_REDIRECT] StartTraceHandler.execute(), success : Collect=true
+2026-04-01 12:12:22,379 [INFO] LogOutputStream:77 - [STDOUT_REDIRECT] StartTraceHandler.execute(), success : Collect=false
+2026-04-01 12:12:29,760 [INFO] LogOutputStream:77 - [STDOUT_REDIRECT] StartTraceHandler.execute(), success : Collect=true
+2026-04-01 13:13:44,496 [INFO] LogOutputStream:77 - [STDOUT_REDIRECT] StartTraceHandler.execute(), success : Collect=false
+2026-04-01 13:13:48,961 [INFO] LogOutputStream:77 - [STDOUT_REDIRECT] StartTraceHandler.execute(), success : Collect=true
+2026-04-01 13:19:28,607 [INFO] LogOutputStream:77 - [STDOUT_REDIRECT] StartTraceHandler.execute(), success : Collect=false
+2026-04-01 13:19:31,590 [INFO] LogOutputStream:77 - [STDOUT_REDIRECT] StartTraceHandler.execute(), success : Collect=true
+2026-04-01 13:33:05,570 [INFO] LogOutputStream:77 - [STDOUT_REDIRECT] StartTraceHandler.execute(), success : Collect=true
+2026-04-01 13:37:59,900 [INFO] LogOutputStream:77 - [STDOUT_REDIRECT] StartTraceHandler.execute(), success : Collect=false
+2026-04-01 13:38:03,205 [INFO] LogOutputStream:77 - [STDOUT_REDIRECT] StartTraceHandler.execute(), success : Collect=true
