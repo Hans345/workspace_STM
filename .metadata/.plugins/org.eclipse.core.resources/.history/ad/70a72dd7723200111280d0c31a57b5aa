@@ -1,0 +1,7 @@
+C:/Users/raphael.baumeler/workspace_STM/203_ADC-Timer/Core/Src/tim.c:31:6:MX_TIM1_Init	11
+C:/Users/raphael.baumeler/workspace_STM/203_ADC-Timer/Core/Src/tim.c:129:6:MX_TIM8_Init	10
+C:/Users/raphael.baumeler/workspace_STM/203_ADC-Timer/Core/Src/tim.c:222:6:HAL_TIM_Base_MspInit	2
+C:/Users/raphael.baumeler/workspace_STM/203_ADC-Timer/Core/Src/tim.c:251:6:HAL_TIM_PWM_MspInit	2
+C:/Users/raphael.baumeler/workspace_STM/203_ADC-Timer/Core/Src/tim.c:279:6:HAL_TIM_MspPostInit	3
+C:/Users/raphael.baumeler/workspace_STM/203_ADC-Timer/Core/Src/tim.c:370:6:HAL_TIM_Base_MspDeInit	2
+C:/Users/raphael.baumeler/workspace_STM/203_ADC-Timer/Core/Src/tim.c:401:6:HAL_TIM_PWM_MspDeInit	2

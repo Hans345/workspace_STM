@@ -1,0 +1,3 @@
+C:/Users/raphael.baumeler/workspace_STM/203_ADC-Timer/Core/Src/fdcan.c:30:6:MX_FDCAN1_Init	8	static
+C:/Users/raphael.baumeler/workspace_STM/203_ADC-Timer/Core/Src/fdcan.c:68:6:HAL_FDCAN_MspInit	264	static
+C:/Users/raphael.baumeler/workspace_STM/203_ADC-Timer/Core/Src/fdcan.c:109:6:HAL_FDCAN_MspDeInit	16	static

@@ -1,4 +1,4 @@
-16:43:55 **** Incremental Build of configuration Debug for project 202_DMA ****
+08:08:53 **** Incremental Build of configuration Debug for project 202_DMA ****
 make -j14 all 
 arm-none-eabi-gcc "C:/Users/raphael.baumeler/workspace_STM/202_DMA/Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal.c" -mcpu=cortex-m33 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32U5A5xx -DARM_MATH_CM33 -c -I../../Core/Inc -I"C:/Users/raphael.baumeler/workspace_STM/200_Pinbelegung/STM32CubeIDE/Drivers/CMSIS_DSP/Include" -I"C:/Users/raphael.baumeler/workspace_STM/200_Pinbelegung/STM32CubeIDE/Drivers/CMSIS_DSP/PrivateInclude" -I../../Drivers/STM32U5xx_HAL_Driver/Inc -I../../Drivers/STM32U5xx_HAL_Driver/Inc/Legacy -I../../Drivers/CMSIS/Device/ST/STM32U5xx/Include -I../../Drivers/CMSIS/Include -I../../Middlewares/ST/ARM/DSP/Inc -I"C:/Users/raphael.baumeler/workspace_STM/202_DMA/STM32CubeIDE/FFT" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32U5xx_HAL_Driver/stm32u5xx_hal.d" -MT"Drivers/STM32U5xx_HAL_Driver/stm32u5xx_hal.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32U5xx_HAL_Driver/stm32u5xx_hal.o"
 arm-none-eabi-gcc "C:/Users/raphael.baumeler/workspace_STM/202_DMA/Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_adc.c" -mcpu=cortex-m33 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32U5A5xx -DARM_MATH_CM33 -c -I../../Core/Inc -I"C:/Users/raphael.baumeler/workspace_STM/200_Pinbelegung/STM32CubeIDE/Drivers/CMSIS_DSP/Include" -I"C:/Users/raphael.baumeler/workspace_STM/200_Pinbelegung/STM32CubeIDE/Drivers/CMSIS_DSP/PrivateInclude" -I../../Drivers/STM32U5xx_HAL_Driver/Inc -I../../Drivers/STM32U5xx_HAL_Driver/Inc/Legacy -I../../Drivers/CMSIS/Device/ST/STM32U5xx/Include -I../../Drivers/CMSIS/Include -I../../Middlewares/ST/ARM/DSP/Inc -I"C:/Users/raphael.baumeler/workspace_STM/202_DMA/STM32CubeIDE/FFT" -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32U5xx_HAL_Driver/stm32u5xx_hal_adc.d" -MT"Drivers/STM32U5xx_HAL_Driver/stm32u5xx_hal_adc.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32U5xx_HAL_Driver/stm32u5xx_hal_adc.o"
@@ -52,11 +52,11 @@ Finished building target: 202_DMA.elf
 arm-none-eabi-size  202_DMA.elf 
 arm-none-eabi-objdump -h -S 202_DMA.elf  > "202_DMA.list"
    text	   data	    bss	    dec	    hex	filename
-  70297	    496	  75200	 145993	  23a49	202_DMA.elf
+  72081	    496	  75200	 147777	  24141	202_DMA.elf
 Finished building: default.size.stdout
  
 Finished building: 202_DMA.list
  
 
-16:44:02 Build Finished. 0 errors, 0 warnings. (took 7s.349ms)
+08:08:58 Build Finished. 0 errors, 0 warnings. (took 4s.306ms)
 
