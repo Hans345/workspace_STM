@@ -9,6 +9,7 @@
 		<item value="x"/>
 	</list>
 	<list key="searchhistory">
+		<item value="sConfig.SamplingTime"/>
 		<item value="HAL_ADC_ConvCpltCallback"/>
 		<item value="weak"/>
 		<item value="HAL_ADC"/>
@@ -23,6 +24,5 @@
 		<item value=".RAM5"/>
 		<item value="user"/>
 		<item value="output"/>
-		<item value="input"/>
 	</list>
 </section>
