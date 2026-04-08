@@ -9,6 +9,10 @@
 		<item value="x"/>
 	</list>
 	<list key="searchhistory">
+		<item value="RAM2_Section"/>
+		<item value="RAM_Section"/>
+		<item value="_Min_Stack_Size"/>
+		<item value="Callback"/>
 		<item value="sConfig.SamplingTime"/>
 		<item value="HAL_ADC_ConvCpltCallback"/>
 		<item value="weak"/>
@@ -20,9 +24,5 @@
 		<item value="arm_rfft_fast_init_f32"/>
 		<item value="y_abs"/>
 		<item value="x"/>
-		<item value="#include"/>
-		<item value=".RAM5"/>
-		<item value="user"/>
-		<item value="output"/>
 	</list>
 </section>

@@ -4629,7 +4629,6 @@ int main(void)
   printf("Start Monitoringsystem!\r\n");
  8002afc:	4820      	ldr	r0, [pc, #128]	@ (8002b80 <main+0xd8>)
  8002afe:	f00d fb3d 	bl	801017c <puts>
-
   // Starte ADC im DMA Modus
   HAL_ADC_Start_DMA(&hadc1, (uint32_t*)ADC_VAL, 10);
  8002b02:	220a      	movs	r2, #10

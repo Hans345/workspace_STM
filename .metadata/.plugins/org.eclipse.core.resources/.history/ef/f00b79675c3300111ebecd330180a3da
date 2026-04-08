@@ -1,0 +1,95 @@
+/*
+ * complex.h
+ *
+ *  Created on: 25.03.2026
+ *      Author: raphael.baumeler
+ */
+
+#ifndef FFT_COMPLEX_H_
+#define FFT_COMPLEX_H_
+
+// Definition Komplexe Zahl
+typedef struct{
+	float real;	// Realteil
+	float imag;	// Imaginärteil
+	// float abs;	// Betrag |ck|
+	// float dummy;// Fuer alignment
+}Complex;
+
+// Hilfsfunktionen für komplexe Zahlen
+// Addition
+// a: Komplexe Zahl a
+// b: Komplexe Zahl b
+Complex complex_add(Complex a, Complex b) {
+    Complex result;
+    result.real = a.real + b.real;
+    result.imag = a.imag + b.imag;
+    return result;
+}
+
+// Subtraktion
+// a: Komplexe Zahl a
+// b: Komplexe Zahl b
+Complex complex_sub(Complex a, Complex b) {
+    Complex result;
+    result.real = a.real - b.real;
+    result.imag = a.imag - b.imag;
+    return result;
+}
+
+// Multiplikation
+// a: Komplexe Zahl a
+// b: Komplexe Zahl b
+Complex complex_mul(Complex a, Complex b) {
+    Complex result;
+    result.real = a.real * b.real - a.imag * b.imag;
+    result.imag = a.real * b.imag + a.imag * b.real;
+    return result;
+}
+
+// Zeitverschiebung
+// e^(i*theta)
+// theta: Winkel [rad]
+Complex complex_exp(float theta) {
+    Complex result;
+    result.real = arm_cos_f32(theta);
+    result.imag = arm_sin_f32(theta);
+    return result;
+}
+
+// Saklierung mit 1/N
+// c: Arbeitsarray (Buffer)
+// N: Anzahl Samples
+void scale(Complex c[], int N) {
+    for (int i = 0; i < N; i++) {
+        c[i].real = c[i].real/N;
+        c[i].imag = c[i].imag/N;
+    }
+}
+
+// Betrag |ck|
+// c: Arbeitsarray (Buffer)
+// N: Anzahl Samples
+void abs_val(Complex c[], float abs[], int N){
+    for (int i = 0; i < N; i++) {
+		float result = 0;
+		float temp = c[i].real*c[i].real + c[i].imag*c[i].imag;
+		arm_sqrt_f32(temp, &result);
+		abs[i] = result;	// Amplitude zweiseitiges Amplitudenspektrum
+    }
+}
+
+// Komplexe Zahl aus Zeitsignal generieren
+// x: Zeitdiskretes Signal
+// c: Arbeitsarray
+// N: Anzahl Samples
+void make_complex(const float x[], Complex c[], int N)
+{
+	for(int i = 0; i < N; i++)
+	{
+	    c[i].real = x[i];
+	    c[i].imag = 0.0;
+	}
+}
+
+#endif /* FFT_COMPLEX_H_ */

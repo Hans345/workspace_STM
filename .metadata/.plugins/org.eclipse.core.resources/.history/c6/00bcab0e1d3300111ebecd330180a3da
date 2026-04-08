@@ -1,0 +1,14 @@
+/*
+ * input.h
+ *
+ *  Created on: 20.03.2026
+ *      Author: raphael.baumeler
+ */
+
+#ifndef FFT_INPUT_H_
+#define FFT_INPUT_H_
+
+float x[8] = {0,0,0,0,0,0,0,0};
+
+
+#endif /* FFT_INPUT_H_ */

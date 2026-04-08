@@ -26,5 +26,7 @@ org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:203_ADC-Timer/activeLaunchTarge
 org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:204_ADC-DMA-Timer/activeLaunchMode=debug
 org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:204_ADC-DMA-Timer/activeLaunchTarget=null\:---
 org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:204_ADC-Trigger/activeLaunchMode=debug
+org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:204_ADC-Trigger/activeLaunchTarget=null\:---
+org.eclipse.cdt.dsf.gdb.gdbRemotedescriptorType\:205_ADC\ Debug/activeLaunchMode=debug
 org.eclipse.launchbar.core.descriptorType.default\:202_DMA\ Debug/activeLaunchMode=debug
 org.eclipse.launchbar.core.descriptorType.default\:202_DMA\ Debug/activeLaunchTarget=org.eclipse.launchbar.core.launchTargetType.local\:Local
