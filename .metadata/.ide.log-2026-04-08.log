@@ -1,0 +1,10 @@
+2026-04-08 08:05:54,626 [INFO] Activator:176 - 
+
+
+2026-04-08 08:05:54,638 [INFO] Activator:177 - !SESSION log4j initialized
+2026-04-08 08:06:00,151 [INFO] LogOutputStream:77 - [STDOUT_REDIRECT] 
+2026-04-08 13:50:32,151 [INFO] LogOutputStream:77 - [STDOUT_REDIRECT] StartTraceHandler.execute(), success : Collect=true
+2026-04-08 13:58:25,107 [INFO] LogOutputStream:77 - [STDOUT_REDIRECT] StartTraceHandler.execute(), success : Collect=false
+2026-04-08 13:58:40,737 [INFO] LogOutputStream:77 - [STDOUT_REDIRECT] StartTraceHandler.execute(), success : Collect=true
+2026-04-08 14:07:35,734 [INFO] LogOutputStream:77 - [STDOUT_REDIRECT] StartTraceHandler.execute(), success : Collect=false
+2026-04-08 14:07:47,398 [INFO] LogOutputStream:77 - [STDOUT_REDIRECT] StartTraceHandler.execute(), success : Collect=true

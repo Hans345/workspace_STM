@@ -1,5 +1,7 @@
 eclipse.preferences.version=1
+org.eclipse.cdt.ui.text.templates.custom=<?xml version\="1.0" encoding\="UTF-8" standalone\="no"?><templates><template autoinsert\="true" context\="org.eclipse.cdt.ui.text.templates.c" deleted\="false" description\="Erzeugt Template f\u00FCr Doxygen Funktions Beschreibung" enabled\="true" name\="doxy1">/**&\#13;\r\n * @brief ${brief}&\#13;\r\n * &\#13;\r\n * @param ${param}&\#13;\r\n * @return ${return}&\#13;\r\n */</template><template autoinsert\="true" context\="org.eclipse.cdt.ui.text.templates.c" deleted\="false" description\="Erzeugt Template f\u00FCr Datei \u00DCberschrift" enabled\="true" name\="doxy2">/**&\#13;\r\n * @file&\#13;\r\n * @brief &lt;b&gt;&lt;/b&gt;&\#13;\r\n * @author &\#13;\r\n * @date &\#13;\r\n * &\#13;\r\n * - &\#13;\r\n *&\#13;\r\n * @note&\#13;\r\n */</template></templates>
 scalability.detect=false
+sourceHoverBackgroundColor=255,255,225
 spelling_locale_initialized=true
 useAnnotationsPrefPage=true
 useQuickDiffPrefPage=true

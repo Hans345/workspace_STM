@@ -6,7 +6,7 @@
   ******************************************************************************
   * @attention
   *
-  * In diesem Projekt wird ein simpler ADC mit DMA implementiert (ohne Trigger).
+  * Simpler ADC mit DMA und Trigger (80 kHz).
   * Das Spannungssignal wird am CN9 zwischen Pin A5 (+) und GND
   * eingespeist. Der ADC Wert [0] wird auf der SVW Konsole ausgegeben.
   *

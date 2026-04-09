@@ -8,7 +8,7 @@
   *
   * In diesem Projekt wird ein simpler ADC implementiert (nicht getriggert und
   * ohne DMA). Das Spannungssignal wird am CN9 zwischen Pin A5 (+) und GND
-  * eingespeist. Die ADC Werte werden auf der SVW Konsole ausgegeben.
+  * eingespeist. Die ADC Werte werden auf der SWV Konsole ausgegeben.
   *
   ******************************************************************************
   */

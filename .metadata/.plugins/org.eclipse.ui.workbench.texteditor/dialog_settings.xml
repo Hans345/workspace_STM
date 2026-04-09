@@ -3,12 +3,18 @@
 	<item key="hasShownOverlayPopupBefore" value="true"/>
 	<item key="replaceBarOpen" value="true"/>
 	<list key="replacehistory">
+		<item value="adc_val"/>
+		<item value="z"/>
+		<item value="a"/>
 		<item value="c"/>
 		<item value="y"/>
 		<item value="y_abs"/>
 		<item value="x"/>
 	</list>
 	<list key="searchhistory">
+		<item value="ADC_VAL"/>
+		<item value="x"/>
+		<item value="aV"/>
 		<item value="RAM2_Section"/>
 		<item value="RAM_Section"/>
 		<item value="_Min_Stack_Size"/>
@@ -21,8 +27,12 @@
 		<item value="y"/>
 		<item value="arm_float"/>
 		<item value="arm_float_to_q15"/>
-		<item value="arm_rfft_fast_init_f32"/>
-		<item value="y_abs"/>
-		<item value="x"/>
 	</list>
+	<section name="org.eclipse.cdt.internal.ui.preferences.CTemplatePreferencePage$CEditTemplateDialog_dialogBounds">
+		<item key="DIALOG_X_ORIGIN" value="456"/>
+		<item key="DIALOG_Y_ORIGIN" value="420"/>
+		<item key="DIALOG_WIDTH" value="611"/>
+		<item key="DIALOG_HEIGHT" value="414"/>
+		<item key="DIALOG_FONT_NAME" value="1|Segoe UI|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|Segoe UI"/>
+	</section>
 </section>

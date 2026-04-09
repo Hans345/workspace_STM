@@ -1,0 +1,122 @@
+/**
+ * @file complex.h
+ * @brief <b>Funktionen für Komplexe Zahlen</b>
+ * @author Raphael Baumeler
+ * @date 09.04.2026
+ */
+
+#ifndef FUNKTIONEN_COMPLEX_H_
+#define FUNKTIONEN_COMPLEX_H_
+
+/**
+ * @brief Variable Komplexe Zahl
+ *
+ * @param real Realteil
+ * @param imag Imaginärteil
+ */
+typedef struct{
+	float real;
+	float imag;
+}Complex;
+
+/**
+ * @brief Komplexe Zahlen Addieren
+ *
+ * @param a Summand
+ * @param b Summand
+ * @return result a + b
+ */
+Complex complex_add(Complex a, Complex b) {
+    Complex result;
+    result.real = a.real + b.real;
+    result.imag = a.imag + b.imag;
+    return result;
+}
+
+/**
+ * @brief Komplexe Zahlen subtrahieren
+ *
+ * @param a Minuend
+ * @param b Subtrahend
+ * @return result a - b
+ */
+Complex complex_sub(Complex a, Complex b) {
+    Complex result;
+    result.real = a.real - b.real;
+    result.imag = a.imag - b.imag;
+    return result;
+}
+
+/**
+ * @brief Komplexe Zahlen multiplizieren
+ *
+ * @param a Faktor
+ * @param b Faktor
+ * @return result a*b
+ */
+Complex complex_mul(Complex a, Complex b) {
+    Complex result;
+    result.real = a.real * b.real - a.imag * b.imag;
+    result.imag = a.real * b.imag + a.imag * b.real;
+    return result;
+}
+
+/**
+ * @brief Komplexe Zahl Phasenverschiebung e^(i*theta)
+ *
+ * @param theta Winkel [rad]
+ * @return result e^(i*theta)
+ */
+Complex complex_exp(float theta) {
+    Complex result;
+    result.real = arm_cos_f32(theta);
+    result.imag = arm_sin_f32(theta);
+    return result;
+}
+
+/**
+ * @brief Skalierung mit 1/N
+ *
+ * @param c Zeiger auf Array welches skaliert werden soll
+ * @param N Array Grösse
+ */
+void scale(Complex c[], int N) {
+    for (int i = 0; i < N; i++) {
+        c[i].real = c[i].real/N;
+        c[i].imag = c[i].imag/N;
+    }
+}
+
+/**
+ * @brief Komplexe Zahl Betrag berechnen
+ *
+ * @param c Zeiger auf Array mit Komplexen Zahlen
+ * @param aV Zeiger auf Array worin die Beträge von c abgelegt werden sollen
+ * @param N Array Grösse
+ */
+void abs_val(const Complex c[], float aV[], int N){
+    for (int i = 0; i < N/2; i++) {
+		float result = 0;
+		float temp = c[i].real*c[i].real + c[i].imag*c[i].imag;
+		arm_sqrt_f32(temp, &result);
+		aV[i] = result;	// Amplitude zweiseitges Amplitudenspektrum
+    }
+}
+
+/**
+ * @brief Komplexe Zahl aus Zeitsignal generieren
+ *
+ * @param x Zeitdiskretes Signal
+ * @param c Komplexes Arbeitsarray
+ * @note c[i].real = x[i], c[i].imag = 0
+ */
+void make_complex(const float x[], Complex c[], int N)
+{
+	for(int i = 0; i < N; i++)
+	{
+	    c[i].real = x[i];
+	    c[i].imag = 0.0;
+	}
+}
+
+#endif /* FUNKTIONEN_COMPLEX_H_ */

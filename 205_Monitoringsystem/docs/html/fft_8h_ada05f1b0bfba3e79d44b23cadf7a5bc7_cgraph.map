@@ -1,0 +1,12 @@
+<map id="fft" name="fft">
+<area shape="rect" id="Node000001" title="Fast Fourier Transformation (FFT)." alt="" coords="8,81,47,108"/>
+<area shape="poly" id="edge5_Node000001_Node000001" title=" " alt="" coords="6,81,3,72,5,63,14,57,27,55,42,57,50,65,45,67,40,62,27,60,16,62,10,66,8,72,11,80"/>
+<area shape="rect" id="Node000002" href="$complex_8h.html#a374c911ba7060ebf628c82f3d9e6528c" title="Komplexe Zahlen Addieren." alt="" coords="95,5,193,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="43,79,93,42,103,38,99,42,96,46,47,83"/>
+<area shape="rect" id="Node000003" href="$complex_8h.html#a114e895dbdd106185d9a2d5c02534f5e" title="Komplexe Zahl Phasenverschiebung." alt="" coords="95,56,193,83"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="46,88,81,81,78,85,48,93"/>
+<area shape="rect" id="Node000004" href="$complex_8h.html#a3381bc8373c19a4bf17d0fe93dd6e3b2" title="Komplexe Zahlen multiplizieren." alt="" coords="95,107,193,133"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="46,96,82,104,77,108,47,101"/>
+<area shape="rect" id="Node000005" href="$complex_8h.html#a2bda09b9200a59ed16f9d48d4d9d7364" title="Komplexe Zahlen subtrahieren." alt="" coords="95,157,193,184"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="46,106,96,143,104,149,98,149,93,148,44,111"/>
+</map>

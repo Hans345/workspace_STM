@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">&#x0A;<refactoring comment="Rename resource &apos;205_Monitoringsystem/FFT&apos; to &apos;Funktionen&apos;" description="Rename resource &apos;FFT&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="FFT" name="Funktionen" stamp="1775719554326" updateReferences="true"/>&#x0A;<refactoring comment="Rename resource &apos;205_Monitoringsystem/Callbacks/adc_callbacks.h&apos; to &apos;callbacks.h&apos;" description="Rename resource &apos;adc_callbacks.h&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="Callbacks/adc_callbacks.h" name="callbacks.h" stamp="1775720186242" updateReferences="true"/>
+</session>

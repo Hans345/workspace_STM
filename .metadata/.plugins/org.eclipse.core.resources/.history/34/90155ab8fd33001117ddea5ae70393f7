@@ -1,0 +1,43 @@
+/*
+ * konsole.h
+ *
+ *  Created on: 09.04.2026
+ *      Author: raphael.baumeler
+ */
+
+#ifndef FUNKTIONEN_KONSOLE_H_
+#define FUNKTIONEN_KONSOLE_H_
+
+/**
+ * @brief Überschreibt die Funktion printf() womit Strings und Zahlen auf der
+ * Konsole via SWV ausgegeben werden können.
+ *
+ * @param file
+ * @param ptr Zeiger auf char array
+ * @param len Länge des char arrays
+ * @return len Länge des char arrays
+ * @note Beispiel: printf("HELLO\n");
+ */
+int _write(int file, char *ptr, int len) {
+	(void) file;
+	int DataIdx;
+
+	for (DataIdx = 0; DataIdx < len; DataIdx++) {
+		ITM_SendChar(*ptr++);
+	}
+	return len;
+}
+
+/**
+ * @brief Ausgabe von Strings via SWV auf der Konsole.
+ *
+ * @param s Zeiger auf char array
+ * @note Für Strings diese Funktion anstelle von printf() verwenden, da weniger Stack benötigt wird!
+ * Beispiel: _print("HELLO\n");
+ */
+void _print(const char *s) {
+	_write(0, (char*) s, strlen(s));
+}
+
+
+#endif /* FUNKTIONEN_KONSOLE_H_ */
