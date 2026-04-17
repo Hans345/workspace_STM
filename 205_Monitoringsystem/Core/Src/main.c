@@ -87,6 +87,10 @@ float a[N];
  * @brief ADC Werte
  */
 uint16_t adc_val[N];
+/**
+ * @brief Clear Putty Konsole
+ */
+uint8_t clear[] = "\033[2J\033[H\r\n";
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -192,6 +196,9 @@ int main(void)
 	_print("Start Monitoringsystem\r\n");
 	_print("*****************************\r\n");
 
+	// Clear PUTTY Konsole
+	HAL_UART_Transmit(&huart1, clear, sizeof(clear)-1, 1000);
+
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -206,17 +213,56 @@ int main(void)
 			fft(c, (int) N);
 			scale(c, (int) N);
 			abs_val(c, a, (int) N);
+
 			// FFT fertig
 			HAL_GPIO_WritePin(LD1_green_GPIO_Port, LD1_green_Pin, 1);
 			_print("FFT berechnet!\n");
-			_print("*****************************\r\n");
-			// Reset
-			qNr = 1;
 
+			// Daten übertragen
+			qNr = 6;
 		}
 
 		// Delay
 		HAL_Delay(200);
+
+		// FFT Daten übertragen
+		if (qNr == 6)
+		{
+			// Übertrage FFt Daten!
+			_print("Uebertrage FFT Daten\n");
+
+			// Daten nach .csv übertragen
+			char header[] = "f,Ampl\r\n";
+			HAL_UART_Transmit(&huart1, (uint8_t*)header, strlen(header), 1000);
+
+			for (int i = 0; i < N/2; i++) {
+			    // float freq = i * (80000.0f / N);   // df = fs/N
+			    char line[64];
+
+			    // Kpmplexe Amplituden in reale Amplituden umrechnen und Daten übertragen
+			    if (i==0) // A0 = c0
+			    {
+				    int len = sprintf(line, "%f\r\n", a[i]);
+				    HAL_UART_Transmit(&huart1, (uint8_t*)line, len, 1000);
+			    }
+			    else // An = |2*cn| mit n = 1,2,3...N/2
+			    {
+				    int len = sprintf(line, "%f\r\n", 2*a[i]);
+				    HAL_UART_Transmit(&huart1, (uint8_t*)line, len, 1000);
+			    }
+
+			}
+
+			// FFT Daten übertragen
+			_print("FFT Daten uebertagen!\n");
+			_print("*****************************\r\n");
+
+			// Reset
+			qNr = 1;
+
+			// Button Interrupt enablen
+			HAL_NVIC_EnableIRQ(EXTI13_IRQn);
+		}
 
     /* USER CODE END WHILE */
 
@@ -350,6 +396,9 @@ void HAL_GPIO_EXTI_Rising_Callback(uint16_t GPIO_Pin) {
 
 	// Konsole
 	_print("ADC Sampling\r\n");
+
+	// Button Interrupt disablen
+	HAL_NVIC_DisableIRQ(EXTI13_IRQn);
 }
 
 /* USER CODE END 4 */

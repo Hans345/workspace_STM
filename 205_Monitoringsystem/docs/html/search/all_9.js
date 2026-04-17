@@ -11,5 +11,7 @@ var searchData=
   ['ld_5fg1_5fgpio_5fport_8',['LD_G1_GPIO_Port',['../main_8h.html#a788289bc22a40e5044f170580f41ce50',1,'main.h']]],
   ['ld_5fg1_5fpin_9',['LD_G1_Pin',['../main_8h.html#adb59a74dd2a28fae32c6118f6cabf599',1,'main.h']]],
   ['ld_5fg2_5fgpio_5fport_10',['LD_G2_GPIO_Port',['../main_8h.html#a0ee5bb983952f23430e1a576695d1dce',1,'main.h']]],
-  ['ld_5fg2_5fpin_11',['LD_G2_Pin',['../main_8h.html#a81ed37a15db0d6d97189a30707f53840',1,'main.h']]]
+  ['ld_5fg2_5fpin_11',['LD_G2_Pin',['../main_8h.html#a81ed37a15db0d6d97189a30707f53840',1,'main.h']]],
+  ['ld_5fr1_5fgpio_5fport_12',['LD_R1_GPIO_Port',['../main_8h.html#a0d775d4525facde9d2cc1189fcc5e5da',1,'main.h']]],
+  ['ld_5fr1_5fpin_13',['LD_R1_Pin',['../main_8h.html#a8daae218ebdfec5c24b5d6fcc431ef37',1,'main.h']]]
 ];

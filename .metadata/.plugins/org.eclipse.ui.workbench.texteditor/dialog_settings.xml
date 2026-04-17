@@ -12,6 +12,7 @@
 		<item value="x"/>
 	</list>
 	<list key="searchhistory">
+		<item value="qNr"/>
 		<item value="ADC_VAL"/>
 		<item value="x"/>
 		<item value="aV"/>
@@ -26,7 +27,6 @@
 		<item value="HAL_"/>
 		<item value="y"/>
 		<item value="arm_float"/>
-		<item value="arm_float_to_q15"/>
 	</list>
 	<section name="org.eclipse.cdt.internal.ui.preferences.CTemplatePreferencePage$CEditTemplateDialog_dialogBounds">
 		<item key="DIALOG_X_ORIGIN" value="456"/>

@@ -47,7 +47,7 @@ var menudata={children:[
 {text:"q",url:"globals.html#index_q"},
 {text:"s",url:"globals.html#index_s"},
 {text:"u",url:"globals.html#index_u"},
-{text:"x",url:"globals.html#index_x"}]},
+{text:"z",url:"globals.html#index_z"}]},
 {text:"Functions",url:"globals_func.html"},
 {text:"Variables",url:"globals_vars.html"},
 {text:"Macros",url:"globals_defs.html",children:[
