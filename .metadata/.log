@@ -8871,3 +8871,341 @@ Unable to read memory.
 java.lang.Exception: Unable to read memory.
 	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.processMIOutput(AbstractMIControl.java:1024)
 	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.run(AbstractMIControl.java:853)
+!SESSION 2026-04-20 08:12:22.763 -----------------------------------------------
+eclipse.buildId=Version 2.1.1
+java.version=21.0.9
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=de_CH
+Framework arguments:  C:\Users\raphael.baumeler\workspace_STM\205_Monitoringsystem_PuTTY\STM32CubeIDE\.project
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 C:\Users\raphael.baumeler\workspace_STM\205_Monitoringsystem_PuTTY\STM32CubeIDE\.project
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2026-04-20 08:12:27.417
+!MESSAGE Log4j2 initialized with config file C:\Users\raphael.baumeler\workspace_STM\.metadata\.log4j2.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2026-04-20 08:12:41.476
+!MESSAGE Started RMI Server, listening on port 41337
+
+!ENTRY org.eclipse.cdt.core 1 0 2026-04-20 08:12:48.265
+!MESSAGE Indexed '205_Monitoringsystem_PuTTY' (46 sources, 120 headers) in 3.34 sec: 14’499 declarations; 103’865 references; 4 unresolved inclusions; 404 syntax errors; 4’219 unresolved names (3.4%)
+
+!ENTRY com.st.stm32cube.ide.mpu.remote.serial 1 1 2026-04-20 08:12:49.955
+!MESSAGE Executed PowerShell command powershell.exe -Command "Get-CimInstance -ClassName Win32_SerialPort | Select-Object -ExpandProperty DeviceID":
+COM3
+COM8
+
+
+!ENTRY com.st.stm32cube.ide.mpu.remote.serial 1 1 2026-04-20 08:12:49.956
+!MESSAGE port: COM3
+
+!ENTRY com.st.stm32cube.ide.mpu.remote.serial 1 1 2026-04-20 08:12:49.957
+!MESSAGE port: COM8
+
+!ENTRY org.eclipse.cdt.core 4 0 2026-04-20 08:13:31.318
+!MESSAGE Error
+!STACK 1
+org.eclipse.core.runtime.CoreException: Project: 205_Monitoringsystem_PuTTY is closed or inaccessible!
+	at org.eclipse.cdt.internal.core.settings.model.ExceptionFactory.createCoreException(ExceptionFactory.java:25)
+	at org.eclipse.cdt.internal.core.settings.model.CProjectDescriptionManager.getProjectDescriptionStorage(CProjectDescriptionManager.java:888)
+	at org.eclipse.cdt.internal.core.settings.model.CProjectDescriptionManager.getStorageForElement(CProjectDescriptionManager.java:908)
+	at org.eclipse.cdt.internal.core.settings.model.CConfigurationSpecSettings.getStorageBase(CConfigurationSpecSettings.java:347)
+	at org.eclipse.cdt.internal.core.settings.model.CConfigurationSpecSettings.getStorage(CConfigurationSpecSettings.java:315)
+	at org.eclipse.cdt.internal.core.settings.model.CConfigurationSpecSettings.getSettingsStorageElement(CConfigurationSpecSettings.java:309)
+	at org.eclipse.cdt.internal.core.settings.model.CConfigurationSpecSettings.<init>(CConfigurationSpecSettings.java:121)
+	at org.eclipse.cdt.internal.core.settings.model.CConfigurationDescriptionCache.<init>(CConfigurationDescriptionCache.java:120)
+	at org.eclipse.cdt.internal.core.settings.model.CProjectDescription.<init>(CProjectDescription.java:175)
+	at org.eclipse.cdt.internal.core.settings.model.xml.XmlProjectDescriptionStorage.loadProjectDescription(XmlProjectDescriptionStorage.java:503)
+	at org.eclipse.cdt.internal.core.settings.model.xml.XmlProjectDescriptionStorage.getProjectDescription(XmlProjectDescriptionStorage.java:239)
+	at org.eclipse.cdt.internal.core.settings.model.CProjectDescriptionManager.getProjectDescriptionInternal(CProjectDescriptionManager.java:426)
+	at org.eclipse.cdt.internal.core.settings.model.CProjectDescriptionManager.getProjectDescription(CProjectDescriptionManager.java:408)
+	at org.eclipse.cdt.internal.core.settings.model.CProjectDescriptionManager.getProjectDescription(CProjectDescriptionManager.java:402)
+	at org.eclipse.cdt.internal.core.settings.model.CProjectDescriptionManager.getProjectDescription(CProjectDescriptionManager.java:395)
+	at org.eclipse.cdt.internal.core.settings.model.CProjectDescriptionManager.isNewStyleProject(CProjectDescriptionManager.java:2464)
+	at org.eclipse.cdt.core.model.CoreModel.isNewStyleProject(CoreModel.java:1457)
+	at org.eclipse.cdt.ui.newui.ManageConfigSelector.getProjects(ManageConfigSelector.java:104)
+	at org.eclipse.cdt.internal.ui.workingsets.HasManagedCdtProjectSelection.hasManagedCdtProjectSelection(HasManagedCdtProjectSelection.java:43)
+	at org.eclipse.cdt.internal.ui.workingsets.HasManagedCdtProjectSelection.test(HasManagedCdtProjectSelection.java:33)
+	at org.eclipse.core.internal.expressions.Property.test(Property.java:65)
+	at org.eclipse.core.expressions.TestExpression.evaluate(TestExpression.java:107)
+	at org.eclipse.ui.internal.services.EvaluationReference.evaluate(EvaluationReference.java:76)
+	at org.eclipse.ui.internal.services.EvaluationReference.evaluate(EvaluationReference.java:106)
+	at org.eclipse.ui.internal.services.EvaluationReference.changed(EvaluationReference.java:100)
+	at org.eclipse.e4.core.internal.contexts.TrackableComputationExt.update(TrackableComputationExt.java:105)
+	at org.eclipse.e4.core.internal.contexts.EclipseContext.processScheduled(EclipseContext.java:358)
+	at org.eclipse.e4.core.internal.contexts.EclipseContext.set(EclipseContext.java:374)
+	at org.eclipse.e4.core.internal.contexts.EclipseContext.deactivate(EclipseContext.java:681)
+	at org.eclipse.e4.ui.workbench.renderers.swt.MenuManagerHideProcessor.lambda$1(MenuManagerHideProcessor.java:140)
+	at org.eclipse.swt.widgets.RunnableLock.run(RunnableLock.java:40)
+	at org.eclipse.swt.widgets.Synchronizer.runAsyncMessages(Synchronizer.java:132)
+	at org.eclipse.swt.widgets.Display.runAsyncMessages(Display.java:4099)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3715)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$5.run(PartRenderingEngine.java:1151)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:339)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1042)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:153)
+	at org.eclipse.ui.internal.Workbench.lambda$3(Workbench.java:639)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:339)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:546)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:173)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:152)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:208)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:143)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:109)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:439)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:271)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:668)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:605)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1481)
+!SUBENTRY 1 org.eclipse.cdt.core 4 0 2026-04-20 08:13:31.319
+!MESSAGE Project: 205_Monitoringsystem_PuTTY is closed or inaccessible!
+!SESSION 2026-04-20 08:14:47.094 -----------------------------------------------
+eclipse.buildId=Version 2.1.1
+java.version=21.0.9
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=de_CH
+Framework arguments:  C:\Users\raphael.baumeler\workspace_STM\205_Monitoringsystem_PuTTY\STM32CubeIDE\.project
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 C:\Users\raphael.baumeler\workspace_STM\205_Monitoringsystem_PuTTY\STM32CubeIDE\.project
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2026-04-20 08:14:50.120
+!MESSAGE Log4j2 initialized with config file C:\Users\raphael.baumeler\workspace_STM\.metadata\.log4j2.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2026-04-20 08:15:02.494
+!MESSAGE Started RMI Server, listening on port 41337
+
+!ENTRY com.st.stm32cube.ide.mpu.remote.serial 1 1 2026-04-20 08:15:07.610
+!MESSAGE Executed PowerShell command powershell.exe -Command "Get-CimInstance -ClassName Win32_SerialPort | Select-Object -ExpandProperty DeviceID":
+COM3
+COM8
+
+
+!ENTRY com.st.stm32cube.ide.mpu.remote.serial 1 1 2026-04-20 08:15:07.611
+!MESSAGE port: COM3
+
+!ENTRY com.st.stm32cube.ide.mpu.remote.serial 1 1 2026-04-20 08:15:07.612
+!MESSAGE port: COM8
+
+!ENTRY org.eclipse.cdt.core 1 0 2026-04-20 08:15:09.142
+!MESSAGE Indexed '205_Monitoringsystem_PuTTY' (46 sources, 120 headers) in 4.83 sec: 14’499 declarations; 103’865 references; 4 unresolved inclusions; 404 syntax errors; 4’219 unresolved names (3.4%)
+
+!ENTRY com.st.stm32cube.ide.mcu.debug.swv 1 1 2026-04-20 08:16:13.507
+!MESSAGE SWV configuration; base: 192000000; minDiv: 16; maxDiv: 65535; maxSWO: 12000000; limit: 1000000 => SWO: 1000000; CPU: 160000000; div: 160
+
+!ENTRY org.eclipse.cdt.dsf.gdb 4 4 2026-04-20 08:16:53.775
+!MESSAGE NullPointerException while trying to calculated source lookup path. This can be ignored if it occurs while terminating a debug session. See Bug 500988.
+!STACK 0
+java.lang.NullPointerException: Cannot read the array length because "containers" is null
+	at org.eclipse.cdt.dsf.gdb.launching.GdbSourceLookupDirector.collectSubstitutionsPaths(GdbSourceLookupDirector.java:102)
+	at org.eclipse.cdt.dsf.gdb.launching.GdbSourceLookupDirector.collectSubstitutionsPaths(GdbSourceLookupDirector.java:146)
+	at org.eclipse.cdt.dsf.gdb.launching.GdbSourceLookupDirector.getSubstitutionsPaths(GdbSourceLookupDirector.java:72)
+	at org.eclipse.cdt.dsf.gdb.service.GDBSourceLookup.getSubstitutionsPaths(GDBSourceLookup.java:124)
+	at org.eclipse.cdt.dsf.gdb.service.GDBSourceLookup.sourceContainersChanged(GDBSourceLookup.java:139)
+	at org.eclipse.cdt.dsf.gdb.launching.GdbSourceLookupParticipant.sourceContainersChangedOnDispatchThread(GdbSourceLookupParticipant.java:120)
+	at org.eclipse.cdt.dsf.gdb.launching.GdbSourceLookupParticipant$1.run(GdbSourceLookupParticipant.java:85)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+
+!ENTRY org.eclipse.cdt.dsf 4 10005 2026-04-20 08:18:03.189
+!MESSAGE Request for monitor: '111^error,msg="Unable to read memory."' resulted in an error.
+!SUBENTRY 1 org.eclipse.cdt.dsf.gdb 4 10004 2026-04-20 08:18:03.189
+!MESSAGE Failed to execute MI command:
+-data-read-memory 0xe000ee08 d 1 1 4
+Error message from debugger back end:
+Unable to read memory.
+!STACK 0
+java.lang.Exception: Unable to read memory.
+	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.processMIOutput(AbstractMIControl.java:1024)
+	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.run(AbstractMIControl.java:853)
+
+!ENTRY org.eclipse.cdt.dsf.gdb 4 10004 2026-04-20 08:18:03.220
+!MESSAGE Failed to execute MI command:
+-stack-list-frames 0 0
+Error message from debugger back end:
+Invalid thread id: 1
+!STACK 0
+java.lang.Exception: Invalid thread id: 1
+	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.processMIOutput(AbstractMIControl.java:1024)
+	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.run(AbstractMIControl.java:853)
+
+!ENTRY org.eclipse.cdt.dsf.gdb 4 10004 2026-04-20 08:18:03.223
+!MESSAGE Failed to execute MI command:
+-stack-list-frames 0 0
+Error message from debugger back end:
+Invalid thread id: 1
+!STACK 0
+java.lang.Exception: Invalid thread id: 1
+	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.processMIOutput(AbstractMIControl.java:1024)
+	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.run(AbstractMIControl.java:853)
+
+!ENTRY org.eclipse.cdt.core 1 0 2026-04-20 08:27:57.817
+!MESSAGE Indexed '206_Monitoringsystem_Matlab' (47 sources, 120 headers) in 4.55 sec: 14’524 declarations; 104’738 references; 4 unresolved inclusions; 404 syntax errors; 4’258 unresolved names (3.4%)
+
+!ENTRY com.st.stm32cube.ide.mcu.debug.swv 1 1 2026-04-20 08:29:10.989
+!MESSAGE SWV configuration; base: 192000000; minDiv: 16; maxDiv: 65535; maxSWO: 12000000; limit: 1000000 => SWO: 1000000; CPU: 160000000; div: 160
+
+!ENTRY org.eclipse.cdt.dsf.gdb 4 4 2026-04-20 08:29:16.607
+!MESSAGE NullPointerException while trying to calculated source lookup path. This can be ignored if it occurs while terminating a debug session. See Bug 500988.
+!STACK 0
+java.lang.NullPointerException: Cannot read the array length because "containers" is null
+	at org.eclipse.cdt.dsf.gdb.launching.GdbSourceLookupDirector.collectSubstitutionsPaths(GdbSourceLookupDirector.java:102)
+	at org.eclipse.cdt.dsf.gdb.launching.GdbSourceLookupDirector.collectSubstitutionsPaths(GdbSourceLookupDirector.java:146)
+	at org.eclipse.cdt.dsf.gdb.launching.GdbSourceLookupDirector.getSubstitutionsPaths(GdbSourceLookupDirector.java:72)
+	at org.eclipse.cdt.dsf.gdb.service.GDBSourceLookup.getSubstitutionsPaths(GDBSourceLookup.java:124)
+	at org.eclipse.cdt.dsf.gdb.service.GDBSourceLookup.sourceContainersChanged(GDBSourceLookup.java:139)
+	at org.eclipse.cdt.dsf.gdb.launching.GdbSourceLookupParticipant.sourceContainersChangedOnDispatchThread(GdbSourceLookupParticipant.java:120)
+	at org.eclipse.cdt.dsf.gdb.launching.GdbSourceLookupParticipant$1.run(GdbSourceLookupParticipant.java:85)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+
+!ENTRY com.st.stm32cube.ide.mcu.debug.swv 1 1 2026-04-20 09:20:04.355
+!MESSAGE SWV configuration; base: 192000000; minDiv: 16; maxDiv: 65535; maxSWO: 12000000; limit: 1000000 => SWO: 1000000; CPU: 160000000; div: 160
+
+!ENTRY com.st.stm32cube.ide.mcu.debug.swv 1 1 2026-04-20 10:46:54.845
+!MESSAGE SWV configuration; base: 192000000; minDiv: 16; maxDiv: 65535; maxSWO: 12000000; limit: 1000000 => SWO: 1000000; CPU: 160000000; div: 160
+
+!ENTRY com.st.stm32cube.ide.mcu.debug.swv 1 1 2026-04-20 14:24:07.290
+!MESSAGE SWV configuration; base: 192000000; minDiv: 16; maxDiv: 65535; maxSWO: 12000000; limit: 1000000 => SWO: 1000000; CPU: 160000000; div: 160
+
+!ENTRY org.eclipse.cdt.core 1 0 2026-04-20 14:40:51.946
+!MESSAGE Indexed '206_Monitoringsystem_Matlab' (46 sources, 120 headers) in 4.42 sec: 14’824 declarations; 109’408 references; 0 unresolved inclusions; 1 syntax errors; 2 unresolved names (0.0016%)
+
+!ENTRY com.st.stm32cube.ide.mcu.debug.swv 1 1 2026-04-20 14:41:43.920
+!MESSAGE SWV configuration; base: 192000000; minDiv: 16; maxDiv: 65535; maxSWO: 12000000; limit: 1000000 => SWO: 1000000; CPU: 160000000; div: 160
+
+!ENTRY org.eclipse.cdt.core 1 0 2026-04-20 14:48:35.651
+!MESSAGE Indexed '206_Monitoringsystem_Matlab' (46 sources, 120 headers) in 2.05 sec: 14’824 declarations; 109’411 references; 0 unresolved inclusions; 1 syntax errors; 2 unresolved names (0.0016%)
+
+!ENTRY com.st.stm32cube.ide.mcu.debug.swv 1 1 2026-04-20 14:48:59.140
+!MESSAGE SWV configuration; base: 192000000; minDiv: 16; maxDiv: 65535; maxSWO: 12000000; limit: 1000000 => SWO: 1000000; CPU: 160000000; div: 160
+
+!ENTRY org.eclipse.cdt.core 1 0 2026-04-20 14:51:38.427
+!MESSAGE Indexed '206_Monitoringsystem_Matlab' (46 sources, 120 headers) in 4.99 sec: 14’824 declarations; 109’406 references; 0 unresolved inclusions; 1 syntax errors; 2 unresolved names (0.0016%)
+
+!ENTRY com.st.stm32cube.ide.mcu.debug.swv 1 1 2026-04-20 14:51:56.121
+!MESSAGE SWV configuration; base: 192000000; minDiv: 16; maxDiv: 65535; maxSWO: 12000000; limit: 1000000 => SWO: 1000000; CPU: 160000000; div: 160
+
+!ENTRY org.eclipse.cdt.core 1 0 2026-04-20 14:58:34.693
+!MESSAGE Indexed '206_Monitoringsystem_Matlab' (46 sources, 120 headers) in 1.49 sec: 14’824 declarations; 109’405 references; 0 unresolved inclusions; 1 syntax errors; 2 unresolved names (0.0016%)
+
+!ENTRY com.st.stm32cube.ide.mcu.debug.swv 1 1 2026-04-20 14:58:55.393
+!MESSAGE SWV configuration; base: 192000000; minDiv: 16; maxDiv: 65535; maxSWO: 12000000; limit: 1000000 => SWO: 1000000; CPU: 160000000; div: 160
+
+!ENTRY org.eclipse.cdt.dsf 4 10005 2026-04-20 15:00:32.409
+!MESSAGE Request for monitor: '115^error,msg="Unable to read memory."' resulted in an error.
+!SUBENTRY 1 org.eclipse.cdt.dsf.gdb 4 10004 2026-04-20 15:00:32.409
+!MESSAGE Failed to execute MI command:
+-data-read-memory 0xe000ee08 d 1 1 4
+Error message from debugger back end:
+Unable to read memory.
+!STACK 0
+java.lang.Exception: Unable to read memory.
+	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.processMIOutput(AbstractMIControl.java:1024)
+	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.run(AbstractMIControl.java:853)
+
+!ENTRY org.eclipse.cdt.dsf.gdb 4 10004 2026-04-20 15:00:32.431
+!MESSAGE Failed to execute MI command:
+-stack-list-frames 0 0
+Error message from debugger back end:
+Invalid thread id: 1
+!STACK 0
+java.lang.Exception: Invalid thread id: 1
+	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.processMIOutput(AbstractMIControl.java:1024)
+	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.run(AbstractMIControl.java:853)
+
+!ENTRY org.eclipse.cdt.core 1 0 2026-04-20 15:01:39.004
+!MESSAGE Indexed '206_Monitoringsystem_Matlab' (46 sources, 120 headers) in 1.5 sec: 14’824 declarations; 109’407 references; 0 unresolved inclusions; 1 syntax errors; 2 unresolved names (0.0016%)
+
+!ENTRY com.st.stm32cube.ide.mcu.debug.swv 1 1 2026-04-20 15:02:12.561
+!MESSAGE SWV configuration; base: 192000000; minDiv: 16; maxDiv: 65535; maxSWO: 12000000; limit: 1000000 => SWO: 1000000; CPU: 160000000; div: 160
+
+!ENTRY org.eclipse.cdt.dsf 4 10005 2026-04-20 15:04:22.479
+!MESSAGE Request for monitor: '114^error,msg="Unable to read memory."' resulted in an error.
+!SUBENTRY 1 org.eclipse.cdt.dsf.gdb 4 10004 2026-04-20 15:04:22.480
+!MESSAGE Failed to execute MI command:
+-data-read-memory 0xe000ee08 d 1 1 4
+Error message from debugger back end:
+Unable to read memory.
+!STACK 0
+java.lang.Exception: Unable to read memory.
+	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.processMIOutput(AbstractMIControl.java:1024)
+	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.run(AbstractMIControl.java:853)
+
+!ENTRY com.st.stm32cube.ide.mcu.debug.swv 1 1 2026-04-20 15:06:02.505
+!MESSAGE SWV configuration; base: 192000000; minDiv: 16; maxDiv: 65535; maxSWO: 12000000; limit: 1000000 => SWO: 1000000; CPU: 160000000; div: 160
+
+!ENTRY org.eclipse.cdt.core 1 0 2026-04-20 15:07:59.542
+!MESSAGE Indexed '206_Monitoringsystem_Matlab' (46 sources, 120 headers) in 4.76 sec: 14’824 declarations; 109’408 references; 0 unresolved inclusions; 1 syntax errors; 2 unresolved names (0.0016%)
+
+!ENTRY org.eclipse.cdt.dsf 4 10005 2026-04-20 15:08:04.145
+!MESSAGE Request for monitor: '114^error,msg="Unable to read memory."' resulted in an error.
+!SUBENTRY 1 org.eclipse.cdt.dsf.gdb 4 10004 2026-04-20 15:08:04.145
+!MESSAGE Failed to execute MI command:
+-data-read-memory 0xe000ee08 d 1 1 4
+Error message from debugger back end:
+Unable to read memory.
+!STACK 0
+java.lang.Exception: Unable to read memory.
+	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.processMIOutput(AbstractMIControl.java:1024)
+	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.run(AbstractMIControl.java:853)
+
+!ENTRY com.st.stm32cube.ide.mcu.debug.swv 1 1 2026-04-20 15:08:31.257
+!MESSAGE SWV configuration; base: 192000000; minDiv: 16; maxDiv: 65535; maxSWO: 12000000; limit: 1000000 => SWO: 1000000; CPU: 160000000; div: 160
+
+!ENTRY org.eclipse.cdt.core 1 0 2026-04-20 15:30:23.848
+!MESSAGE Indexed '206_Monitoringsystem_Matlab' (46 sources, 120 headers) in 4.6 sec: 14’824 declarations; 109’406 references; 0 unresolved inclusions; 1 syntax errors; 2 unresolved names (0.0016%)
+
+!ENTRY org.eclipse.cdt.dsf 4 10005 2026-04-20 15:30:43.857
+!MESSAGE Request for monitor: '115^error,msg="Unable to read memory."' resulted in an error.
+!SUBENTRY 1 org.eclipse.cdt.dsf.gdb 4 10004 2026-04-20 15:30:43.857
+!MESSAGE Failed to execute MI command:
+-data-read-memory 0xe000ee08 d 1 1 4
+Error message from debugger back end:
+Unable to read memory.
+!STACK 0
+java.lang.Exception: Unable to read memory.
+	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.processMIOutput(AbstractMIControl.java:1024)
+	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.run(AbstractMIControl.java:853)
+
+!ENTRY com.st.stm32cube.ide.mcu.debug.swv 1 1 2026-04-20 15:31:37.913
+!MESSAGE SWV configuration; base: 192000000; minDiv: 16; maxDiv: 65535; maxSWO: 12000000; limit: 1000000 => SWO: 1000000; CPU: 160000000; div: 160
+
+!ENTRY org.eclipse.cdt.dsf 4 10005 2026-04-20 15:33:17.783
+!MESSAGE Request for monitor: '102^error,msg="Unable to read memory."' resulted in an error.
+!SUBENTRY 1 org.eclipse.cdt.dsf.gdb 4 10004 2026-04-20 15:33:17.783
+!MESSAGE Failed to execute MI command:
+-data-read-memory 0xe000ee08 d 1 1 4
+Error message from debugger back end:
+Unable to read memory.
+!STACK 0
+java.lang.Exception: Unable to read memory.
+	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.processMIOutput(AbstractMIControl.java:1024)
+	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.run(AbstractMIControl.java:853)
+
+!ENTRY com.st.stm32cube.ide.mcu.debug.swv 1 1 2026-04-20 15:35:20.135
+!MESSAGE SWV configuration; base: 192000000; minDiv: 16; maxDiv: 65535; maxSWO: 12000000; limit: 1000000 => SWO: 1000000; CPU: 160000000; div: 160
+
+!ENTRY com.st.stm32cube.ide.mcu.debug.swv 1 1 2026-04-20 15:52:46.229
+!MESSAGE SWV configuration; base: 192000000; minDiv: 16; maxDiv: 65535; maxSWO: 12000000; limit: 1000000 => SWO: 1000000; CPU: 160000000; div: 160
+
+!ENTRY com.st.stm32cube.ide.mcu.debug.swv 1 1 2026-04-20 16:48:38.026
+!MESSAGE SWV configuration; base: 192000000; minDiv: 16; maxDiv: 65535; maxSWO: 12000000; limit: 1000000 => SWO: 1000000; CPU: 160000000; div: 160
+
+!ENTRY org.eclipse.cdt.dsf 4 10005 2026-04-20 17:17:28.909
+!MESSAGE Request for monitor: '108^error,msg="Unable to read memory."' resulted in an error.
+!SUBENTRY 1 org.eclipse.cdt.dsf.gdb 4 10004 2026-04-20 17:17:28.909
+!MESSAGE Failed to execute MI command:
+-data-read-memory 0xe000ee08 d 1 1 4
+Error message from debugger back end:
+Unable to read memory.
+!STACK 0
+java.lang.Exception: Unable to read memory.
+	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.processMIOutput(AbstractMIControl.java:1024)
+	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.run(AbstractMIControl.java:853)

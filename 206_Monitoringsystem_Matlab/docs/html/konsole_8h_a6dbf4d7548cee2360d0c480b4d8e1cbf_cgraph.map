@@ -1,0 +1,5 @@
+<map id="_print" name="_print">
+<area shape="rect" id="Node000001" title="Ausgabe von Strings via SWV auf der Konsole." alt="" coords="5,5,59,32"/>
+<area shape="rect" id="Node000002" href="$konsole_8h.html#aa025a12d45f60c7d0eae249e61f0c7f9" title="Überschreibt die Funktion printf() womit Strings und Zahlen auf der Konsole via SWV ausgegeben werden..." alt="" coords="107,5,163,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="59,16,93,18,88,19,59,21"/>
+</map>

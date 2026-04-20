@@ -1,0 +1,90 @@
+/**
+ * @file fft.h
+ * @brief <b>Fourier Transformation</b>
+ * @author Raphael Baumeler
+ * @date 09.04.2026
+ */
+
+#ifndef FUNKTIONEN_FFT_H_
+#define FUNKTIONEN_FFT_H_
+
+/**
+ * @brief Diskrete Fourier Transformation (DFT)
+ *
+ * @param z Zeiger auf Array mit Spannungswerten  [V]
+ * @param c Zeiger auf Komplexe Fourier Koeffizenten Array
+ * @param N Array Länge
+ * @note Der Rechenaufwand ist O(N^2). Deshalb wird empfohlen diese Funktion mit N <= 4096 auszuführen.
+ * Für eine effiziente Berechnung mussi N = 2^Y mit Y = 1,2,3...
+ */
+void dft(float z[], Complex c[], int N) {
+	for (int k = 0; k < N; k++) {
+		// Initalisierung
+		c[k].real = 0;
+		c[k].imag = 0;
+
+		// Summe berechnen
+		for (int n = 0; n < N; n++) {
+			float phi = (-2.0 * M_PI * k * n) / N;
+			float cv = arm_cos_f32(phi);
+			float sv = arm_sin_f32(phi);
+
+			c[k].real = c[k].real + z[n] * cv;
+			c[k].imag = c[k].imag + z[n] * sv;
+		}
+	}
+}
+
+/**
+ * @brief Fast Fourier Transformation (FFT)
+ *
+ * @param c Zeiger auf Komplexe Fourier Koeffizenten Array (ck)
+ * @param N Länge Array
+ * @note Der Rechenaufwand ist gegenüber dft() reduziert und beträgt O(N*log(N)).
+ * Da der RAM auf dem NUCLEO-U5A5ZJ-Q auf 2.44 MB begrenzt ist, wird empfohlen diese Funktion mit
+ * N <= 65536 Samples auszuführen.
+ */
+void fft(Complex c[], int N) {
+	if (N <= 1)
+		return;
+
+	// Aufteilen
+	Complex ce[N / 2];
+	Complex co[N / 2];
+	for (int i = 0; i < N / 2; i++) {
+		ce[i] = c[2 * i];
+		co[i] = c[2 * i + 1];
+	}
+
+	// Rekursion
+	fft(ce, N / 2);
+	fft(co, N / 2);
+
+	// Kombinieren
+	for (int k = 0; k < N / 2; k++) {
+		float angle = (-2.0 * M_PI * k) / N;
+		Complex twiddle = complex_exp(angle);
+
+		Complex t = complex_mul(twiddle, co[k]);
+
+		c[k] = complex_add(ce[k], t);
+		c[k + N / 2] = complex_sub(ce[k], t);
+	}
+}
+
+/**
+ * @brief Rechnet ADC Werte in Spannungen um. Greift auf globale Arrays für ADC Werte und Spannungswerte zu.
+ *
+ * @param adc_val Zeiger auf Array mit ADC Werten
+ * @param z Zeiger auf Array mit umgerechneten Spannungswerten [V]
+ * @param nS Buffer Länge
+ * @note Die Bufferlänge für die ADC-Werte (adc_val) und die Spannungswerte (z) muss gleich sein!
+ */
+void calc_voltage(const uint16_t adc_val[], float z[], int nS) {
+	for (int i = 0; i < nS; i++) {
+		z[i] = (adc_val[i] / 16383.0) * 3.3;
+		// z[i] = (adc_val[i] / 4095.0) * 3.3;
+	}
+}
+
+#endif /* FUNKTIONEN_FFT_H_ */

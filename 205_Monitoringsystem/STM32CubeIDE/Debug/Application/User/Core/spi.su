@@ -1,3 +1,0 @@
-C:/Users/raphael.baumeler/workspace_STM/205_Monitoringsystem/Core/Src/spi.c:30:6:MX_SPI3_Init	24	static
-C:/Users/raphael.baumeler/workspace_STM/205_Monitoringsystem/Core/Src/spi.c:81:6:HAL_SPI_MspInit	272	static
-C:/Users/raphael.baumeler/workspace_STM/205_Monitoringsystem/Core/Src/spi.c:131:6:HAL_SPI_MspDeInit	16	static
