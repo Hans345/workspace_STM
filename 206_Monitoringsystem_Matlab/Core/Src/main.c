@@ -47,15 +47,7 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-// FFT
-#include <stdio.h>
-#include <stdlib.h>
-#include <math.h>
-#include "arm_math.h"
-#include "complex.h"
-#include "fft.h"
-// Konsole
-#include "konsole.h"
+#include "statemachine.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -65,11 +57,7 @@
 
 /* Private define ------------------------------------------------------------*/
 /* USER CODE BEGIN PD */
-/**
- * @brief Buffer Grösse in Samples.
- * @note Für eine effiziente Berechnung der FFT muss dieser Wert N = 2^Y sein (Y = 1,2,3...).
- */
-#define N 65536
+
 /* USER CODE END PD */
 
 /* Private macro -------------------------------------------------------------*/
@@ -85,37 +73,13 @@
  */
 int qNr = 1;
 /**
- * @brief Array für Zeitsignal (dt = 1/100kHz)
+ * @brief Anfangs State
  */
-float z[N];
+State_t curr_state = IDLE;
 /**
- * @brief Array Komplexe Fourier Koeffizienten (df = 100kHz/N)
+ * @brief Anfangs Event
  */
-Complex c[N];
-/**
- * @brief Betrag komplexer Fourierkoeffizienten (df = 100kHz/N)
- * @note Achtung das sind die Beträge der komplexen Fourierkoeffizienten!<br>
- * Für das einseitige Amplitudenspektrum müssen diese umgerechnet werden!<br>
- * A0 = c0, An = |2*cn| mit n = 1,2,3...N/2 <br>
- * phiN = arg(an -j*bn)
- */
-float a[N];
-/**
- * @brief ADC Werte
- */
-uint16_t adc_val[N];
-/**
- * @brief Clear Putty Konsole
- */
-uint8_t clear[] = "\033[2J\033[H\r\n";
-/**
- * @brief gain Analoge Signalverarbeitung
- */
-float gain = 1/1.65;
-/**
- * @brief offset Analoge Signalverarbeitung
- */
-float ofs = 0.229;
+Event_t curr_event = EVENT_NONE;
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -217,72 +181,17 @@ int main(void)
   MX_USART2_UART_Init();
   /* USER CODE BEGIN 2 */
 
-	// printf()
-	_print("Start Monitoringsystem\r\n");
-	_print("*****************************\r\n");
-
-	// Clear PUTTY Konsole
-	HAL_UART_Transmit(&huart1, clear, sizeof(clear)-1, 1000);
+  // Monitoringsystem bereit zum ausführen
+  StateMachine(&curr_state, &curr_event);
 
   /* USER CODE END 2 */
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
 	while (1) {
-		// FFT
-		// Sampling fertig -> FFT
-		if (qNr == 5) {
-			_print("Berechne FFT\r\n");
-			calc_voltage(adc_val, z, (int) N, gain, ofs);
-			make_complex(z, c, (int) N);
-			fft(c, (int) N);
-			scale(c, (int) N);
-			abs_val(c, a, (int) N);
-
-			// FFT fertig
-			_print("FFT berechnet!\n");
-
-			// Daten übertragen
-			qNr = 6;
-		}
-
-		// Daten übertragen
-		// FFT fertig -> Daten Übertragen
-		if (qNr == 6)
-		{
-			_print("Uebertrage Daten\n");
-
-			// Daten übertragen
-			char header[] = "ub, uAb\r\n";
-			HAL_UART_Transmit(&huart1, (uint8_t*)header, strlen(header), 1000);
-
-			for (int i = 0; i < N; i++) {
-			    char line[64];
-
-			    // Zeitsignal und komplexe Amplituden senden
-				int len = sprintf(line, "%f, %f\r\n",z[i], a[i]);
-				HAL_UART_Transmit(&huart1, (uint8_t*)line, len, 1000);
-			}
-
-			_print("Daten uebertagen!\n");
-			_print("*****************************\r\n");
-
-			// Reset
-			qNr = 1;
-
-			// LED
-			HAL_GPIO_WritePin(LD1_green_GPIO_Port, LD1_green_Pin, 0);
-
-			// Button Interrupt aktivieren
-			HAL_NVIC_EnableIRQ(EXTI13_IRQn);
-		}
-
-		// Delay
-		HAL_Delay(200);
-
-    /* USER CODE END WHILE */
-
-    /* USER CODE BEGIN 3 */
+		/* USER CODE END WHILE */
+	    StateMachine(&curr_state, &curr_event);
+		/* USER CODE BEGIN 3 */
 	}
   /* USER CODE END 3 */
 }
@@ -397,7 +306,10 @@ void HAL_ADC_ConvCpltCallback(ADC_HandleTypeDef *hadc) {
 		HAL_TIM_Base_Stop_IT(&htim3);
 		// Set Pin Low
 		// HAL_GPIO_WritePin(GPIOF, GPIO_PIN_3, 0);
-		qNr = 5;
+		// Reset
+		qNr = 1;
+		// State Machine
+		curr_event = EVENT_SAMPLING_DONE;
 		break;
 	}
 }
@@ -420,8 +332,8 @@ void HAL_GPIO_EXTI_Rising_Callback(uint16_t GPIO_Pin) {
 	// HAL_GPIO_WritePin(GPIOF, GPIO_PIN_3, 1);
 	HAL_GPIO_WritePin(LD1_green_GPIO_Port, LD1_green_Pin, 1);
 
-	// Konsole
-	_print("ADC Sampling\r\n");
+	// State Machine
+	curr_event = EVENT_BLUE_BUTTON;
 }
 
 /* USER CODE END 4 */

@@ -1,0 +1,71 @@
+/**
+ * @file statemachine.h
+ * @brief <b>Statemachine</b>
+ * @author Raphael Baumeler
+ * @date 11.06.2026
+ */
+
+#ifndef FUNKTIONEN_STATEMACHINE_H_
+#define FUNKTIONEN_STATEMACHINE_H_
+
+/**
+ * @brief States für Statemachine
+ */
+typedef enum
+{
+	IDLE,
+    READY,
+    SAMPLING,
+    FFT,
+    TRANSFER
+} State_t;
+
+/**
+ * @brief Events für Statemachine
+ */
+typedef enum
+{
+    EVENT_NONE,
+    EVENT_BUTTON,
+	EVENT_SAMPLING_DONE
+} Event_t;
+
+void StateMachine(State_t *state, Event_t event)
+{
+    switch (*state)
+    {
+        case IDLE:
+            *state = READY;
+            break;
+
+        case READY:
+			if(event == EVENT_BUTTON)
+			{
+				_print("Start Monitoringsystem\r\n");
+				_print("*****************************\r\n");
+				_print("ADC Sampling\r\n");
+				// Clear PUTTY Konsole
+				HAL_UART_Transmit(&huart1, clear, sizeof(clear) - 1, 1000);
+				*state = SAMPLING;
+			}
+            break;
+
+        case SAMPLING:
+
+        	if(event == EVENT_SAMPLING_DONE)
+        	{
+        		*state = FFT;
+        	}
+        	break;
+
+        case FFT:
+
+        	break;
+
+        default:
+            *state = STATE_OFF;
+            break;
+    }
+}
+
+#endif /* FUNKTIONEN_STATEMACHINE_H_ */

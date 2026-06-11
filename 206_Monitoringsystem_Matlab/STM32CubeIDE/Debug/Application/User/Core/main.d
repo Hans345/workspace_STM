@@ -44,7 +44,9 @@ Application/User/Core/main.o: \
  ../../Core/Inc/dac.h ../../Core/Inc/fdcan.h ../../Core/Inc/flash.h \
  ../../Core/Inc/gpdma.h ../../Core/Inc/gtzc.h ../../Core/Inc/icache.h \
  ../../Core/Inc/spi.h ../../Core/Inc/tim.h ../../Core/Inc/usart.h \
- ../../Core/Inc/gpio.h ../../Middlewares/ST/ARM/DSP/Inc/arm_math.h \
+ ../../Core/Inc/gpio.h \
+ C:/Users/raphael.baumeler/workspace_STM/206_Monitoringsystem_Matlab/STM32CubeIDE/Funktionen/statemachine.h \
+ ../../Middlewares/ST/ARM/DSP/Inc/arm_math.h \
  ../../Drivers/CMSIS/Include/cmsis_compiler.h \
  C:/Users/raphael.baumeler/workspace_STM/206_Monitoringsystem_Matlab/STM32CubeIDE/Funktionen/complex.h \
  C:/Users/raphael.baumeler/workspace_STM/206_Monitoringsystem_Matlab/STM32CubeIDE/Funktionen/fft.h \
@@ -102,6 +104,7 @@ Application/User/Core/main.o: \
 ../../Core/Inc/tim.h:
 ../../Core/Inc/usart.h:
 ../../Core/Inc/gpio.h:
+C:/Users/raphael.baumeler/workspace_STM/206_Monitoringsystem_Matlab/STM32CubeIDE/Funktionen/statemachine.h:
 ../../Middlewares/ST/ARM/DSP/Inc/arm_math.h:
 ../../Drivers/CMSIS/Include/cmsis_compiler.h:
 C:/Users/raphael.baumeler/workspace_STM/206_Monitoringsystem_Matlab/STM32CubeIDE/Funktionen/complex.h:

@@ -1,4 +1,4 @@
-13:06:53 **** Incremental Build of configuration Debug for project 206_Monitoringsystem_Matlab ****
+17:15:57 **** Incremental Build of configuration Debug for project 206_Monitoringsystem_Matlab ****
 make -j14 all 
 arm-none-eabi-gcc "C:/Users/raphael.baumeler/workspace_STM/206_Monitoringsystem_Matlab/Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal.c" -mcpu=cortex-m33 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32U5A5xx -DARM_MATH_CM33 -c -I"C:/Users/raphael.baumeler/workspace_STM/206_Monitoringsystem_Matlab/STM32CubeIDE/Funktionen" -I"C:/Users/raphael.baumeler/workspace_STM/206_Monitoringsystem_Matlab/STM32CubeIDE/Callbacks" -I../../Core/Inc -I"C:/Users/raphael.baumeler/workspace_STM/200_Pinbelegung/STM32CubeIDE/Drivers/CMSIS_DSP/Include" -I"C:/Users/raphael.baumeler/workspace_STM/200_Pinbelegung/STM32CubeIDE/Drivers/CMSIS_DSP/PrivateInclude" -I../../Drivers/STM32U5xx_HAL_Driver/Inc -I../../Drivers/STM32U5xx_HAL_Driver/Inc/Legacy -I../../Drivers/CMSIS/Device/ST/STM32U5xx/Include -I../../Drivers/CMSIS/Include -I../../Middlewares/ST/ARM/DSP/Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32U5xx_HAL_Driver/stm32u5xx_hal.d" -MT"Drivers/STM32U5xx_HAL_Driver/stm32u5xx_hal.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32U5xx_HAL_Driver/stm32u5xx_hal.o"
 arm-none-eabi-gcc "C:/Users/raphael.baumeler/workspace_STM/206_Monitoringsystem_Matlab/Drivers/STM32U5xx_HAL_Driver/Src/stm32u5xx_hal_adc.c" -mcpu=cortex-m33 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32U5A5xx -DARM_MATH_CM33 -c -I"C:/Users/raphael.baumeler/workspace_STM/206_Monitoringsystem_Matlab/STM32CubeIDE/Funktionen" -I"C:/Users/raphael.baumeler/workspace_STM/206_Monitoringsystem_Matlab/STM32CubeIDE/Callbacks" -I../../Core/Inc -I"C:/Users/raphael.baumeler/workspace_STM/200_Pinbelegung/STM32CubeIDE/Drivers/CMSIS_DSP/Include" -I"C:/Users/raphael.baumeler/workspace_STM/200_Pinbelegung/STM32CubeIDE/Drivers/CMSIS_DSP/PrivateInclude" -I../../Drivers/STM32U5xx_HAL_Driver/Inc -I../../Drivers/STM32U5xx_HAL_Driver/Inc/Legacy -I../../Drivers/CMSIS/Device/ST/STM32U5xx/Include -I../../Drivers/CMSIS/Include -I../../Middlewares/ST/ARM/DSP/Inc -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Drivers/STM32U5xx_HAL_Driver/stm32u5xx_hal_adc.d" -MT"Drivers/STM32U5xx_HAL_Driver/stm32u5xx_hal_adc.o" --specs=nano.specs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32U5xx_HAL_Driver/stm32u5xx_hal_adc.o"
@@ -53,11 +53,11 @@ Finished building target: 206_Monitoringsystem_Matlab.elf
 arm-none-eabi-size  206_Monitoringsystem_Matlab.elf 
 arm-none-eabi-objdump -h -S 206_Monitoringsystem_Matlab.elf  > "206_Monitoringsystem_Matlab.list"
    text	   data	    bss	    dec	    hex	filename
-  85813	    520	1197896	1284229	 139885	206_Monitoringsystem_Matlab.elf
+  85925	    520	1197904	1284349	 1398fd	206_Monitoringsystem_Matlab.elf
 Finished building: default.size.stdout
  
 Finished building: 206_Monitoringsystem_Matlab.list
  
 
-13:06:59 Build Finished. 0 errors, 0 warnings. (took 6s.277ms)
+17:16:00 Build Finished. 0 errors, 0 warnings. (took 3s.782ms)
 
