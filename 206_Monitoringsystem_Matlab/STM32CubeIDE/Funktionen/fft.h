@@ -15,7 +15,7 @@
  * @param c Zeiger auf Komplexe Fourier Koeffizenten Array
  * @param N Array Länge
  * @note Der Rechenaufwand ist O(N^2). Deshalb wird empfohlen diese Funktion mit N <= 4096 auszuführen.
- * Für eine effiziente Berechnung mussi N = 2^Y mit Y = 1,2,3...
+ * Für eine effiziente Berechnung muss N = 2^Y mit Y = 1,2,3...
  */
 void dft(float z[], Complex c[], int N) {
 	for (int k = 0; k < N; k++) {
@@ -78,11 +78,13 @@ void fft(Complex c[], int N) {
  * @param adc_val Zeiger auf Array mit ADC Werten
  * @param z Zeiger auf Array mit umgerechneten Spannungswerten [V]
  * @param nS Buffer Länge
+ * @param gain Verstärkung Analoge Signalverarbeitung
+ * @param ofs Offset Analoge Signalverarbeitung
  * @note Die Bufferlänge für die ADC-Werte (adc_val) und die Spannungswerte (z) muss gleich sein!
  */
-void calc_voltage(const uint16_t adc_val[], float z[], int nS) {
+void calc_voltage(const uint16_t adc_val[], float z[], int nS, float gain, float ofs) {
 	for (int i = 0; i < nS; i++) {
-		z[i] = (adc_val[i] / 16383.0) * 3.3;
+		z[i] = gain * (adc_val[i] / 16383.0) * 3.3 + ofs;
 		// z[i] = (adc_val[i] / 4095.0) * 3.3;
 	}
 }

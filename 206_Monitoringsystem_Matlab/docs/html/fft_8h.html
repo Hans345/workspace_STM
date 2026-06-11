@@ -113,16 +113,16 @@ Functions</h2></td></tr>
 <tr class="memdesc:a362437b35f22fdfeff4257a96d2ab86e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Diskrete Fourier Transformation (DFT).  <br /></td></tr>
 <tr class="memitem:ada05f1b0bfba3e79d44b23cadf7a5bc7" id="r_ada05f1b0bfba3e79d44b23cadf7a5bc7"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#ada05f1b0bfba3e79d44b23cadf7a5bc7">fft</a> (<a class="el" href="struct_complex.html">Complex</a> <a class="el" href="main_8c.html#a03426a483d4a9fc3381b103c78122dc9">c</a>[], int <a class="el" href="main_8c.html#a0240ac851181b84ac374872dc5434ee4">N</a>)</td></tr>
 <tr class="memdesc:ada05f1b0bfba3e79d44b23cadf7a5bc7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fast Fourier Transformation (FFT).  <br /></td></tr>
-<tr class="memitem:acfa6a813795b83fa3873b7a1301e23f6" id="r_acfa6a813795b83fa3873b7a1301e23f6"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#acfa6a813795b83fa3873b7a1301e23f6">calc_voltage</a> (const uint16_t <a class="el" href="main_8c.html#ab4208e2b3becb30f8d88bb936883ffc1">adc_val</a>[], float <a class="el" href="main_8c.html#a3a86c055295e8753e46ed30bef7a2aa6">z</a>[], int nS)</td></tr>
-<tr class="memdesc:acfa6a813795b83fa3873b7a1301e23f6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Rechnet ADC Werte in Spannungen um. Greift auf globale Arrays für ADC Werte und Spannungswerte zu.  <br /></td></tr>
+<tr class="memitem:aff140c96c0f5752485ae2d7c2e72eccc" id="r_aff140c96c0f5752485ae2d7c2e72eccc"><td class="memItemLeft">void&#160;</td><td class="memItemRight"><a class="el" href="#aff140c96c0f5752485ae2d7c2e72eccc">calc_voltage</a> (const uint16_t <a class="el" href="main_8c.html#ab4208e2b3becb30f8d88bb936883ffc1">adc_val</a>[], float <a class="el" href="main_8c.html#a3a86c055295e8753e46ed30bef7a2aa6">z</a>[], int nS, float <a class="el" href="main_8c.html#aca3852dab23cf0066809ecc1997fb58b">gain</a>, float <a class="el" href="main_8c.html#a3dcb13e1343c20d36118d12d389a4b12">ofs</a>)</td></tr>
+<tr class="memdesc:aff140c96c0f5752485ae2d7c2e72eccc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Rechnet ADC Werte in Spannungen um. Greift auf globale Arrays für ADC Werte und Spannungswerte zu.  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><p><b>Fourier Transformation</b> </p>
 <dl class="section author"><dt>Author</dt><dd>Raphael Baumeler </dd></dl>
 <dl class="section date"><dt>Date</dt><dd>09.04.2026 </dd></dl>
 </div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Function Documentation</h2>
-<a id="acfa6a813795b83fa3873b7a1301e23f6" name="acfa6a813795b83fa3873b7a1301e23f6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#acfa6a813795b83fa3873b7a1301e23f6">&#9670;&#160;</a></span>calc_voltage()</h2>
+<a id="aff140c96c0f5752485ae2d7c2e72eccc" name="aff140c96c0f5752485ae2d7c2e72eccc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aff140c96c0f5752485ae2d7c2e72eccc">&#9670;&#160;</a></span>calc_voltage()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -140,7 +140,17 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>nS</em></span>&#160;)</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>nS</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>gain</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>ofs</em></span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -149,8 +159,10 @@ Functions</h2></td></tr>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname"><a class="el" href="main_8c.html#ab4208e2b3becb30f8d88bb936883ffc1" title="ADC Werte.">adc_val</a></td><td>Zeiger auf Array mit ADC Werten </td></tr>
-    <tr><td class="paramname"><a class="el" href="main_8c.html#a3a86c055295e8753e46ed30bef7a2aa6" title="Array für Zeitsignal (dt = 1/80kHz).">z</a></td><td>Zeiger auf Array mit umgerechneten Spannungswerten [V] </td></tr>
+    <tr><td class="paramname"><a class="el" href="main_8c.html#a3a86c055295e8753e46ed30bef7a2aa6" title="Array für Zeitsignal (dt = 1/100kHz).">z</a></td><td>Zeiger auf Array mit umgerechneten Spannungswerten [V] </td></tr>
     <tr><td class="paramname">nS</td><td>Buffer Länge </td></tr>
+    <tr><td class="paramname"><a class="el" href="main_8c.html#aca3852dab23cf0066809ecc1997fb58b" title="gain Analoge Signalverarbeitung">gain</a></td><td>Verstärkung Analoge Signalverarbeitung </td></tr>
+    <tr><td class="paramname"><a class="el" href="main_8c.html#a3dcb13e1343c20d36118d12d389a4b12" title="offset Analoge Signalverarbeitung">ofs</a></td><td>Offset Analoge Signalverarbeitung </td></tr>
   </table>
   </dd>
 </dl>
@@ -158,8 +170,8 @@ Functions</h2></td></tr>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="fft_8h_acfa6a813795b83fa3873b7a1301e23f6_icgraph.png" border="0" usemap="#afft_8h_acfa6a813795b83fa3873b7a1301e23f6_icgraph" loading="lazy" alt=""/></div>
-<map name="afft_8h_acfa6a813795b83fa3873b7a1301e23f6_icgraph" id="afft_8h_acfa6a813795b83fa3873b7a1301e23f6_icgraph">
+<div class="center"><img src="fft_8h_aff140c96c0f5752485ae2d7c2e72eccc_icgraph.png" border="0" usemap="#afft_8h_aff140c96c0f5752485ae2d7c2e72eccc_icgraph" loading="lazy" alt=""/></div>
+<map name="afft_8h_aff140c96c0f5752485ae2d7c2e72eccc_icgraph" id="afft_8h_aff140c96c0f5752485ae2d7c2e72eccc_icgraph">
 <area shape="rect" title="Rechnet ADC Werte in Spannungen um. Greift auf globale Arrays für ADC Werte und Spannungswerte zu." alt="" coords="103,5,197,32"/>
 <area shape="rect" href="main_8c.html#a840291bc02cba5474a4cb46a9b9566fe" title="The application entry point." alt="" coords="5,5,55,32"/>
 <area shape="poly" title=" " alt="" coords="84,20,55,21,55,16,89,18"/>
@@ -195,13 +207,13 @@ Here is the caller graph for this function:</div>
 <p>Diskrete Fourier Transformation (DFT). </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname"><a class="el" href="main_8c.html#a3a86c055295e8753e46ed30bef7a2aa6" title="Array für Zeitsignal (dt = 1/80kHz).">z</a></td><td>Zeiger auf Array mit Spannungswerten [V] </td></tr>
-    <tr><td class="paramname"><a class="el" href="main_8c.html#a03426a483d4a9fc3381b103c78122dc9" title="Array Komplexe Fourier Koeffizienten (df = 80kHz/N).">c</a></td><td>Zeiger auf Komplexe Fourier Koeffizenten Array </td></tr>
+    <tr><td class="paramname"><a class="el" href="main_8c.html#a3a86c055295e8753e46ed30bef7a2aa6" title="Array für Zeitsignal (dt = 1/100kHz).">z</a></td><td>Zeiger auf Array mit Spannungswerten [V] </td></tr>
+    <tr><td class="paramname"><a class="el" href="main_8c.html#a03426a483d4a9fc3381b103c78122dc9" title="Array Komplexe Fourier Koeffizienten (df = 100kHz/N).">c</a></td><td>Zeiger auf Komplexe Fourier Koeffizenten Array </td></tr>
     <tr><td class="paramname"><a class="el" href="main_8c.html#a0240ac851181b84ac374872dc5434ee4" title="Buffer Grösse in Samples.">N</a></td><td>Array Länge </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section note"><dt>Note</dt><dd>Der Rechenaufwand ist O(N^2). Deshalb wird empfohlen diese Funktion mit N &lt;= 4096 auszuführen. Für eine effiziente Berechnung mussi N = 2^Y mit Y = 1,2,3... </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>Der Rechenaufwand ist O(N^2). Deshalb wird empfohlen diese Funktion mit N &lt;= 4096 auszuführen. Für eine effiziente Berechnung muss N = 2^Y mit Y = 1,2,3... </dd></dl>
 
 </div>
 </div>
@@ -227,7 +239,7 @@ Here is the caller graph for this function:</div>
 <p>Fast Fourier Transformation (FFT). </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname"><a class="el" href="main_8c.html#a03426a483d4a9fc3381b103c78122dc9" title="Array Komplexe Fourier Koeffizienten (df = 80kHz/N).">c</a></td><td>Zeiger auf Komplexe Fourier Koeffizenten Array (ck) </td></tr>
+    <tr><td class="paramname"><a class="el" href="main_8c.html#a03426a483d4a9fc3381b103c78122dc9" title="Array Komplexe Fourier Koeffizienten (df = 100kHz/N).">c</a></td><td>Zeiger auf Komplexe Fourier Koeffizenten Array (ck) </td></tr>
     <tr><td class="paramname"><a class="el" href="main_8c.html#a0240ac851181b84ac374872dc5434ee4" title="Buffer Grösse in Samples.">N</a></td><td>Länge Array </td></tr>
   </table>
   </dd>

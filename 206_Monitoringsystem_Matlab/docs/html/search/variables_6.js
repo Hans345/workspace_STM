@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['x_0',['x',['../main_8c.html#a730933e849731648c69ca0f5bfd3f996',1,'main.c']]]
+  ['real_0',['real',['../struct_complex.html#a077ee5b14945485e970f47cd3476215c',1,'Complex']]]
 ];

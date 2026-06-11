@@ -10,6 +10,9 @@ var main_8c =
     [ "a", "main_8c.html#a52ab9eb0b5b597911c376641d86052f1", null ],
     [ "adc_val", "main_8c.html#ab4208e2b3becb30f8d88bb936883ffc1", null ],
     [ "c", "main_8c.html#a03426a483d4a9fc3381b103c78122dc9", null ],
+    [ "clear", "main_8c.html#a748384b980f1bcede2c79d9aa0b245f1", null ],
+    [ "gain", "main_8c.html#aca3852dab23cf0066809ecc1997fb58b", null ],
+    [ "ofs", "main_8c.html#a3dcb13e1343c20d36118d12d389a4b12", null ],
     [ "qNr", "main_8c.html#a9ef83077b67f1b0b38e5897df32745b9", null ],
     [ "z", "main_8c.html#a3a86c055295e8753e46ed30bef7a2aa6", null ]
 ];

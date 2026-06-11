@@ -19,20 +19,32 @@ disp("Warte auf Daten vom STM32...");
 % sobald eine komplette Zeile empfangen wurde
 configureCallback(s, "terminator", @readData);
 
-% FFT Array definieren
-global a idx N
+% Globale Parameter - in callback sichtbar!
+global t ub f1 P1 f2 P2 idx N
+
+% Parameter
 N = 65536;
-fs = 80e3;
-df = fs/N;
-f = 0:df:df*(N-1)/2;
+fs = 100e3;
 idx = 1;
-a = zeros(N/2,2);
-a(:,1) = f;
+
+% Zeitsignal
+dt = 1/fs;
+t = 0:dt:dt*(N-1);
+ub = zeros(1,N);
+
+% FFT
+df = fs/N;
+% Einseitiges Amplitudenspektrum
+f1 = df*(0:(N/2));
+P1 = zeros(1,N/2+1);
+% Zweiseitiges Amplitudenspektrum
+f2 = df*(0:(N-1));
+P2 = zeros(1,N);
 
 % Callback
 function readData(src, ~)
     % Variablen sichtbar machen
-    global a idx N
+    global t ub f1 P1 P2 idx N
 
     % Eine Zeile vom Serial-Port lesen
     line = readline(src);
@@ -44,21 +56,44 @@ function readData(src, ~)
     if all(~isnan(data))
         % Variable im Workspace speichern
         assignin("base", "data", data);
-        a(idx,2) = data(1);
+        ub(idx) = data(1);    % Zeitsignal
+        P2(idx) = data(2);    % Komplexe Amplitude FFT
 
         % Konsole
         if(idx < 100)
-            fprintf("idx=%d | val=%f\n", idx, data(1));
+            fprintf("idx=%d | ub=%f | P2=%f\n", idx, ub(idx), P2(idx));
         end
 
         % Index
         idx = idx + 1;
 
-        % Reset Index & Daten darstellen
-        if(idx > N/2)
-            loglog(a(:,1),a(:,2));
+        % Daten STM32 darstellen
+        if(idx > N)
+            % Zeitsignal darstellen
+            figure(1);
+            tiledlayout(2,1, 'TileSpacing', 'compact', 'Padding', 'compact')
+            nexttile(1);
+            plot(t, ub);
             hold on;
+            xlabel('Zeit [s]');
+            ylabel('Amplitude [V]');
+            title('Zeitsignal');
             grid on;
+            xlim([min(t) max(t)]);
+
+            % FFT darstellen
+            P1 = P2(1:N/2+1);
+            P1(2:end-1) = 2*P1(2:end-1);
+            nexttile(2);
+            loglog(f1,P1);
+            hold on;
+            xlabel('Frequenz [Hz]');
+            ylabel('Amplitude [V]');
+            title('FFT');
+            grid on;
+            xlim([min(f1) max(f1)]);
+
+            % Index zurürcksetzen
             idx = 1;
         end
     else

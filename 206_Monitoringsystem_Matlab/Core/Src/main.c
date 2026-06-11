@@ -5,13 +5,27 @@
  * @author Raphael Baumeler
  * @date 09.04.2026
  *
+ * In diesem Skript kann die FFT mit dem NUCLEO Board berechnet werden und mit den
+ * Oszilloskop Werten verglichen werden.
+ *
+ * Beschreibung Monitoringsystem
  * - Das Monitoringsystem wird über den blauen Button gestartet (SWV Output beachten)
- * - Das ADC Sampling erfolgt mit 80 kHz am PC0 bzw. Pin A5 vom CN9
+ * - Das ADC Sampling erfolgt mit 100 kHz am PC0 bzw. J1 auf dem PCB
  * - Die Samplingfrequenz kann am PF3 gemessen werden
  * - Nach dem Sampling wird die FFT berechnet
  * - Anschliessend erfolgt die Datenübertragung via VCP (PA9 und PA10)
- * - Die FFT Daten können mit PuTTY direkt auf den PC geloggt werden
- *   (COM-Port und Serielle Schnittstelle entsprechend konfigurieren!)
+ *
+ * Vergleich FFT Oszilloskop mit FFT STM32
+ * - Spannungssignal am Anschluss J1 (0...2V) anschliessen und parallel mit Oszilloskop messen.
+ * - ADC-Trigger am PF3 mit Oszilloskop messen.
+ * - Trigger auf ADC-Trigger Signal setzen und Single Shot auswählen.
+ * - Oszilloskop via Ethernet und uC via USB mit Laptop verbinden (IP-Konfiguration beachten).
+ * - Matlab main.m aus dem Projektverzeichnis starten.
+ * - Blauer Button am NUCLEO Board betätigen.
+ * - FFT wird berechnet und das Zeitsignal wie die Amplitudenwerte der berechneten FFT werden zu
+ *   Matlab übertragen und in einem Plot Fenster dargestellt.
+ * - Nachdem main.m durchgelaufen ist das zweite Skript readwaveform_teledyne.m starten für
+ *   den direkten Vergleich zwischen Teledyne und STM32 FFT
  *
  * @note Aufgrund der hohen Abtastfrequenz muss vor PC0 ein Buffer geschaltet werden, welcher den ADC Pin treibt!
  */
@@ -71,15 +85,15 @@
  */
 int qNr = 1;
 /**
- * @brief Array für Zeitsignal (dt = 1/80kHz)
+ * @brief Array für Zeitsignal (dt = 1/100kHz)
  */
 float z[N];
 /**
- * @brief Array Komplexe Fourier Koeffizienten (df = 80kHz/N)
+ * @brief Array Komplexe Fourier Koeffizienten (df = 100kHz/N)
  */
 Complex c[N];
 /**
- * @brief Betrag komplexer Fourierkoeffizienten (df = 80kHz/N)
+ * @brief Betrag komplexer Fourierkoeffizienten (df = 100kHz/N)
  * @note Achtung das sind die Beträge der komplexen Fourierkoeffizienten!<br>
  * Für das einseitige Amplitudenspektrum müssen diese umgerechnet werden!<br>
  * A0 = c0, An = |2*cn| mit n = 1,2,3...N/2 <br>
@@ -94,6 +108,14 @@ uint16_t adc_val[N];
  * @brief Clear Putty Konsole
  */
 uint8_t clear[] = "\033[2J\033[H\r\n";
+/**
+ * @brief gain Analoge Signalverarbeitung
+ */
+float gain = 1/1.65;
+/**
+ * @brief offset Analoge Signalverarbeitung
+ */
+float ofs = 0.229;
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -211,7 +233,7 @@ int main(void)
 		// Sampling fertig -> FFT
 		if (qNr == 5) {
 			_print("Berechne FFT\r\n");
-			calc_voltage(adc_val, z, (int) N);
+			calc_voltage(adc_val, z, (int) N, gain, ofs);
 			make_complex(z, c, (int) N);
 			fft(c, (int) N);
 			scale(c, (int) N);
@@ -224,37 +246,25 @@ int main(void)
 			qNr = 6;
 		}
 
-		// FFT Daten übertragen
-		// FFT fertig -> Datenübertragung
+		// Daten übertragen
+		// FFT fertig -> Daten Übertragen
 		if (qNr == 6)
 		{
-			// Übertrage FFT Daten!
-			_print("Uebertrage FFT Daten\n");
+			_print("Uebertrage Daten\n");
 
-			// Daten nach .csv übertragen
-			char header[] = "f,Ampl\r\n";
+			// Daten übertragen
+			char header[] = "ub, uAb\r\n";
 			HAL_UART_Transmit(&huart1, (uint8_t*)header, strlen(header), 1000);
 
-			for (int i = 0; i < N/2; i++) {
-			    // float freq = i * (80000.0f / N);   // df = fs/N
+			for (int i = 0; i < N; i++) {
 			    char line[64];
 
-			    // Kpmplexe Amplituden in reale Amplituden umrechnen und Daten übertragen
-			    if (i==0) // A0 = c0
-			    {
-				    int len = sprintf(line, "%f\r\n", a[i]);
-				    HAL_UART_Transmit(&huart1, (uint8_t*)line, len, 1000);
-			    }
-			    else // An = |2*cn| mit n = 1,2,3...N/2
-			    {
-				    int len = sprintf(line, "%f\r\n", 2*a[i]);
-				    HAL_UART_Transmit(&huart1, (uint8_t*)line, len, 1000);
-			    }
-
+			    // Zeitsignal und komplexe Amplituden senden
+				int len = sprintf(line, "%f, %f\r\n",z[i], a[i]);
+				HAL_UART_Transmit(&huart1, (uint8_t*)line, len, 1000);
 			}
 
-			// FFT Daten übertragen
-			_print("FFT Daten uebertagen!\n");
+			_print("Daten uebertagen!\n");
 			_print("*****************************\r\n");
 
 			// Reset
@@ -263,7 +273,7 @@ int main(void)
 			// LED
 			HAL_GPIO_WritePin(LD1_green_GPIO_Port, LD1_green_Pin, 0);
 
-			// Button Interrupt enablen
+			// Button Interrupt aktivieren
 			HAL_NVIC_EnableIRQ(EXTI13_IRQn);
 		}
 
@@ -386,7 +396,7 @@ void HAL_ADC_ConvCpltCallback(ADC_HandleTypeDef *hadc) {
 		HAL_ADC_Stop_DMA(&hadc1);
 		HAL_TIM_Base_Stop_IT(&htim3);
 		// Set Pin Low
-		HAL_GPIO_WritePin(GPIOF, GPIO_PIN_3, 0);
+		// HAL_GPIO_WritePin(GPIOF, GPIO_PIN_3, 0);
 		qNr = 5;
 		break;
 	}
@@ -394,19 +404,20 @@ void HAL_ADC_ConvCpltCallback(ADC_HandleTypeDef *hadc) {
 
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim) {
 	// PF3 Toggeln
-	// HAL_GPIO_TogglePin(GPIOF, GPIO_PIN_3);
+	HAL_GPIO_TogglePin(GPIOF, GPIO_PIN_3);
 }
 
 void HAL_GPIO_EXTI_Rising_Callback(uint16_t GPIO_Pin) {
-	// Button Interrupt disablen
+	// Button Interrupt deaktivieren
 	HAL_NVIC_DisableIRQ(EXTI13_IRQn);
 
 	// ADC Trigger und DMA starten
+	__HAL_TIM_SET_COUNTER(&htim3,0);
 	HAL_TIM_Base_Start_IT(&htim3);
 	HAL_ADC_Start_DMA(&hadc1, (uint32_t*) &adc_val[0], (int) (N / 4));
 
 	// Set Pin High
-	HAL_GPIO_WritePin(GPIOF, GPIO_PIN_3, 1);
+	// HAL_GPIO_WritePin(GPIOF, GPIO_PIN_3, 1);
 	HAL_GPIO_WritePin(LD1_green_GPIO_Port, LD1_green_Pin, 1);
 
 	// Konsole

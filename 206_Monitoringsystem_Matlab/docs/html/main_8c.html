@@ -190,23 +190,41 @@ Variables</h2></td></tr>
 <tr class="memitem:a9ef83077b67f1b0b38e5897df32745b9" id="r_a9ef83077b67f1b0b38e5897df32745b9"><td class="memItemLeft">int&#160;</td><td class="memItemRight"><a class="el" href="#a9ef83077b67f1b0b38e5897df32745b9">qNr</a> = 1</td></tr>
 <tr class="memdesc:a9ef83077b67f1b0b38e5897df32745b9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Quadrant Nummer DMA Übertragung.  <br /></td></tr>
 <tr class="memitem:a3a86c055295e8753e46ed30bef7a2aa6" id="r_a3a86c055295e8753e46ed30bef7a2aa6"><td class="memItemLeft">float&#160;</td><td class="memItemRight"><a class="el" href="#a3a86c055295e8753e46ed30bef7a2aa6">z</a> [<a class="el" href="#a0240ac851181b84ac374872dc5434ee4">N</a>]</td></tr>
-<tr class="memdesc:a3a86c055295e8753e46ed30bef7a2aa6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Array für Zeitsignal (dt = 1/80kHz).  <br /></td></tr>
+<tr class="memdesc:a3a86c055295e8753e46ed30bef7a2aa6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Array für Zeitsignal (dt = 1/100kHz).  <br /></td></tr>
 <tr class="memitem:a03426a483d4a9fc3381b103c78122dc9" id="r_a03426a483d4a9fc3381b103c78122dc9"><td class="memItemLeft"><a class="el" href="struct_complex.html">Complex</a>&#160;</td><td class="memItemRight"><a class="el" href="#a03426a483d4a9fc3381b103c78122dc9">c</a> [<a class="el" href="#a0240ac851181b84ac374872dc5434ee4">N</a>]</td></tr>
-<tr class="memdesc:a03426a483d4a9fc3381b103c78122dc9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Array Komplexe Fourier Koeffizienten (df = 80kHz/N).  <br /></td></tr>
+<tr class="memdesc:a03426a483d4a9fc3381b103c78122dc9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Array Komplexe Fourier Koeffizienten (df = 100kHz/N).  <br /></td></tr>
 <tr class="memitem:a52ab9eb0b5b597911c376641d86052f1" id="r_a52ab9eb0b5b597911c376641d86052f1"><td class="memItemLeft">float&#160;</td><td class="memItemRight"><a class="el" href="#a52ab9eb0b5b597911c376641d86052f1">a</a> [<a class="el" href="#a0240ac851181b84ac374872dc5434ee4">N</a>]</td></tr>
 <tr class="memdesc:a52ab9eb0b5b597911c376641d86052f1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Betrag komplexer Fourierkoeffizienten (df = 80kHz/N).  <br /></td></tr>
 <tr class="memitem:ab4208e2b3becb30f8d88bb936883ffc1" id="r_ab4208e2b3becb30f8d88bb936883ffc1"><td class="memItemLeft">uint16_t&#160;</td><td class="memItemRight"><a class="el" href="#ab4208e2b3becb30f8d88bb936883ffc1">adc_val</a> [<a class="el" href="#a0240ac851181b84ac374872dc5434ee4">N</a>]</td></tr>
 <tr class="memdesc:ab4208e2b3becb30f8d88bb936883ffc1"><td class="mdescLeft">&#160;</td><td class="mdescRight">ADC Werte.  <br /></td></tr>
+<tr class="memitem:a748384b980f1bcede2c79d9aa0b245f1" id="r_a748384b980f1bcede2c79d9aa0b245f1"><td class="memItemLeft">uint8_t&#160;</td><td class="memItemRight"><a class="el" href="#a748384b980f1bcede2c79d9aa0b245f1">clear</a> [] = &quot;\033[2J\033[H\r\n&quot;</td></tr>
+<tr class="memdesc:a748384b980f1bcede2c79d9aa0b245f1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clear Putty Konsole.  <br /></td></tr>
+<tr class="memitem:aca3852dab23cf0066809ecc1997fb58b" id="r_aca3852dab23cf0066809ecc1997fb58b"><td class="memItemLeft">float&#160;</td><td class="memItemRight"><a class="el" href="#aca3852dab23cf0066809ecc1997fb58b">gain</a> = 1/1.65</td></tr>
+<tr class="memdesc:aca3852dab23cf0066809ecc1997fb58b"><td class="mdescLeft">&#160;</td><td class="mdescRight">gain Analoge Signalverarbeitung  <br /></td></tr>
+<tr class="memitem:a3dcb13e1343c20d36118d12d389a4b12" id="r_a3dcb13e1343c20d36118d12d389a4b12"><td class="memItemLeft">float&#160;</td><td class="memItemRight"><a class="el" href="#a3dcb13e1343c20d36118d12d389a4b12">ofs</a> = 0.229</td></tr>
+<tr class="memdesc:a3dcb13e1343c20d36118d12d389a4b12"><td class="mdescLeft">&#160;</td><td class="mdescRight">offset Analoge Signalverarbeitung  <br /></td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
 <div class="textblock"><p><b>Monitoringsystem für Medicoat</b> </p>
 <dl class="section author"><dt>Author</dt><dd>Raphael Baumeler </dd></dl>
 <dl class="section date"><dt>Date</dt><dd>09.04.2026</dd></dl>
-<ul>
+<p>In diesem Skript kann die FFT mit dem NUCLEO Board berechnet werden und mit den Oszilloskop Werten verglichen werden.</p>
+<p>Beschreibung Monitoringsystem</p><ul>
 <li>Das Monitoringsystem wird über den blauen Button gestartet (SWV Output beachten)</li>
-<li>Das ADC Sampling erfolgt mit 80 kHz am PC0 bzw. Pin A5 vom CN9</li>
+<li>Das ADC Sampling erfolgt mit 100 kHz am PC0 bzw. J1 auf dem PCB</li>
 <li>Die Samplingfrequenz kann am PF3 gemessen werden</li>
 <li>Nach dem Sampling wird die FFT berechnet</li>
+<li>Anschliessend erfolgt die Datenübertragung via VCP (PA9 und PA10)</li>
+</ul>
+<p>Vergleich FFT Oszilloskop mit FFT STM32</p><ul>
+<li>Spannungssignal am Anschluss J1 (0...2V) anschliessen und parallel mit Oszilloskop messen.</li>
+<li>ADC-Trigger am PF3 mit Oszilloskop messen.</li>
+<li>Trigger auf ADC-Trigger Signal setzen und Single Shot auswählen.</li>
+<li>Oszilloskop via Ethernet und uC via USB mit Laptop verbinden (IP-Konfiguration beachten).</li>
+<li>Matlab main.m aus dem Projektverzeichnis starten.</li>
+<li>Blauer Button am NUCLEO Board betätigen.</li>
+<li>FFT wird berechnet und das Zeitsignal wie die Amplitudenwerte der berechneten FFT werden zu Matlab übertragen und in einem Plot Fenster dargestellt.</li>
+<li>Nachdem main.m durchgelaufen ist das zweite Skript readwaveform_teledyne.m starten für den direkten Vergleich zwischen Teledyne und STM32 FFT</li>
 </ul>
 <dl class="section note"><dt>Note</dt><dd>Aufgrund der hohen Abtastfrequenz muss vor PC0 ein Buffer geschaltet werden, welcher den ADC Pin treibt! </dd></dl>
 </div><a name="doc-define-members" id="doc-define-members"></a><h2 id="header-doc-define-members" class="groupheader">Macro Definition Documentation</h2>
@@ -393,7 +411,7 @@ Here is the call graph for this function:</div>
 <area shape="poly" title=" " alt="" coords="32,180,52,115,73,76,101,42,135,25,132,29,104,46,77,79,57,117,37,182"/>
 <area shape="rect" href="complex_8h.html#a2340931cdf6737432d5f53596be00e09" title="Komplexe Zahl Betrag berechnen." alt="" coords="142,56,208,83"/>
 <area shape="poly" title=" " alt="" coords="35,180,60,137,79,113,101,93,129,79,126,83,104,97,83,117,65,140,40,182"/>
-<area shape="rect" href="fft_8h.html#acfa6a813795b83fa3873b7a1301e23f6" title="Rechnet ADC Werte in Spannungen um. Greift auf globale Arrays für ADC Werte und Spannungswerte zu." alt="" coords="128,107,222,133"/>
+<area shape="rect" href="fft_8h.html#aff140c96c0f5752485ae2d7c2e72eccc" title="Rechnet ADC Werte in Spannungen um. Greift auf globale Arrays für ADC Werte und Spannungswerte zu." alt="" coords="128,107,222,133"/>
 <area shape="poly" title=" " alt="" coords="47,179,101,143,117,138,113,141,104,148,51,183"/>
 <area shape="rect" href="fft_8h.html#ada05f1b0bfba3e79d44b23cadf7a5bc7" title="Fast Fourier Transformation (FFT)." alt="" coords="156,181,195,208"/>
 <area shape="poly" title=" " alt="" coords="54,192,142,193,139,197,56,197"/>
@@ -518,7 +536,55 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p>Array Komplexe Fourier Koeffizienten (df = 80kHz/N). </p>
+<p>Array Komplexe Fourier Koeffizienten (df = 100kHz/N). </p>
+
+</div>
+</div>
+<a id="a748384b980f1bcede2c79d9aa0b245f1" name="a748384b980f1bcede2c79d9aa0b245f1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a748384b980f1bcede2c79d9aa0b245f1">&#9670;&#160;</a></span>clear</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t clear[] = &quot;\033[2J\033[H\r\n&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Clear Putty Konsole. </p>
+
+</div>
+</div>
+<a id="aca3852dab23cf0066809ecc1997fb58b" name="aca3852dab23cf0066809ecc1997fb58b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aca3852dab23cf0066809ecc1997fb58b">&#9670;&#160;</a></span>gain</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float gain = 1/1.65</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>gain Analoge Signalverarbeitung </p>
+
+</div>
+</div>
+<a id="a3dcb13e1343c20d36118d12d389a4b12" name="a3dcb13e1343c20d36118d12d389a4b12"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3dcb13e1343c20d36118d12d389a4b12">&#9670;&#160;</a></span>ofs</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float ofs = 0.229</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>offset Analoge Signalverarbeitung </p>
 
 </div>
 </div>
@@ -550,7 +616,7 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
-<p>Array für Zeitsignal (dt = 1/80kHz). </p>
+<p>Array für Zeitsignal (dt = 1/100kHz). </p>
 
 </div>
 </div>

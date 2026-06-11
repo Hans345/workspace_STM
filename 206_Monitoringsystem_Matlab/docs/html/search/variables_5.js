@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['z_0',['z',['../main_8c.html#a3a86c055295e8753e46ed30bef7a2aa6',1,'main.c']]]
+  ['qnr_0',['qNr',['../main_8c.html#a9ef83077b67f1b0b38e5897df32745b9',1,'main.c']]]
 ];

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['konsole_2eh_0',['konsole.h',['../konsole_8h.html',1,'']]]
+  ['imag_0',['imag',['../struct_complex.html#ac148da3741763a01aeabd39c45263cd0',1,'Complex']]]
 ];
