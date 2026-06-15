@@ -9800,3 +9800,127 @@ Unable to read memory.
 java.lang.Exception: Unable to read memory.
 	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.processMIOutput(AbstractMIControl.java:1024)
 	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.run(AbstractMIControl.java:853)
+!SESSION 2026-06-12 15:55:17.863 -----------------------------------------------
+eclipse.buildId=Version 2.1.1
+java.version=21.0.9
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=de_CH
+Framework arguments:  C:\Users\raphael.baumeler\workspace_STM\206_Monitoringsystem_Matlab\STM32CubeIDE\.project
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 C:\Users\raphael.baumeler\workspace_STM\206_Monitoringsystem_Matlab\STM32CubeIDE\.project
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2026-06-12 15:55:23.833
+!MESSAGE Log4j2 initialized with config file C:\Users\raphael.baumeler\workspace_STM\.metadata\.log4j2.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2026-06-12 15:55:34.153
+!MESSAGE Started RMI Server, listening on port 41337
+
+!ENTRY com.st.stm32cube.ide.mpu.remote.serial 1 1 2026-06-12 15:55:37.310
+!MESSAGE Executed PowerShell command powershell.exe -Command "Get-CimInstance -ClassName Win32_SerialPort | Select-Object -ExpandProperty DeviceID":
+COM3
+COM8
+
+
+!ENTRY com.st.stm32cube.ide.mpu.remote.serial 1 1 2026-06-12 15:55:37.312
+!MESSAGE port: COM3
+
+!ENTRY com.st.stm32cube.ide.mpu.remote.serial 1 1 2026-06-12 15:55:37.315
+!MESSAGE port: COM8
+
+!ENTRY org.eclipse.cdt.core 1 0 2026-06-12 15:55:41.367
+!MESSAGE Indexed '206_Monitoringsystem_Matlab' (46 sources, 121 headers) in 6.7 sec: 14’845 declarations; 109’442 references; 0 unresolved inclusions; 1 syntax errors; 2 unresolved names (0.0016%)
+!SESSION 2026-06-15 12:36:34.968 -----------------------------------------------
+eclipse.buildId=Version 2.1.1
+java.version=21.0.9
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=de_CH
+Framework arguments:  C:\Users\raphael.baumeler\workspace_STM\206_Monitoringsystem_Matlab\STM32CubeIDE\.project
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 C:\Users\raphael.baumeler\workspace_STM\206_Monitoringsystem_Matlab\STM32CubeIDE\.project
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2026-06-15 12:36:38.560
+!MESSAGE Log4j2 initialized with config file C:\Users\raphael.baumeler\workspace_STM\.metadata\.log4j2.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2026-06-15 12:36:45.232
+!MESSAGE Started RMI Server, listening on port 41337
+
+!ENTRY com.st.stm32cube.ide.mpu.remote.serial 1 1 2026-06-15 12:36:47.556
+!MESSAGE Executed PowerShell command powershell.exe -Command "Get-CimInstance -ClassName Win32_SerialPort | Select-Object -ExpandProperty DeviceID":
+COM3
+
+
+!ENTRY com.st.stm32cube.ide.mpu.remote.serial 1 1 2026-06-15 12:36:47.557
+!MESSAGE port: COM3
+
+!ENTRY org.eclipse.cdt.core 1 0 2026-06-15 12:36:51.344
+!MESSAGE Indexed '206_Monitoringsystem_Matlab' (46 sources, 121 headers) in 5.68 sec: 14’845 declarations; 109’442 references; 0 unresolved inclusions; 1 syntax errors; 2 unresolved names (0.0016%)
+
+!ENTRY com.st.stm32cube.ide.mpu.remote.serial 1 1 2026-06-15 12:38:07.152
+!MESSAGE Executed PowerShell command powershell.exe -Command "Get-CimInstance -ClassName Win32_SerialPort | Select-Object -ExpandProperty DeviceID":
+COM3
+COM8
+
+
+!ENTRY com.st.stm32cube.ide.mpu.remote.serial 1 1 2026-06-15 12:38:07.152
+!MESSAGE port: COM3
+
+!ENTRY com.st.stm32cube.ide.mpu.remote.serial 1 1 2026-06-15 12:38:07.152
+!MESSAGE port: COM8
+
+!ENTRY com.st.stm32cube.ide.mcu.debug.swv 1 1 2026-06-15 12:38:29.834
+!MESSAGE SWV configuration; base: 192000000; minDiv: 16; maxDiv: 65535; maxSWO: 12000000; limit: 1000000 => SWO: 1000000; CPU: 160000000; div: 160
+
+!ENTRY com.st.stm32cube.ide.mcu.debug.swv 1 1 2026-06-15 12:45:16.684
+!MESSAGE SWV configuration; base: 192000000; minDiv: 16; maxDiv: 65535; maxSWO: 12000000; limit: 1000000 => SWO: 1000000; CPU: 160000000; div: 160
+
+!ENTRY org.eclipse.cdt.dsf 4 10005 2026-06-15 13:08:56.081
+!MESSAGE Request for monitor: '118^error,msg="Unable to read memory."' resulted in an error.
+!SUBENTRY 1 org.eclipse.cdt.dsf.gdb 4 10004 2026-06-15 13:08:56.081
+!MESSAGE Failed to execute MI command:
+-data-read-memory 0xe000ee08 d 1 1 4
+Error message from debugger back end:
+Unable to read memory.
+!STACK 0
+java.lang.Exception: Unable to read memory.
+	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.processMIOutput(AbstractMIControl.java:1024)
+	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.run(AbstractMIControl.java:853)
+
+!ENTRY com.st.stm32cube.ide.mcu.debug.swv 1 1 2026-06-15 13:10:23.720
+!MESSAGE SWV configuration; base: 192000000; minDiv: 16; maxDiv: 65535; maxSWO: 12000000; limit: 1000000 => SWO: 1000000; CPU: 160000000; div: 160
+
+!ENTRY org.eclipse.cdt.dsf 4 10005 2026-06-15 13:11:35.834
+!MESSAGE Request for monitor: '120^error,msg="Unable to read memory."' resulted in an error.
+!SUBENTRY 1 org.eclipse.cdt.dsf.gdb 4 10004 2026-06-15 13:11:35.834
+!MESSAGE Failed to execute MI command:
+-data-read-memory 0xe000ee08 d 1 1 4
+Error message from debugger back end:
+Unable to read memory.
+!STACK 0
+java.lang.Exception: Unable to read memory.
+	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.processMIOutput(AbstractMIControl.java:1024)
+	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.run(AbstractMIControl.java:853)
+
+!ENTRY com.st.stm32cube.ide.mcu.debug.swv 1 1 2026-06-15 13:12:15.023
+!MESSAGE SWV configuration; base: 192000000; minDiv: 16; maxDiv: 65535; maxSWO: 12000000; limit: 1000000 => SWO: 1000000; CPU: 160000000; div: 160
+
+!ENTRY com.st.stm32cube.ide.mcu.debug.swv 1 1 2026-06-15 13:15:03.452
+!MESSAGE SWV configuration; base: 192000000; minDiv: 16; maxDiv: 65535; maxSWO: 12000000; limit: 1000000 => SWO: 1000000; CPU: 160000000; div: 160
+
+!ENTRY com.st.stm32cube.ide.mcu.debug.swv 1 1 2026-06-15 13:25:34.711
+!MESSAGE SWV configuration; base: 192000000; minDiv: 16; maxDiv: 65535; maxSWO: 12000000; limit: 1000000 => SWO: 1000000; CPU: 160000000; div: 160
+
+!ENTRY org.eclipse.cdt.core 1 0 2026-06-15 14:23:45.820
+!MESSAGE Indexed '206_Monitoringsystem_Matlab' (46 sources, 121 headers) in 6.05 sec: 14’846 declarations; 109’472 references; 0 unresolved inclusions; 1 syntax errors; 2 unresolved names (0.0016%)
+
+!ENTRY com.st.stm32cube.ide.mcu.debug.swv 1 1 2026-06-15 14:24:59.815
+!MESSAGE SWV configuration; base: 192000000; minDiv: 16; maxDiv: 65535; maxSWO: 12000000; limit: 1000000 => SWO: 1000000; CPU: 160000000; div: 160
+
+!ENTRY org.eclipse.cdt.dsf 4 10005 2026-06-15 17:24:11.347
+!MESSAGE Request for monitor: '118^error,msg="Unable to read memory."' resulted in an error.
+!SUBENTRY 1 org.eclipse.cdt.dsf.gdb 4 10004 2026-06-15 17:24:11.347
+!MESSAGE Failed to execute MI command:
+-data-read-memory 0xe000ee08 d 1 1 4
+Error message from debugger back end:
+Unable to read memory.
+!STACK 0
+java.lang.Exception: Unable to read memory.
+	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.processMIOutput(AbstractMIControl.java:1024)
+	at org.eclipse.cdt.dsf.mi.service.command.AbstractMIControl$RxThread.run(AbstractMIControl.java:853)

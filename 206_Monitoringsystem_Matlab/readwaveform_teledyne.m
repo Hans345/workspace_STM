@@ -60,12 +60,10 @@ set(groupObj, 'Precision', 'int16')
 
 % Daten auswählen
 t0 = 0;
-t1 = t(end);
+t1 = (N-1)*(1/fs);
 i0 = find(abs(X-t0)<(X(2)-X(1)));
 i1 = find(abs(X-t1)<(X(2)-X(1)));
-dX = X(2) - X(1);
-% X = 0:dX:dX*(N-1);
-X = t;
+X = X(i0(1):i1(1));
 Y = Y(i0(1):i1(1));
 
 % FFT  
