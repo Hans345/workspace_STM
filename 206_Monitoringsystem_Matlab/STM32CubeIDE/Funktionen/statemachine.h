@@ -40,6 +40,7 @@ typedef enum
 	EVENT_FFT_DONE,
 	EVENT_TRANSFER_DONE
 } Event_t;
+
 /**
  * @brief Buffer Grösse in Samples.
  * @note Für eine effiziente Berechnung der FFT muss dieser Wert N = 2^Y sein (Y = 1,2,3...).
@@ -77,7 +78,16 @@ float gain = 1/1.65;
  * @brief offset Analoge Signalverarbeitung
  */
 float ofs = 0.229;
-
+/**
+ * @brief Maximalwert FFT, freq: Frequenz, amp: Amplitude
+ */
+fft_max_t max;
+/**
+ * @brief Samplingfrequenz
+ * @note Wenn dieser Wert angepasst wird, müssen Prescaler und Counter Period vom Timer 3 ebenfalls angepasst werden:
+ * fs = sysClk/(PSC*ARR)
+ */
+const float fs = 100000;
 /**
  * @brief State Machine
  *
@@ -119,8 +129,13 @@ void StateMachine(State_t *state, Event_t *event)
     			fft(c, (int) N);
     			scale(c, (int) N);
     			abs_val(c, a, (int) N);
+    			// Spitzenwert bestimmmen
+    			max = get_array_max(a, N, fs);
     			// Konsole
     			_print("FFT berechnet!\n");
+    			char buffer[64];
+    			snprintf(buffer, sizeof(buffer),"Maximum: %.3f V bei %.2f Hz\n", max.amp, max.freq);
+    			_print(buffer);
     			// State Update
     			*state = TRANSFER;
     			// Event Update
@@ -138,7 +153,7 @@ void StateMachine(State_t *state, Event_t *event)
     			HAL_UART_Transmit(&huart1, (uint8_t*) header, strlen(header), 1000);
     			for (int i = 0; i < N; i++) {
     				char line[64];
-    				// Zeitsignal und komplexe Amplituden senden
+    				// Zeitsignal z[i] und komplexe Amplituden a[i] senden
     				int len = sprintf(line, "%f, %f\r\n", z[i], a[i]);
     				HAL_UART_Transmit(&huart1, (uint8_t*) line, len, 1000);
     			}

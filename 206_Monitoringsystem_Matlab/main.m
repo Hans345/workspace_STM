@@ -69,6 +69,9 @@ function readData(src, ~)
 
         % Daten STM32 darstellen
         if(idx > N)
+            % Daten normieren 0...1
+            % ub_norm = (ub - min(ub))/(max(ub) - min(ub));
+
             % Zeitsignal darstellen
             figure(1);
             tiledlayout(2,1, 'TileSpacing', 'compact', 'Padding', 'compact')

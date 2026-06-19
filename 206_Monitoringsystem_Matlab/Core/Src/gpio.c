@@ -60,7 +60,7 @@ void MX_GPIO_Init(void)
   HAL_GPIO_WritePin(GPIOF, GPIO_PIN_3|SPI3_CS4_Pin, GPIO_PIN_RESET);
 
   /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(GPIOB, SPI3_CS3_Pin|LD2_blue_Pin|SPI3_CS1_Pin|SPI3_CS2_Pin, GPIO_PIN_RESET);
+  HAL_GPIO_WritePin(GPIOB, SPI3_CS3_Pin|LD2_blue_Pin|SPI3_CS2_Pin, GPIO_PIN_RESET);
 
   /*Configure GPIO pin Output Level */
   HAL_GPIO_WritePin(GPIOG, LD3_red_Pin|LD_B1_Pin|LD_G2_Pin|LD_G1_Pin
@@ -71,6 +71,9 @@ void MX_GPIO_Init(void)
 
   /*Configure GPIO pin Output Level */
   HAL_GPIO_WritePin(USART2_REn_GPIO_Port, USART2_REn_Pin, GPIO_PIN_RESET);
+
+  /*Configure GPIO pin Output Level */
+  HAL_GPIO_WritePin(SPI3_CS1_GPIO_Port, SPI3_CS1_Pin, GPIO_PIN_SET);
 
   /*Configure GPIO pin : USER_B1_Pin */
   GPIO_InitStruct.Pin = USER_B1_Pin;

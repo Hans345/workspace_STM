@@ -56,24 +56,40 @@ set(deviceObj.Trigger(1), 'Mode', 'stop');
 groupObj = get(deviceObj, 'Waveform');
 groupObj = groupObj(1);
 set(groupObj, 'Precision', 'int16')
-[Y,X,YUNIT,XUNIT,HEADER] = invoke(groupObj, 'readwaveform', 'channel1', true);
+[Y_CH1,X_CH1,YUNIT,XUNIT,HEADER] = invoke(groupObj, 'readwaveform', 'channel1', true);
+[Y_CH2,X_CH2,YUNIT,XUNIT,HEADER] = invoke(groupObj, 'readwaveform', 'channel2', true);
 
 % Daten auswählen
 t0 = 0;
 t1 = (N-1)*(1/fs);
-i0 = find(abs(X-t0)<(X(2)-X(1)));
-i1 = find(abs(X-t1)<(X(2)-X(1)));
-X = X(i0(1):i1(1));
-Y = Y(i0(1):i1(1));
+i0 = find(abs(X_CH1-t0)<(X_CH1(2)-X_CH1(1)));
+i1 = find(abs(X_CH1-t1)<(X_CH1(2)-X_CH1(1)));
+X_CH1 = X_CH1(i0(1):i1(1));
+Y_CH1 = Y_CH1(i0(1):i1(1));
+X_CH2 = X_CH2(i0(1):i1(1));
+Y_CH2 = Y_CH2(i0(1):i1(1));
 
 % FFT  
-[P1_TEL, f_TEL] = func_fft(X, Y);
+[P1_TEL_CH1, f_TEL_CH1] = func_fft(X_CH1, Y_CH1);
+[P1_TEL_CH2, f_TEL_CH2] = func_fft(X_CH2, Y_CH2);
 [P1_STM, f_STM] = func_fft(t, ub);
+
+% FFT Fensterfunktionen
+w1 = hamming(N)';           % Hamming-Fenster
+w2 = hann(N)';              % Hann-Fenster
+w3 = blackmanharris(N)';    % Blackman-Fenster
+w4 = flattopwin(N)';        % Flattop-Fenster
+[P1_HAMM, f_HAMM] = func_fft(t, w1.*ub);
+[P1_HANN, f_HANN] = func_fft(t, w2.*ub);
+[P1_BLACK, f_BLACK] = func_fft(t, w3.*ub);
+[P1_FLAT, f_FLAT] = func_fft(t, w4.*ub);
 
 % Zeitsignal Teledyne
 figure(1);
 nexttile(1);
-plot(X,Y);
+plot(X_CH1,Y_CH1);
+hold on;
+plot(X_CH2,Y_CH2);
 legend({'STM32' 'Teledyne LeCroy'});
 hold off;
 
@@ -82,12 +98,18 @@ nexttile(2);
 loglog(f_STM, P1_STM);
 
 % FFT Teledyne
-loglog(f_TEL,P1_TEL);
-hold off;
-legend({'FFT und Messdaten STM32' 'Messdaten STM32 FFT Matlab' 'Messdaten Teledyne FFT Matlab'});
+loglog(f_TEL_CH1,P1_TEL_CH1);
+loglog(f_TEL_CH2,P1_TEL_CH2);
+% loglog(f_HAMM, P1_HAMM);
+% loglog(f_HANN, P1_HANN);
+% loglog(f_BLACK, P1_BLACK);
+% loglog(f_FLAT, P1_FLAT);
+% legend({'FFT und Messdaten STM32' 'Messdaten STM32 FFT Matlab' 'Messdaten Teledyne FFT Matlab'...
+%    'Hamming Fenster' 'Hann-Fenster' 'Blackman-Fenster' 'Flattop-Fenster'});
+legend({'FFT und Messdaten STM32' 'Messdaten STM32 FFT Matlab' 'CH1 Teledyne FFT Matlab' 'CH2 Teledyne FFT Matlab'});
 
 % Delete objects.
 delete([deviceObj interfaceObj]);
 
 % Kreuzkorrelation
-R = corrcoef(P1,P1_TEL)
+R = corrcoef(P1,P1_TEL_CH1)

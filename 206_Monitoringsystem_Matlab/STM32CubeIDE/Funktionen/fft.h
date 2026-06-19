@@ -9,6 +9,15 @@
 #define FUNKTIONEN_FFT_H_
 
 /**
+ * @brief Maximalwert FFT
+ */
+typedef struct
+{
+    float freq;
+    float amp;
+} fft_max_t;
+
+/**
  * @brief Diskrete Fourier Transformation (DFT)
  *
  * @param z Zeiger auf Array mit Spannungswerten  [V]
@@ -87,6 +96,35 @@ void calc_voltage(const uint16_t adc_val[], float z[], int nS, float gain, float
 		z[i] = gain * (adc_val[i] / 16383.0) * 3.3 + ofs;
 		// z[i] = (adc_val[i] / 4095.0) * 3.3;
 	}
+}
+
+/**
+ * @brief Berechnet den Maximalwert der FFT ohne den DC-Anteil zu berücksichtigen!
+ *
+ * @param *arr eindimensionales Array für Max-Berechnung
+ * @param N Anzahl Array Werte
+ * @param fs Abtastfrequenz [Hz]
+ */
+fft_max_t get_array_max(const float *arr, int N, float fs)
+{
+    fft_max_t result;
+
+    result.amp = arr[1];
+    int idx = 0;
+
+    for (int i = 2; i < N; i++)
+    {
+        if (arr[i] > result.amp)
+        {
+            result.amp = arr[i];
+            idx = i;
+        }
+    }
+
+    float df = fs / N;
+    result.freq = idx * df;
+
+    return result;
 }
 
 #endif /* FUNKTIONEN_FFT_H_ */
