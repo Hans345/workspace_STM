@@ -50,7 +50,8 @@ Application/User/Core/main.o: \
  ../../Drivers/CMSIS/Include/cmsis_compiler.h \
  C:/Users/raphael.baumeler/workspace_STM/206_Monitoringsystem_Matlab/STM32CubeIDE/Funktionen/complex.h \
  C:/Users/raphael.baumeler/workspace_STM/206_Monitoringsystem_Matlab/STM32CubeIDE/Funktionen/fft.h \
- C:/Users/raphael.baumeler/workspace_STM/206_Monitoringsystem_Matlab/STM32CubeIDE/Funktionen/konsole.h
+ C:/Users/raphael.baumeler/workspace_STM/206_Monitoringsystem_Matlab/STM32CubeIDE/Funktionen/konsole.h \
+ C:/Users/raphael.baumeler/workspace_STM/206_Monitoringsystem_Matlab/STM32CubeIDE/Funktionen/analogOut.h
 ../../Core/Inc/main.h:
 ../../Drivers/STM32U5xx_HAL_Driver/Inc/stm32u5xx_hal.h:
 ../../Core/Inc/stm32u5xx_hal_conf.h:
@@ -110,3 +111,4 @@ C:/Users/raphael.baumeler/workspace_STM/206_Monitoringsystem_Matlab/STM32CubeIDE
 C:/Users/raphael.baumeler/workspace_STM/206_Monitoringsystem_Matlab/STM32CubeIDE/Funktionen/complex.h:
 C:/Users/raphael.baumeler/workspace_STM/206_Monitoringsystem_Matlab/STM32CubeIDE/Funktionen/fft.h:
 C:/Users/raphael.baumeler/workspace_STM/206_Monitoringsystem_Matlab/STM32CubeIDE/Funktionen/konsole.h:
+C:/Users/raphael.baumeler/workspace_STM/206_Monitoringsystem_Matlab/STM32CubeIDE/Funktionen/analogOut.h:

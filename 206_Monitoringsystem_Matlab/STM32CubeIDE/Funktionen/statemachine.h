@@ -17,6 +17,8 @@
 #include "fft.h"
 // Konsole
 #include "konsole.h"
+// Analog Output
+#include "analogOut.h"
 
 /**
  * @brief States für Statemachine
@@ -73,15 +75,27 @@ uint16_t adc_val[N];
 /**
  * @brief gain Analoge Signalverarbeitung
  */
-float gain = 1/1.65;
+const float gain = 1/1.65;
 /**
  * @brief offset Analoge Signalverarbeitung
  */
-float ofs = 0.229;
+const float ofs = 0.229;
 /**
  * @brief Maximalwert FFT, freq: Frequenz, amp: Amplitude
  */
 fft_max_t max;
+/**
+ * @brief Drehfrequenz umgerechnet in Prozent
+ */
+float fft_per;
+/**
+ * @brief Drehfrequenz umgerechnet in mA
+ */
+float fft_cur;
+/**
+ * @brief Maximale Drehfrequenz [Hz]
+ */
+const float freq_max = 150;
 /**
  * @brief Samplingfrequenz
  * @note Wenn dieser Wert angepasst wird, müssen Prescaler und Counter Period vom Timer 3 ebenfalls angepasst werden:
@@ -134,7 +148,7 @@ void StateMachine(State_t *state, Event_t *event)
     			// Konsole
     			_print("FFT berechnet!\n");
     			char buffer[64];
-    			snprintf(buffer, sizeof(buffer),"Maximum: %.3f V bei %.2f Hz\n", max.amp, max.freq);
+    			snprintf(buffer, sizeof(buffer),"Maximum: %.3f V bei %.2f Hz\n", 2*max.amp, max.freq);
     			_print(buffer);
     			// State Update
     			*state = TRANSFER;
@@ -157,6 +171,13 @@ void StateMachine(State_t *state, Event_t *event)
     				int len = sprintf(line, "%f, %f\r\n", z[i], a[i]);
     				HAL_UART_Transmit(&huart1, (uint8_t*) line, len, 1000);
     			}
+    			// Analog Out
+    			fft_per = 100*max.freq/freq_max;
+    			fft_cur = 4.0f + (fft_per/100)*16.0f;
+    			XTR111_SetPercent(fft_per);
+    			char buffer[128];
+    			snprintf(buffer, sizeof(buffer),"Max. Drehfrequenz: %.0f Hz, Analog Output: %.2f %% bzw. %.2f mA\n", freq_max, fft_per, fft_cur);
+    			_print(buffer);
     			// Konsole
     			_print("Daten uebertagen!\n");
     			_print("*****************************\r\n");

@@ -140,7 +140,8 @@ int main(void)
 
   /* MCU Configuration--------------------------------------------------------*/
 
-  /* MPU Configuration--------------------------------------------------------*/  MPU_Config();
+  /* MPU Configuration--------------------------------------------------------*/
+  MPU_Config();
 
   /* Reset of all peripherals, Initializes the Flash interface and the Systick. */
   HAL_Init();
@@ -181,24 +182,7 @@ int main(void)
   /* USER CODE BEGIN 2 */
 
   // Monitoringsystem bereit zum ausführen
-  // StateMachine(&curr_state, &curr_event);
-
-  // SPI3 Datenübertragung
-  HAL_StatusTypeDef status;
-
-  uint8_t txData[3];
-  txData[0] = 0x00;	// PD1, PD0 = 0 -> Normal Mode
-  txData[1] = 0xFF;	// First Data Byte
-  txData[2] = 0xFF;	// Second Data Byte
-
-  HAL_GPIO_WritePin(SPI3_CS1_GPIO_Port, SPI3_CS1_Pin, GPIO_PIN_RESET);
-  status = HAL_SPI_Transmit(&hspi3, txData, sizeof(txData), HAL_MAX_DELAY); // Drittes Argument bedeutet Anzahl Datenframes!
-  HAL_GPIO_WritePin(SPI3_CS1_GPIO_Port, SPI3_CS1_Pin, GPIO_PIN_SET);
-
-  /*if(status != HAL_OK)
-  {
-      Error_Handler();
-  }*/
+  StateMachine(&curr_state, &curr_event);
 
   /* USER CODE END 2 */
 
@@ -208,7 +192,7 @@ int main(void)
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
-		// StateMachine(&curr_state, &curr_event);
+		StateMachine(&curr_state, &curr_event);
 	}
   /* USER CODE END 3 */
 }

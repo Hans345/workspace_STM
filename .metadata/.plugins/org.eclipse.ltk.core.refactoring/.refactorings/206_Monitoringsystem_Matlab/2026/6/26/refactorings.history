@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;206_Monitoringsystem_Matlab/Funktionen/AnalogOut.h&apos; to &apos;analogOut.h&apos;" description="Rename resource &apos;AnalogOut.h&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="Funktionen/AnalogOut.h" name="analogOut.h" stamp="1782222144042" updateReferences="true"/>
+</session>
