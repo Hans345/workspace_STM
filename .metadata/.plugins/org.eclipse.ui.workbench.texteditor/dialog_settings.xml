@@ -12,6 +12,7 @@
 		<item value="x"/>
 	</list>
 	<list key="searchhistory">
+		<item value="HAL_UART_Transmit"/>
 		<item value="fs"/>
 		<item value="GPIO_To"/>
 		<item value="GPIO_Too"/>
@@ -26,7 +27,6 @@
 		<item value="RAM2_Section"/>
 		<item value="RAM_Section"/>
 		<item value="_Min_Stack_Size"/>
-		<item value="Callback"/>
 	</list>
 	<section name="org.eclipse.cdt.internal.ui.preferences.CTemplatePreferencePage$CEditTemplateDialog_dialogBounds">
 		<item key="DIALOG_X_ORIGIN" value="456"/>

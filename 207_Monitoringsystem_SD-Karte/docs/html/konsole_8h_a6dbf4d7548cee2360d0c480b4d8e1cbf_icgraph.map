@@ -1,0 +1,7 @@
+<map id="_print" name="_print">
+<area shape="rect" id="Node000001" title="Ausgabe von Strings via SWV auf der Konsole." alt="" coords="222,43,275,69"/>
+<area shape="rect" id="Node000002" href="$main_8c.html#a537318eafe9182b60dc22ef54966c6a1" title="GPIO Callback. Wenn der User B1 (blau) auf dem NUCLEO Board gedrückt wird, wird dieser Callback aufge..." alt="" coords="5,5,174,48"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="204,49,174,45,174,40,209,48"/>
+<area shape="rect" id="Node000003" href="$main_8c.html#a840291bc02cba5474a4cb46a9b9566fe" title="The application entry point." alt="" coords="65,72,114,99"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="209,63,115,83,114,78,204,64"/>
+</map>

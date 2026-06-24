@@ -1,0 +1,9 @@
+<map id="XTR111_SetCurrent" name="XTR111_SetCurrent">
+<area shape="rect" id="Node000001" title="XTR111_SetCurrent." alt="" coords="439,5,577,32"/>
+<area shape="rect" id="Node000002" href="$analog_out_8h.html#a18ae2e684bbc7f0e6ce1ebd1fdf25ef0" title="XTR111_SetCurrent." alt="" coords="252,5,391,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="421,19,392,21,392,16,426,19"/>
+<area shape="rect" id="Node000003" href="$statemachine_8h.html#a56607aca98a096e0fc7bcaa5ea589ff2" title="State Machine." alt="" coords="103,5,204,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="234,19,204,21,204,16,239,19"/>
+<area shape="rect" id="Node000004" href="$main_8c.html#a840291bc02cba5474a4cb46a9b9566fe" title="The application entry point." alt="" coords="5,5,55,32"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="85,20,55,21,55,16,90,18"/>
+</map>

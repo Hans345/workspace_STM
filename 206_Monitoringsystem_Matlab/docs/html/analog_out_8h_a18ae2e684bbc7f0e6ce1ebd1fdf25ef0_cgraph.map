@@ -1,0 +1,5 @@
+<map id="XTR111_SetPercent" name="XTR111_SetPercent">
+<area shape="rect" id="Node000001" title="XTR111_SetCurrent." alt="" coords="5,5,145,32"/>
+<area shape="rect" id="Node000002" href="$analog_out_8h.html#a5223c611234757f168f86fc3a4474e62" title="XTR111_SetCurrent." alt="" coords="193,5,330,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="145,16,180,19,175,19,145,21"/>
+</map>

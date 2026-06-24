@@ -1,0 +1,217 @@
+/**
+ * @file statemachine.h
+ * @brief <b>Statemachine</b>
+ * @author Raphael Baumeler
+ * @date 11.06.2026
+ */
+
+#ifndef FUNKTIONEN_STATEMACHINE_H_
+#define FUNKTIONEN_STATEMACHINE_H_
+
+// FFT
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+#include "arm_math.h"
+#include "complex.h"
+#include "fft.h"
+// Konsole
+#include "konsole.h"
+// Analog Output
+#include "analogOut.h"
+
+/**
+ * @brief States für Statemachine
+ */
+typedef enum {
+	IDLE, READY, FFT, TRANSFER
+} State_t;
+
+/**
+ * @brief Events für Statemachine
+ */
+typedef enum {
+	EVENT_NONE,
+	EVENT_BLUE_BUTTON,
+	EVENT_SAMPLING_DONE,
+	EVENT_FFT_DONE,
+	EVENT_TRANSFER_DONE
+} Event_t;
+
+/**
+ * @brief Buffer Grösse in Samples.
+ * @note Für eine effiziente Berechnung der FFT muss dieser Wert N = 2^Y sein (Y = 1,2,3...).
+ */
+#define N 65536
+/**
+ * @brief Clear Putty Konsole
+ */
+const char *clear = "\033[2J\033[H";
+/**
+ * @brief Array für Zeitsignal (dt = 1/100kHz)
+ */
+float z[N];
+/**
+ * @brief Array Komplexe Fourier Koeffizienten (df = 100kHz/N)
+ */
+Complex c[N];
+/**
+ * @brief Betrag komplexer Fourierkoeffizienten (df = 100kHz/N)
+ * @note Achtung das sind die Beträge der komplexen Fourierkoeffizienten!<br>
+ * Für das einseitige Amplitudenspektrum müssen diese umgerechnet werden!<br>
+ * A0 = c0, An = |2*cn| mit n = 1,2,3...N/2 <br>
+ * phiN = arg(an -j*bn)
+ */
+float a[N];
+/**
+ * @brief ADC Werte
+ */
+uint16_t adc_val[N];
+/**
+ * @brief gain Analoge Signalverarbeitung
+ */
+const float gain = 1 / 1.65;
+/**
+ * @brief offset Analoge Signalverarbeitung
+ */
+const float ofs = 0.229;
+/**
+ * @brief Maximalwert FFT, freq: Frequenz, amp: Amplitude
+ */
+fft_max_t max;
+/**
+ * @brief Drehfrequenz umgerechnet in Prozent
+ */
+float fft_per;
+/**
+ * @brief Drehfrequenz umgerechnet in mA
+ */
+float fft_cur;
+/**
+ * @brief Maximale Drehfrequenz [Hz]
+ */
+const float freq_max = 150;
+/**
+ * @brief Samplingfrequenz
+ * @note Wenn dieser Wert angepasst wird, müssen Prescaler und Counter Period vom Timer 3 ebenfalls angepasst werden:
+ * fs = sysClk/(PSC*ARR)
+ */
+const float fs = 100000;
+/**
+ * @brief State Machine
+ *
+ * @param *state Zeiger auf aktuellen State
+ * @param *event Zeiger auf aktuellen State
+ */
+void StateMachine(State_t *state, Event_t *event) {
+	switch (*state) {
+	case IDLE:
+		// Konsole
+		const char *text =  "Monitoringsystem Bereit\r\n"
+							"Blauer Button Druecken um zu starten\r\n"
+							"*****************************************\r\n";
+		_print_PuTTY(clear);
+		_print_PuTTY(text);
+		_print_SWV(text);
+		// State Update
+		*state = READY;
+		break;
+
+	case READY:
+		if (*event == EVENT_BLUE_BUTTON) {
+			// PuTTY
+			const char *text = "ADC Sampling\r\n";
+			_print_PuTTY(text);
+			_print_SWV(text);
+			// State Update
+			*state = FFT;
+		}
+		break;
+
+	case FFT:
+		if (*event == EVENT_SAMPLING_DONE) {
+			// Konsole
+			const char *text = "Berechne FFT\r\n";
+			// _print_PuTTY(text);
+			_print_SWV(text);
+			// FFT
+			calc_voltage(adc_val, z, (int) N, gain, ofs);
+			make_complex(z, c, (int) N);
+			fft(c, (int) N);
+			scale(c, (int) N);
+			abs_val(c, a, (int) N);
+			// Spitzenwert bestimmmen
+			max = get_array_max(a, N, fs);
+			// Drehfrequenz limitieren auf 0...150 Hz
+			if (max.freq < 0.0f) {
+				max.freq = 0.0f;
+				max.amp = 0.0f;
+			}
+			if (max.freq > freq_max) {
+				max.freq = 0.0f;
+				max.amp = 0.0f;
+			}
+			// Konsole
+			char text[64];
+			snprintf(text, sizeof(text), "Maximum: %.3f V bei %.2f Hz\n", 2 * max.amp, max.freq);
+			// _print_PuTTY(text);
+			_print_SWV(text);
+			// State Update
+			*state = TRANSFER;
+			// Event Update
+			*event = EVENT_FFT_DONE;
+		}
+		break;
+
+	case TRANSFER:
+		if (*event == EVENT_FFT_DONE) {
+			// Konsole
+			const char *text = "Uebertrage Daten\n";
+			//_print_PuTTY(text);
+			_print_SWV(text);
+			// Datentransfer
+			char header[] = "ub, uAb\r\n";
+			HAL_UART_Transmit(&huart1, (uint8_t*) header, strlen(header), 1000);
+			for (int i = 0; i < N; i++) {
+				char line[64];
+				// Zeitsignal z[i] und komplexe Amplituden a[i] senden
+				int len = sprintf(line, "%f, %f\r\n", z[i], a[i]);
+				HAL_UART_Transmit(&huart1, (uint8_t*) line, len, 1000);
+			}
+			*text = "Daten uebertagen!\n"
+			//_print_PuTTY(text);
+			_print_SWV(text);
+			// Analog Out
+			fft_per = 100 * max.freq / freq_max;
+			fft_cur = 4.0f + (fft_per / 100) * 16.0f;
+			XTR111_SetPercent(fft_per, SPI3_CS1_GPIO_Port, SPI3_CS1_Pin);
+			// Konsole
+			char buffer[128];
+			snprintf(buffer, sizeof(buffer),
+					"Max. Drehfrequenz: %.0f Hz\nAnalog Output: %.2f %% bzw. %.2f mA\n"
+					"*****************************************\r\n", freq_max, fft_per, fft_cur);
+			//_print_PuTTY(text);
+			_print_SWV(buffer);
+			// Signalisation mit LED
+			HAL_GPIO_WritePin(LD1_green_GPIO_Port, LD1_green_Pin, 0);
+			// Button Interrupt aktivieren
+			HAL_NVIC_EnableIRQ(EXTI13_IRQn);
+			// State Update
+			*state = READY;
+			// Event Update
+			*event = EVENT_TRANSFER_DONE;
+		}
+		break;
+
+	default:
+		// Konsole
+		const char *text = "Undefinierter State!\n";
+		//_print_PuTTY(text);
+		_print_SWV("Undefinierter State!\n");
+		// State Update
+		*state = IDLE;
+		break;
+	}
+}
+
+#endif /* FUNKTIONEN_STATEMACHINE_H_ */

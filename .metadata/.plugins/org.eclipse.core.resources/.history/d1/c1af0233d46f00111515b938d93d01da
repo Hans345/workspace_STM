@@ -1,0 +1,4 @@
+C:/Users/raphael.baumeler/workspace_STM/206_Monitoringsystem_Matlab/Core/Src/comp.c:31:6:MX_COMP1_Init	8	static
+C:/Users/raphael.baumeler/workspace_STM/206_Monitoringsystem_Matlab/Core/Src/comp.c:61:6:MX_COMP2_Init	8	static
+C:/Users/raphael.baumeler/workspace_STM/206_Monitoringsystem_Matlab/Core/Src/comp.c:93:6:HAL_COMP_MspInit	56	static
+C:/Users/raphael.baumeler/workspace_STM/206_Monitoringsystem_Matlab/Core/Src/comp.c:163:6:HAL_COMP_MspDeInit	16	static

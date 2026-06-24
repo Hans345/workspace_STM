@@ -1,0 +1,79 @@
+/**
+ * @file fft.h
+ * @brief <b>Analoge Outputs: 4...20mA</b>
+ * @author Raphael Baumeler
+ * @date 23.06.2026
+ */
+
+#ifndef FUNKTIONEN_ANALOGOUT_H_
+#define FUNKTIONEN_ANALOGOUT_H_
+
+/**
+ * @brief Maximalwert DAC
+ */
+#define DAC_MAX     65535.0f
+/**
+ * @brief Referenzspannung DAC [V]
+ */
+#define DAC_REF     5.0f
+/**
+ * @brief Rset XTR111 [Ohm]
+ * Vin = (Iout*Rset)/10
+ */
+#define RSET        2000.0f
+
+/**
+ * @brief XTR111_SetCurrent
+ *
+ * @param current_mA Strom für den 4...20mA Output
+ */
+void XTR111_SetCurrent(float current_mA, GPIO_TypeDef *GPIO_Port, uint16_t GPIO_Pin)
+{
+    // Strom auf 4...20 mA begrenzen
+    if(current_mA < 4.0f)
+        current_mA = 4.0f;
+
+    if(current_mA > 20.0f)
+        current_mA = 20.0f;
+
+    // Gewünschte VIN berechnen
+    float vin = (current_mA / 1000.0f) * RSET / 10.0f;
+
+    // DAC-Code berechnen
+    uint16_t dacValue = (uint16_t)((vin / DAC_REF) * DAC_MAX + 0.5f);
+
+    // SPI-Daten vorbereiten
+    uint8_t txData[3];
+
+    txData[0] = 0x00;                     // Normal Mode
+    txData[1] = (dacValue >> 8) & 0xFF;   // MSB
+    txData[2] = dacValue & 0xFF;          // LSB
+
+    // SPI-Daten an DAC senden
+	HAL_GPIO_WritePin(GPIO_Port, GPIO_Pin, GPIO_PIN_RESET);
+	HAL_SPI_Transmit(&hspi3, txData, sizeof(txData), HAL_MAX_DELAY); // Drittes Argument bedeutet Anzahl Datenframes!
+	HAL_GPIO_WritePin(GPIO_Port, GPIO_Pin, GPIO_PIN_SET);
+}
+
+/**
+ * @brief XTR111_SetCurrent
+ *
+ * @param percent zu übertragender Strom in %: 0% -> 4mA, 100% -> 20mA
+ */
+void XTR111_SetPercent(float percent, GPIO_TypeDef *GPIO_Port, uint16_t GPIO_Pin)
+{
+	// Limitieren auf 0...100%
+    if(percent < 0.0f)
+        percent = 0.0f;
+
+    if(percent > 100.0f)
+        percent = 100.0f;
+
+    // 4...20 mA
+    float current = 4.0f + percent * 0.16f;
+
+    // Strom einstellen
+    XTR111_SetCurrent(current, GPIO_Port, GPIO_Pin);
+}
+
+#endif /* FUNKTIONEN_ANALOGOUT_H_ */
