@@ -1,0 +1,4 @@
+../../Drivers/CMSIS/Include/core_cm33.h:3212:26:ITM_SendChar	4
+../Funktionen/Src/konsole.c:30:5:_write	2
+../Funktionen/Src/konsole.c:47:6:_print_SWV	1
+../Funktionen/Src/konsole.c:56:6:_print_PuTTY	2

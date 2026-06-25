@@ -2,4 +2,6 @@
 <area shape="rect" id="Node000001" title="XTR111_SetCurrent." alt="" coords="5,5,145,32"/>
 <area shape="rect" id="Node000002" href="$analog_out_8h.html#a5223c611234757f168f86fc3a4474e62" title="XTR111_SetCurrent." alt="" coords="193,5,330,32"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="145,16,180,19,175,19,145,21"/>
+<area shape="rect" id="Node000003" href="$main_8c.html#a1730ffe1e560465665eb47d9264826f9" title="This function is executed in case of error occurrence." alt="" coords="378,5,479,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="331,16,365,19,360,19,331,21"/>
 </map>

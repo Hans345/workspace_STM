@@ -22,7 +22,7 @@ var statemachine_8h =
     [ "fft_cur", "statemachine_8h.html#a800cf10d59cc31f47e49422c04ac22d4", null ],
     [ "fft_per", "statemachine_8h.html#a0e9e56ce00f35b6712bd50658e1c2e35", null ],
     [ "freq_max", "statemachine_8h.html#a8408fe90bdce9c5a3dec3ecb27f6d946", null ],
-    [ "fs", "statemachine_8h.html#a5914eda95c21b243915c06c08fb45e3b", null ],
+    [ "fsamp", "statemachine_8h.html#a2cc5c496942f6e9b7e92c75b3311860d", null ],
     [ "gain", "statemachine_8h.html#abb0a798e6f2165f27cc17a8b780c3470", null ],
     [ "max", "statemachine_8h.html#ad4776ab34d43d5adde7145c71f4e24b3", null ],
     [ "ofs", "statemachine_8h.html#aa1405694319e4fae148b18c2aeb38e39", null ],

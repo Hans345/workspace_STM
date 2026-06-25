@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.16.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Monitoringsystem: STM32CubeIDE/Funktionen/analogOut.h Source File</title>
+<title>Monitoringsystem: STM32CubeIDE/Funktionen/Inc/analogOut.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -100,67 +100,77 @@ $(function(){initNavTree('analog_out_8h_source.html','',''); });
 <div class="line"><a id="l00018" name="l00018"></a><span class="lineno"><a class="line" href="analog_out_8h.html#a77c3a4c33582295e93ba434c43c010ba">   18</a></span><span class="preprocessor">#define DAC_REF     5.0f</span><span class="preprocessor"></span></div>
 <div class="line"><a id="l00023" name="l00023"></a><span class="lineno"><a class="line" href="analog_out_8h.html#a204b59cfa2bdae74c2de680d439eb05e">   23</a></span><span class="preprocessor">#define RSET        2000.0f</span></div>
 <div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span></div>
-<div class="foldopen" id="foldopen00032" data-start="{" data-end="}">
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno"><a class="line" href="analog_out_8h.html#a5223c611234757f168f86fc3a4474e62">   32</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="analog_out_8h.html#a5223c611234757f168f86fc3a4474e62">XTR111_SetCurrent</a>(<span class="keywordtype">float</span> current_mA, GPIO_TypeDef *GPIO_Port, uint16_t GPIO_Pin)</div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>{</div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    <span class="comment">// Strom auf 4...20 mA begrenzen</span></div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    <span class="keywordflow">if</span>(current_mA &lt; 4.0f)</div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>        current_mA = 4.0f;</div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span> </div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    <span class="keywordflow">if</span>(current_mA &gt; 20.0f)</div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>        current_mA = 20.0f;</div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span> </div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    <span class="comment">// Gewünschte VIN berechnen</span></div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    <span class="keywordtype">float</span> vin = (current_mA / 1000.0f) * <a class="code hl_define" href="analog_out_8h.html#a204b59cfa2bdae74c2de680d439eb05e">RSET</a> / 10.0f;</div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span> </div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    <span class="comment">// DAC-Code berechnen</span></div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    uint16_t dacValue = (uint16_t)((vin / <a class="code hl_define" href="analog_out_8h.html#a77c3a4c33582295e93ba434c43c010ba">DAC_REF</a>) * <a class="code hl_define" href="analog_out_8h.html#a80825df7d911faa99554cbe165590474">DAC_MAX</a> + 0.5f);</div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span> </div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    <span class="comment">// SPI-Daten vorbereiten</span></div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    uint8_t txData[3];</div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span> </div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    txData[0] = 0x00;                     <span class="comment">// Normal Mode</span></div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    txData[1] = (dacValue &gt;&gt; 8) &amp; 0xFF;   <span class="comment">// MSB</span></div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    txData[2] = dacValue &amp; 0xFF;          <span class="comment">// LSB</span></div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span> </div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    <span class="comment">// SPI-Daten an DAC senden</span></div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>    HAL_GPIO_WritePin(GPIO_Port, GPIO_Pin, GPIO_PIN_RESET);</div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>    HAL_SPI_Transmit(&amp;hspi3, txData, <span class="keyword">sizeof</span>(txData), HAL_MAX_DELAY); <span class="comment">// Drittes Argument bedeutet Anzahl Datenframes!</span></div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>    HAL_GPIO_WritePin(GPIO_Port, GPIO_Pin, GPIO_PIN_SET);</div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>}</div>
+<div class="foldopen" id="foldopen00033" data-start="{" data-end="}">
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno"><a class="line" href="analog_out_8h.html#a5223c611234757f168f86fc3a4474e62">   33</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="analog_out_8h.html#a5223c611234757f168f86fc3a4474e62">XTR111_SetCurrent</a>(<span class="keywordtype">float</span> current_mA, GPIO_TypeDef *GPIO_Port, uint16_t GPIO_Pin)</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>{</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    <span class="comment">// Strom auf 4...20 mA begrenzen</span></div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    <span class="keywordflow">if</span>(current_mA &lt; 4.0f)</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>        current_mA = 4.0f;</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span> </div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    <span class="keywordflow">if</span>(current_mA &gt; 20.0f)</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>        current_mA = 20.0f;</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span> </div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    <span class="comment">// Gewünschte VIN berechnen</span></div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    <span class="keywordtype">float</span> vin = (current_mA / 1000.0f) * <a class="code hl_define" href="analog_out_8h.html#a204b59cfa2bdae74c2de680d439eb05e">RSET</a> / 10.0f;</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span> </div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    <span class="comment">// DAC-Code berechnen</span></div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    uint16_t dacValue = (uint16_t)((vin / <a class="code hl_define" href="analog_out_8h.html#a77c3a4c33582295e93ba434c43c010ba">DAC_REF</a>) * <a class="code hl_define" href="analog_out_8h.html#a80825df7d911faa99554cbe165590474">DAC_MAX</a> + 0.5f);</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span> </div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    <span class="comment">// SPI-Daten vorbereiten</span></div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    uint8_t txData[3];</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span> </div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    txData[0] = 0x00;                     <span class="comment">// Normal Mode</span></div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    txData[1] = (dacValue &gt;&gt; 8) &amp; 0xFF;   <span class="comment">// MSB</span></div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    txData[2] = dacValue &amp; 0xFF;          <span class="comment">// LSB</span></div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span> </div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>    <span class="comment">// Konfiguration Clock Phase anpassen wenn nötig</span></div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="user__diskio__spi_8c.html#aec51920045aad7f70cbfd1f58228d866">hspi3</a>.Init.CLKPhase == SPI_PHASE_1EDGE) {</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>        <a class="code hl_variable" href="user__diskio__spi_8c.html#aec51920045aad7f70cbfd1f58228d866">hspi3</a>.Init.CLKPhase = SPI_PHASE_2EDGE; <span class="comment">// Für DAC SPI_PHASE_2EDGE</span></div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>        <span class="keywordflow">if</span> (HAL_SPI_Init(&amp;<a class="code hl_variable" href="user__diskio__spi_8c.html#aec51920045aad7f70cbfd1f58228d866">hspi3</a>) != HAL_OK) {</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>            <a class="code hl_function" href="main_8c.html#a1730ffe1e560465665eb47d9264826f9">Error_Handler</a>();</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>        }</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>    }</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span> </div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>    <span class="comment">// SPI-Daten an DAC senden</span></div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>    HAL_GPIO_WritePin(GPIO_Port, GPIO_Pin, GPIO_PIN_RESET);</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>    HAL_SPI_Transmit(&amp;<a class="code hl_variable" href="user__diskio__spi_8c.html#aec51920045aad7f70cbfd1f58228d866">hspi3</a>, txData, <span class="keyword">sizeof</span>(txData), HAL_MAX_DELAY); <span class="comment">// Drittes Argument bedeutet Anzahl Datenframes!</span></div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>    HAL_GPIO_WritePin(GPIO_Port, GPIO_Pin, GPIO_PIN_SET);</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>}</div>
 </div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span></div>
-<div class="foldopen" id="foldopen00067" data-start="{" data-end="}">
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno"><a class="line" href="analog_out_8h.html#a18ae2e684bbc7f0e6ce1ebd1fdf25ef0">   67</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="analog_out_8h.html#a18ae2e684bbc7f0e6ce1ebd1fdf25ef0">XTR111_SetPercent</a>(<span class="keywordtype">float</span> percent, GPIO_TypeDef *GPIO_Port, uint16_t GPIO_Pin)</div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>{</div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>    <span class="comment">// Limitieren auf 0...100%</span></div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>    <span class="keywordflow">if</span>(percent &lt; 0.0f)</div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>        percent = 0.0f;</div>
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span> </div>
-<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>    <span class="keywordflow">if</span>(percent &gt; 100.0f)</div>
-<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>        percent = 100.0f;</div>
-<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span> </div>
-<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>    <span class="comment">// 4...20 mA</span></div>
-<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>    <span class="keywordtype">float</span> current = 4.0f + percent * 0.16f;</div>
-<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span> </div>
-<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>    <span class="comment">// Strom einstellen</span></div>
-<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>    <a class="code hl_function" href="analog_out_8h.html#a5223c611234757f168f86fc3a4474e62">XTR111_SetCurrent</a>(current, GPIO_Port, GPIO_Pin);</div>
-<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>}</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span></div>
+<div class="foldopen" id="foldopen00076" data-start="{" data-end="}">
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno"><a class="line" href="analog_out_8h.html#a18ae2e684bbc7f0e6ce1ebd1fdf25ef0">   76</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="analog_out_8h.html#a18ae2e684bbc7f0e6ce1ebd1fdf25ef0">XTR111_SetPercent</a>(<span class="keywordtype">float</span> percent, GPIO_TypeDef *GPIO_Port, uint16_t GPIO_Pin)</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>{</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>    <span class="comment">// Limitieren auf 0...100%</span></div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>    <span class="keywordflow">if</span>(percent &lt; 0.0f)</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>        percent = 0.0f;</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span> </div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>    <span class="keywordflow">if</span>(percent &gt; 100.0f)</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>        percent = 100.0f;</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span> </div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>    <span class="comment">// 4...20 mA</span></div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>    <span class="keywordtype">float</span> current = 4.0f + percent * 0.16f;</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span> </div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>    <span class="comment">// Strom einstellen</span></div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>    <a class="code hl_function" href="analog_out_8h.html#a5223c611234757f168f86fc3a4474e62">XTR111_SetCurrent</a>(current, GPIO_Port, GPIO_Pin);</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>}</div>
 </div>
-<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span> </div>
-<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span><span class="preprocessor">#endif </span><span class="comment">/* FUNKTIONEN_ANALOGOUT_H_ */</span><span class="preprocessor"></span></div>
-<div class="ttc" id="aanalog_out_8h_html_a18ae2e684bbc7f0e6ce1ebd1fdf25ef0"><div class="ttname"><a href="analog_out_8h.html#a18ae2e684bbc7f0e6ce1ebd1fdf25ef0">XTR111_SetPercent</a></div><div class="ttdeci">void XTR111_SetPercent(float percent, GPIO_TypeDef *GPIO_Port, uint16_t GPIO_Pin)</div><div class="ttdoc">XTR111_SetCurrent.</div><div class="ttdef"><b>Definition</b> analogOut.h:67</div></div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span> </div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span><span class="preprocessor">#endif </span><span class="comment">/* FUNKTIONEN_ANALOGOUT_H_ */</span><span class="preprocessor"></span></div>
+<div class="ttc" id="aanalog_out_8h_html_a18ae2e684bbc7f0e6ce1ebd1fdf25ef0"><div class="ttname"><a href="analog_out_8h.html#a18ae2e684bbc7f0e6ce1ebd1fdf25ef0">XTR111_SetPercent</a></div><div class="ttdeci">void XTR111_SetPercent(float percent, GPIO_TypeDef *GPIO_Port, uint16_t GPIO_Pin)</div><div class="ttdoc">XTR111_SetCurrent.</div><div class="ttdef"><b>Definition</b> analogOut.h:76</div></div>
 <div class="ttc" id="aanalog_out_8h_html_a204b59cfa2bdae74c2de680d439eb05e"><div class="ttname"><a href="analog_out_8h.html#a204b59cfa2bdae74c2de680d439eb05e">RSET</a></div><div class="ttdeci">#define RSET</div><div class="ttdoc">Rset XTR111 [Ohm]   Vin = (Iout*Rset)/10.</div><div class="ttdef"><b>Definition</b> analogOut.h:23</div></div>
-<div class="ttc" id="aanalog_out_8h_html_a5223c611234757f168f86fc3a4474e62"><div class="ttname"><a href="analog_out_8h.html#a5223c611234757f168f86fc3a4474e62">XTR111_SetCurrent</a></div><div class="ttdeci">void XTR111_SetCurrent(float current_mA, GPIO_TypeDef *GPIO_Port, uint16_t GPIO_Pin)</div><div class="ttdoc">XTR111_SetCurrent.</div><div class="ttdef"><b>Definition</b> analogOut.h:32</div></div>
+<div class="ttc" id="aanalog_out_8h_html_a5223c611234757f168f86fc3a4474e62"><div class="ttname"><a href="analog_out_8h.html#a5223c611234757f168f86fc3a4474e62">XTR111_SetCurrent</a></div><div class="ttdeci">void XTR111_SetCurrent(float current_mA, GPIO_TypeDef *GPIO_Port, uint16_t GPIO_Pin)</div><div class="ttdoc">XTR111_SetCurrent.</div><div class="ttdef"><b>Definition</b> analogOut.h:33</div></div>
 <div class="ttc" id="aanalog_out_8h_html_a77c3a4c33582295e93ba434c43c010ba"><div class="ttname"><a href="analog_out_8h.html#a77c3a4c33582295e93ba434c43c010ba">DAC_REF</a></div><div class="ttdeci">#define DAC_REF</div><div class="ttdoc">Referenzspannung DAC [V].</div><div class="ttdef"><b>Definition</b> analogOut.h:18</div></div>
 <div class="ttc" id="aanalog_out_8h_html_a80825df7d911faa99554cbe165590474"><div class="ttname"><a href="analog_out_8h.html#a80825df7d911faa99554cbe165590474">DAC_MAX</a></div><div class="ttdeci">#define DAC_MAX</div><div class="ttdoc">Maximalwert DAC.</div><div class="ttdef"><b>Definition</b> analogOut.h:14</div></div>
+<div class="ttc" id="amain_8c_html_a1730ffe1e560465665eb47d9264826f9"><div class="ttname"><a href="main_8c.html#a1730ffe1e560465665eb47d9264826f9">Error_Handler</a></div><div class="ttdeci">void Error_Handler(void)</div><div class="ttdoc">This function is executed in case of error occurrence.</div><div class="ttdef"><b>Definition</b> main.c:433</div></div>
+<div class="ttc" id="auser__diskio__spi_8c_html_aec51920045aad7f70cbfd1f58228d866"><div class="ttname"><a href="user__diskio__spi_8c.html#aec51920045aad7f70cbfd1f58228d866">hspi3</a></div><div class="ttdeci">SPI_HandleTypeDef hspi3</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 </div><!-- container -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a href="dir_bc84256498dc5614be2bf6f96d0ea448.html">STM32CubeIDE</a></li><li class="navelem"><a href="dir_a7810b4f5d5d256f1ff48a574a98cf20.html">Funktionen</a></li><li class="navelem"><a href="analog_out_8h.html">analogOut.h</a></li>
+    <li class="navelem"><a href="dir_bc84256498dc5614be2bf6f96d0ea448.html">STM32CubeIDE</a></li><li class="navelem"><a href="dir_a7810b4f5d5d256f1ff48a574a98cf20.html">Funktionen</a></li><li class="navelem"><a href="dir_5c1fc4ac432e295bde335fb117d1cef7.html">Inc</a></li><li class="navelem"><a href="analog_out_8h.html">analogOut.h</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.16.1 </li>
   </ul>
 </div>

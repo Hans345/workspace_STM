@@ -1,0 +1,27 @@
+<map id="STM32CubeIDE/SD&#45;Karte/Inc/ffconf.h" name="STM32CubeIDE/SD&#45;Karte/Inc/ffconf.h">
+<area shape="rect" id="Node000001" title=" " alt="" coords="189,5,364,48"/>
+<area shape="rect" id="Node000002" href="$ff_8h.html" title=" " alt="" coords="189,96,364,139"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="278,61,279,96,274,95,276,66"/>
+<area shape="rect" id="Node000003" href="$main_8c.html" title="Monitoringsystem für Medicoat" alt="" coords="5,459,122,485"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="223,149,190,173,151,202,114,238,84,279,74,302,66,327,60,378,60,425,64,459,59,458,55,425,54,378,61,326,69,300,80,276,110,235,147,198,186,168,226,145"/>
+<area shape="rect" id="Node000004" href="$ff__gen__drv_8h.html" title="Header for ff_gen_drv.c module." alt="" coords="189,187,364,229"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="278,152,279,187,274,186,276,157"/>
+<area shape="rect" id="Node000011" href="$ff_8c.html" title=" " alt="" coords="389,187,564,229"/>
+<area shape="poly" id="edge14_Node000002_Node000011" title=" " alt="" coords="338,143,432,185,427,187,338,148"/>
+<area shape="poly" id="edge4_Node000004_Node000003" title=" " alt="" coords="176,237,145,255,116,279,100,300,88,324,72,375,66,423,66,459,60,458,61,423,67,374,83,322,95,297,112,275,142,251,180,234"/>
+<area shape="rect" id="Node000005" href="$user__diskio__spi_8h.html" title="This file contains the common defines and functions prototypes for the user_diskio_spi driver impleme..." alt="" coords="126,277,302,320"/>
+<area shape="poly" id="edge5_Node000004_Node000005" title=" " alt="" coords="255,240,231,279,227,275,252,244"/>
+<area shape="rect" id="Node000007" href="$user__diskio_8c.html" title="This file includes a diskio driver skeleton to be completed by the user." alt="" coords="526,368,702,411"/>
+<area shape="poly" id="edge13_Node000004_Node000007" title=" " alt="" coords="296,240,327,282,345,301,366,318,394,331,434,344,529,370,524,370,432,349,392,336,363,322,342,305,323,285,295,245"/>
+<area shape="rect" id="Node000009" href="$diskio_8c.html" title="FatFs low level disk I/O module." alt="" coords="377,277,552,320"/>
+<area shape="poly" id="edge11_Node000004_Node000009" title=" " alt="" coords="335,234,424,276,418,277,334,239"/>
+<area shape="rect" id="Node000010" href="$ff__gen__drv_8c.html" title="FatFs generic low level driver." alt="" coords="577,277,752,320"/>
+<area shape="poly" id="edge12_Node000004_Node000010" title=" " alt="" coords="380,230,579,276,574,278,380,235"/>
+<area shape="poly" id="edge6_Node000005_Node000003" title=" " alt="" coords="159,330,138,349,116,370,100,392,87,417,70,459,65,457,82,415,95,390,112,366,135,345,163,327"/>
+<area shape="rect" id="Node000006" href="$user__diskio_8h.html" title="This file contains the common defines and functions prototypes for the user_diskio driver." alt="" coords="126,368,302,411"/>
+<area shape="poly" id="edge7_Node000005_Node000006" title=" " alt="" coords="216,333,217,369,212,367,213,338"/>
+<area shape="poly" id="edge9_Node000005_Node000007" title=" " alt="" coords="317,320,529,367,524,370,317,325"/>
+<area shape="rect" id="Node000008" href="$user__diskio__spi_8c.html" title="This file contains the implementation of the user_diskio_spi FatFs driver." alt="" coords="326,368,502,411"/>
+<area shape="poly" id="edge10_Node000005_Node000008" title=" " alt="" coords="275,324,370,367,365,368,275,329"/>
+<area shape="poly" id="edge8_Node000006_Node000003" title=" " alt="" coords="165,419,88,461,86,456,160,418"/>
+</map>

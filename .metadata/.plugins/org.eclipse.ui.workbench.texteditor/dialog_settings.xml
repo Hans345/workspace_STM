@@ -12,6 +12,10 @@
 		<item value="x"/>
 	</list>
 	<list key="searchhistory">
+		<item value="Link"/>
+		<item value="USER_SPI_stat"/>
+		<item value="USER"/>
+		<item value="SD_SPI_HANDLE"/>
 		<item value="HAL_UART_Transmit"/>
 		<item value="fs"/>
 		<item value="GPIO_To"/>
@@ -23,10 +27,6 @@
 		<item value="qNr"/>
 		<item value="ADC_VAL"/>
 		<item value="x"/>
-		<item value="aV"/>
-		<item value="RAM2_Section"/>
-		<item value="RAM_Section"/>
-		<item value="_Min_Stack_Size"/>
 	</list>
 	<section name="org.eclipse.cdt.internal.ui.preferences.CTemplatePreferencePage$CEditTemplateDialog_dialogBounds">
 		<item key="DIALOG_X_ORIGIN" value="456"/>

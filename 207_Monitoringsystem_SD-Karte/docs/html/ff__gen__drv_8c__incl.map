@@ -1,0 +1,19 @@
+<map id="STM32CubeIDE/SD&#45;Karte/Src/ff_gen_drv.c" name="STM32CubeIDE/SD&#45;Karte/Src/ff_gen_drv.c">
+<area shape="rect" id="Node000001" title="FatFs generic low level driver." alt="" coords="5,5,181,48"/>
+<area shape="rect" id="Node000002" href="$ff__gen__drv_8h.html" title="Header for ff_gen_drv.c module." alt="" coords="47,96,139,123"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="93,46,96,80,90,80,93,51"/>
+<area shape="rect" id="Node000003" href="$diskio_8h.html" title=" " alt="" coords="21,171,88,197"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="85,126,71,158,66,156,87,121"/>
+<area shape="rect" id="Node000005" href="$ff_8h.html" title=" " alt="" coords="112,171,151,197"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="100,121,120,157,115,157,100,126"/>
+<area shape="rect" id="Node000004" href="$integer_8h.html" title=" " alt="" coords="19,245,90,272"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="55,195,57,230,52,229,54,201"/>
+<area shape="poly" id="edge5_Node000005_Node000004" title=" " alt="" coords="117,200,81,236,77,233,120,196"/>
+<area shape="rect" id="Node000006" href="$ffconf_8h.html" title=" " alt="" coords="114,245,178,272"/>
+<area shape="poly" id="edge6_Node000005_Node000006" title=" " alt="" coords="135,195,143,230,138,230,134,200"/>
+<area shape="rect" id="Node000007" href="$main_8h.html" title=": Header for main.c file. This file contains the common defines of the application." alt="" coords="82,320,142,347"/>
+<area shape="poly" id="edge7_Node000006_Node000007" title=" " alt="" coords="142,270,126,307,122,304,139,275"/>
+<area shape="rect" id="Node000008" title=" " alt="" coords="85,395,205,421"/>
+<area shape="poly" id="edge9_Node000006_Node000008" title=" " alt="" coords="150,270,156,306,157,347,152,381,148,378,152,347,151,306,148,275"/>
+<area shape="poly" id="edge8_Node000007_Node000008" title=" " alt="" coords="119,345,136,381,130,380,116,349"/>
+</map>

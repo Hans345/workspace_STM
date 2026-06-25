@@ -1,7 +1,14 @@
 <map id="Error_Handler" name="Error_Handler">
-<area shape="rect" id="Node000001" title="This function is executed in case of error occurrence." alt="" coords="296,5,397,32"/>
-<area shape="rect" id="Node000002" href="$main_8c.html#a70af21c671abfcc773614a9a4f63d920" title="System Clock Configuration." alt="" coords="103,5,248,32"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="278,19,249,21,248,16,283,19"/>
-<area shape="rect" id="Node000003" href="$main_8c.html#a840291bc02cba5474a4cb46a9b9566fe" title="The application entry point." alt="" coords="5,5,55,32"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="85,20,55,21,55,16,90,18"/>
+<area shape="rect" id="Node000001" title="This function is executed in case of error occurrence." alt="" coords="535,31,637,57"/>
+<area shape="rect" id="Node000002" href="$main_8c.html#a840291bc02cba5474a4cb46a9b9566fe" title="The application entry point." alt="" coords="200,5,249,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="524,26,487,21,420,16,353,15,250,19,249,14,353,10,420,11,488,16,529,26"/>
+<area shape="rect" id="Node000003" href="$main_8c.html#a70af21c671abfcc773614a9a4f63d920" title="System Clock Configuration." alt="" coords="342,31,487,57"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="517,44,488,47,488,41,523,44"/>
+<area shape="rect" id="Node000004" href="$analog_out_8h.html#a5223c611234757f168f86fc3a4474e62" title="XTR111_SetCurrent." alt="" coords="346,81,483,108"/>
+<area shape="poly" id="edge4_Node000001_Node000004" title=" " alt="" coords="526,62,463,83,462,78,521,63"/>
+<area shape="poly" id="edge3_Node000003_Node000002" title=" " alt="" coords="324,33,249,25,249,19,329,32"/>
+<area shape="rect" id="Node000005" href="$analog_out_8h.html#a18ae2e684bbc7f0e6ce1ebd1fdf25ef0" title="XTR111_SetCurrent." alt="" coords="155,81,294,108"/>
+<area shape="poly" id="edge5_Node000004_Node000005" title=" " alt="" coords="328,95,295,97,295,92,333,95"/>
+<area shape="rect" id="Node000006" href="$statemachine_8h.html#a56607aca98a096e0fc7bcaa5ea589ff2" title="State Machine." alt="" coords="5,81,107,108"/>
+<area shape="poly" id="edge6_Node000005_Node000006" title=" " alt="" coords="136,95,107,97,107,92,141,94"/>
 </map>

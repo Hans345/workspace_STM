@@ -1,0 +1,26 @@
+<map id="STM32CubeIDE/SD&#45;Karte/Src/user_diskio.c" name="STM32CubeIDE/SD&#45;Karte/Src/user_diskio.c">
+<area shape="rect" id="Node000001" title="This file includes a diskio driver skeleton to be completed by the user." alt="" coords="19,5,194,48"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,96,70,123"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="88,51,60,85,56,83,90,46"/>
+<area shape="rect" id="Node000003" href="$ff__gen__drv_8h.html" title="Header for ff_gen_drv.c module." alt="" coords="69,171,160,197"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="108,46,116,155,111,155,107,51"/>
+<area shape="rect" id="Node000010" href="$user__diskio__spi_8h.html" title="This file contains the common defines and functions prototypes for the user_diskio_spi driver impleme..." alt="" coords="144,96,267,123"/>
+<area shape="poly" id="edge11_Node000001_Node000010" title=" " alt="" coords="132,46,181,85,176,87,133,51"/>
+<area shape="rect" id="Node000004" href="$diskio_8h.html" title=" " alt="" coords="154,245,220,272"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="127,195,166,234,161,235,127,201"/>
+<area shape="rect" id="Node000006" href="$ff_8h.html" title=" " alt="" coords="90,245,129,272"/>
+<area shape="poly" id="edge5_Node000003_Node000006" title=" " alt="" coords="115,195,114,230,109,229,113,200"/>
+<area shape="rect" id="Node000005" href="$integer_8h.html" title=" " alt="" coords="159,320,230,347"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="189,270,194,305,189,304,187,275"/>
+<area shape="poly" id="edge6_Node000006_Node000005" title=" " alt="" coords="124,270,171,309,166,311,124,275"/>
+<area shape="rect" id="Node000007" href="$ffconf_8h.html" title=" " alt="" coords="71,320,135,347"/>
+<area shape="poly" id="edge7_Node000006_Node000007" title=" " alt="" coords="109,270,108,305,103,304,108,275"/>
+<area shape="rect" id="Node000008" href="$main_8h.html" title=": Header for main.c file. This file contains the common defines of the application." alt="" coords="39,395,100,421"/>
+<area shape="poly" id="edge8_Node000007_Node000008" title=" " alt="" coords="98,345,84,382,79,379,96,350"/>
+<area shape="rect" id="Node000009" title=" " alt="" coords="43,469,163,496"/>
+<area shape="poly" id="edge10_Node000007_Node000009" title=" " alt="" coords="107,345,114,380,115,421,110,455,106,453,110,421,108,381,105,349"/>
+<area shape="poly" id="edge9_Node000008_Node000009" title=" " alt="" coords="77,420,93,455,88,455,74,424"/>
+<area shape="poly" id="edge14_Node000010_Node000003" title=" " alt="" coords="188,125,144,163,140,159,191,121"/>
+<area shape="poly" id="edge13_Node000010_Node000004" title=" " alt="" coords="205,121,193,231,188,229,203,126"/>
+<area shape="poly" id="edge12_Node000010_Node000005" title=" " alt="" coords="212,120,224,149,235,187,240,230,235,273,217,309,212,306,230,271,234,230,229,188,219,151,211,126"/>
+</map>

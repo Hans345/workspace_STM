@@ -49,6 +49,9 @@
 /* USER CODE BEGIN Includes */
 #include "statemachine.h"
 #include "user_diskio_spi.h"
+#include "ff.h"
+#include "ff_gen_drv.h"
+#include "user_diskio.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -81,6 +84,7 @@ State_t curr_state = IDLE;
  * @brief Anfangs Event
  */
 Event_t curr_event = EVENT_NONE;
+
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -185,9 +189,14 @@ int main(void)
   // Monitoringsystem bereit zum ausführen
   // StateMachine(&curr_state, &curr_event);
 
-  // SD-Karte
-  hspi3.Init.CLKPhase = SPI_PHASE_1EDGE;
-  hspi3.Init.BaudRatePrescaler = SPI_BAUDRATEPRESCALER_256;
+  // Modifiziere SPI
+  hspi3.Init.CLKPhase = SPI_PHASE_1EDGE; // Für SD-Karte SPI_PHASE_1EDGE
+  if (HAL_SPI_Init(&hspi3) != HAL_OK)
+  {
+    Error_Handler();
+  }
+
+  // Inizialisiere SD-Karte
   if (USER_SPI_initialize(0) == 0)
   {
       _print_SWV("SD Init OK\r\n");
@@ -196,6 +205,20 @@ int main(void)
   {
 	  _print_SWV("SD Init Fehler\r\n");
   }
+
+  // Testdatei erzeugen
+  char SDPath[4];
+
+  FATFS sd_fs;
+  FIL sd_fil;	// Dateihandle
+  UINT sd_bw;	// Anzahl geschriebener Bytes
+
+  FATFS_LinkDriver(&USER_Driver, SDPath);
+  f_mount(&sd_fs, SDPath, 1);
+
+  f_open(&sd_fil, "0:/test.csv", FA_CREATE_ALWAYS | FA_WRITE);
+  f_write(&sd_fil, "7,8\r\n", 5, &sd_bw);
+  f_close(&sd_fil);
 
   /* USER CODE END 2 */
 

@@ -1,0 +1,9 @@
+<map id="f_write" name="f_write">
+<area shape="rect" id="Node000001" title=" " alt="" coords="5,56,66,83"/>
+<area shape="rect" id="Node000002" href="$ff_8c.html#a7519abb60fe91f6aa1d17f64fbae123a" title=" " alt="" coords="114,5,195,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="65,54,109,37,106,41,68,59"/>
+<area shape="rect" id="Node000003" href="$diskio_8c.html#a075d27f59f550e2cee07d00abcff32e0" title="Reads Sector(s)." alt="" coords="116,56,193,83"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="66,67,102,68,98,71,67,72"/>
+<area shape="rect" id="Node000004" href="$diskio_8h.html#a0fe56ee4831a44b09cfd96856e069634" title=" " alt="" coords="114,107,194,133"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="67,79,110,99,105,101,66,85"/>
+</map>

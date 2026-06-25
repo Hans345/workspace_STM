@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.16.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Monitoringsystem: STM32CubeIDE/Funktionen/analogOut.h File Reference</title>
+<title>Monitoringsystem: STM32CubeIDE/Funktionen/Inc/analogOut.h File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -97,8 +97,8 @@ $(function(){initNavTree('analog_out_8h.html','',''); });
 <div class="textblock"><div class="dynheader">
 This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
-<div class="center"><img src="analog_out_8h__dep__incl.png" border="0" usemap="#a_s_t_m32_cube_i_d_e_2_funktionen_2analog_out_8hdep" loading="lazy" alt=""/></div>
-<map name="a_s_t_m32_cube_i_d_e_2_funktionen_2analog_out_8hdep" id="a_s_t_m32_cube_i_d_e_2_funktionen_2analog_out_8hdep">
+<div class="center"><img src="analog_out_8h__dep__incl.png" border="0" usemap="#a_s_t_m32_cube_i_d_e_2_funktionen_2_inc_2analog_out_8hdep" loading="lazy" alt=""/></div>
+<map name="a_s_t_m32_cube_i_d_e_2_funktionen_2_inc_2analog_out_8hdep" id="a_s_t_m32_cube_i_d_e_2_funktionen_2_inc_2analog_out_8hdep">
 <area shape="rect" title="Analoge Outputs: 4...20mA" alt="" coords="5,5,191,48"/>
 <area shape="rect" href="statemachine_8h.html" title="Statemachine" alt="" coords="5,96,191,139"/>
 <area shape="poly" title=" " alt="" coords="99,61,101,96,95,95,97,66"/>
@@ -214,18 +214,27 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
+<dl class="section note"><dt>Note</dt><dd>Für DAC SPI_PHASE_2EDGE verwenden! </dd></dl>
+<div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="analog_out_8h_a5223c611234757f168f86fc3a4474e62_cgraph.png" border="0" usemap="#aanalog_out_8h_a5223c611234757f168f86fc3a4474e62_cgraph" loading="lazy" alt=""/></div>
+<map name="aanalog_out_8h_a5223c611234757f168f86fc3a4474e62_cgraph" id="aanalog_out_8h_a5223c611234757f168f86fc3a4474e62_cgraph">
+<area shape="rect" title="XTR111_SetCurrent." alt="" coords="5,5,143,32"/>
+<area shape="rect" href="main_8c.html#a1730ffe1e560465665eb47d9264826f9" title="This function is executed in case of error occurrence." alt="" coords="191,5,292,32"/>
+<area shape="poly" title=" " alt="" coords="143,16,178,18,173,19,143,21"/>
+</map>
+</div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="analog_out_8h_a5223c611234757f168f86fc3a4474e62_icgraph.png" border="0" usemap="#aanalog_out_8h_a5223c611234757f168f86fc3a4474e62_icgraph" loading="lazy" alt=""/></div>
 <map name="aanalog_out_8h_a5223c611234757f168f86fc3a4474e62_icgraph" id="aanalog_out_8h_a5223c611234757f168f86fc3a4474e62_icgraph">
-<area shape="rect" title="XTR111_SetCurrent." alt="" coords="439,5,577,32"/>
-<area shape="rect" href="analog_out_8h.html#a18ae2e684bbc7f0e6ce1ebd1fdf25ef0" title="XTR111_SetCurrent." alt="" coords="252,5,391,32"/>
-<area shape="poly" title=" " alt="" coords="421,19,392,21,392,16,426,19"/>
-<area shape="rect" href="statemachine_8h.html#a56607aca98a096e0fc7bcaa5ea589ff2" title="State Machine." alt="" coords="103,5,204,32"/>
-<area shape="poly" title=" " alt="" coords="234,19,204,21,204,16,239,19"/>
-<area shape="rect" href="main_8c.html#a840291bc02cba5474a4cb46a9b9566fe" title="The application entry point." alt="" coords="5,5,55,32"/>
-<area shape="poly" title=" " alt="" coords="85,20,55,21,55,16,90,18"/>
+<area shape="rect" title="XTR111_SetCurrent." alt="" coords="342,5,479,32"/>
+<area shape="rect" href="analog_out_8h.html#a18ae2e684bbc7f0e6ce1ebd1fdf25ef0" title="XTR111_SetCurrent." alt="" coords="155,5,294,32"/>
+<area shape="poly" title=" " alt="" coords="323,19,295,21,294,16,329,19"/>
+<area shape="rect" href="statemachine_8h.html#a56607aca98a096e0fc7bcaa5ea589ff2" title="State Machine." alt="" coords="5,5,107,32"/>
+<area shape="poly" title=" " alt="" coords="136,19,107,21,107,16,141,18"/>
 </map>
 </div>
 
@@ -272,6 +281,8 @@ Here is the call graph for this function:</div>
 <area shape="rect" title="XTR111_SetCurrent." alt="" coords="5,5,145,32"/>
 <area shape="rect" href="analog_out_8h.html#a5223c611234757f168f86fc3a4474e62" title="XTR111_SetCurrent." alt="" coords="193,5,330,32"/>
 <area shape="poly" title=" " alt="" coords="145,16,180,19,175,19,145,21"/>
+<area shape="rect" href="main_8c.html#a1730ffe1e560465665eb47d9264826f9" title="This function is executed in case of error occurrence." alt="" coords="378,5,479,32"/>
+<area shape="poly" title=" " alt="" coords="331,16,365,19,360,19,331,21"/>
 </map>
 </div>
 <div class="dynheader">
@@ -279,11 +290,9 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="analog_out_8h_a18ae2e684bbc7f0e6ce1ebd1fdf25ef0_icgraph.png" border="0" usemap="#aanalog_out_8h_a18ae2e684bbc7f0e6ce1ebd1fdf25ef0_icgraph" loading="lazy" alt=""/></div>
 <map name="aanalog_out_8h_a18ae2e684bbc7f0e6ce1ebd1fdf25ef0_icgraph" id="aanalog_out_8h_a18ae2e684bbc7f0e6ce1ebd1fdf25ef0_icgraph">
-<area shape="rect" title="XTR111_SetCurrent." alt="" coords="252,5,391,32"/>
-<area shape="rect" href="statemachine_8h.html#a56607aca98a096e0fc7bcaa5ea589ff2" title="State Machine." alt="" coords="103,5,204,32"/>
-<area shape="poly" title=" " alt="" coords="234,19,204,21,204,16,239,19"/>
-<area shape="rect" href="main_8c.html#a840291bc02cba5474a4cb46a9b9566fe" title="The application entry point." alt="" coords="5,5,55,32"/>
-<area shape="poly" title=" " alt="" coords="85,20,55,21,55,16,90,18"/>
+<area shape="rect" title="XTR111_SetCurrent." alt="" coords="155,5,294,32"/>
+<area shape="rect" href="statemachine_8h.html#a56607aca98a096e0fc7bcaa5ea589ff2" title="State Machine." alt="" coords="5,5,107,32"/>
+<area shape="poly" title=" " alt="" coords="136,19,107,21,107,16,141,18"/>
 </map>
 </div>
 
@@ -302,7 +311,7 @@ Here is the caller graph for this function:</div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a href="dir_bc84256498dc5614be2bf6f96d0ea448.html">STM32CubeIDE</a></li><li class="navelem"><a href="dir_a7810b4f5d5d256f1ff48a574a98cf20.html">Funktionen</a></li><li class="navelem"><a href="analog_out_8h.html">analogOut.h</a></li>
+    <li class="navelem"><a href="dir_bc84256498dc5614be2bf6f96d0ea448.html">STM32CubeIDE</a></li><li class="navelem"><a href="dir_a7810b4f5d5d256f1ff48a574a98cf20.html">Funktionen</a></li><li class="navelem"><a href="dir_5c1fc4ac432e295bde335fb117d1cef7.html">Inc</a></li><li class="navelem"><a href="analog_out_8h.html">analogOut.h</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.16.1 </li>
   </ul>
 </div>

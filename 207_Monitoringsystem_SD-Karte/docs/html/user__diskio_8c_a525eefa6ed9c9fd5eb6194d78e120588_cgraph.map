@@ -1,0 +1,9 @@
+<map id="USER_initialize" name="USER_initialize">
+<area shape="rect" id="Node000001" title="Initializes a Drive." alt="" coords="5,31,119,57"/>
+<area shape="rect" id="Node000002" href="$user__diskio__spi_8c.html#ae4e6118f0907efeabc35df6af5cabe04" title=" " alt="" coords="167,31,309,57"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="119,41,154,43,148,45,119,47"/>
+<area shape="rect" id="Node000003" href="$user__diskio__spi_8c.html#a886ee4d971e1f523b5e5bbcce8ea0935" title=" " alt="" coords="368,5,475,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="309,31,355,28,350,29,310,37"/>
+<area shape="rect" id="Node000004" href="$user__diskio__spi_8c.html#a7d7de72a956b4d29837d4fb84fce1ca8" title=" " alt="" coords="357,56,485,83"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="310,51,344,58,339,58,309,57"/>
+</map>

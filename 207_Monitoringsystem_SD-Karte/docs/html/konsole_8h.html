@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.16.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Monitoringsystem: STM32CubeIDE/Funktionen/konsole.h File Reference</title>
+<title>Monitoringsystem: STM32CubeIDE/Funktionen/Inc/konsole.h File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -97,11 +97,15 @@ $(function(){initNavTree('konsole_8h.html','',''); });
 <div class="textblock"><div class="dynheader">
 This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
-<div class="center"><img src="konsole_8h__dep__incl.png" border="0" usemap="#a_s_t_m32_cube_i_d_e_2_funktionen_2konsole_8hdep" loading="lazy" alt=""/></div>
-<map name="a_s_t_m32_cube_i_d_e_2_funktionen_2konsole_8hdep" id="a_s_t_m32_cube_i_d_e_2_funktionen_2konsole_8hdep">
-<area shape="rect" title="Konsolen Output via SWV und PuTTY" alt="" coords="5,5,191,48"/>
+<div class="center"><img src="konsole_8h__dep__incl.png" border="0" usemap="#a_s_t_m32_cube_i_d_e_2_funktionen_2_inc_2konsole_8hdep" loading="lazy" alt=""/></div>
+<map name="a_s_t_m32_cube_i_d_e_2_funktionen_2_inc_2konsole_8hdep" id="a_s_t_m32_cube_i_d_e_2_funktionen_2_inc_2konsole_8hdep">
+<area shape="rect" title="Konsolen Output via SWV und PuTTY" alt="" coords="215,5,400,48"/>
 <area shape="rect" href="statemachine_8h.html" title="Statemachine" alt="" coords="5,96,191,139"/>
-<area shape="poly" title=" " alt="" coords="99,61,101,96,95,95,97,66"/>
+<area shape="poly" title=" " alt="" coords="242,56,148,98,146,93,246,53"/>
+<area shape="rect" href="konsole_8c.html" title=" " alt="" coords="215,96,400,139"/>
+<area shape="poly" title=" " alt="" coords="309,61,310,97,305,94,306,66"/>
+<area shape="rect" href="user__diskio__spi_8c.html" title="This file contains the implementation of the user_diskio_spi FatFs driver." alt="" coords="424,96,599,139"/>
+<area shape="poly" title=" " alt="" coords="369,52,466,95,461,96,369,57"/>
 <area shape="rect" href="main_8c.html" title="Monitoringsystem für Medicoat" alt="" coords="40,187,156,213"/>
 <area shape="poly" title=" " alt="" coords="100,153,100,187,96,185,96,156"/>
 </map>
@@ -122,6 +126,9 @@ Functions</h2></td></tr>
 <div class="textblock"><p><b>Konsolen Output via SWV und PuTTY</b> </p>
 <dl class="section author"><dt>Author</dt><dd>Raphael Baumeler </dd></dl>
 <dl class="section date"><dt>Date</dt><dd>09.04.2026 </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>Damit diese Funktionen genutzt werden können muss der Serial Wire Viewer (SWV) in den Debugkonfiguration und die SWV Konsole im Debug Modus aktiviert werden. In PuTTY müssen COM-Port, Baudrate und Verbindungstyp korrekt definiert werden. Baudrate = 230400, Verbindungstyp = Serial, COM gemäss Geräte Manager!</dd></dl>
+<dl class="section author"><dt>Author</dt><dd>Raphael Baumeler </dd></dl>
+<dl class="section date"><dt>Date</dt><dd>25.06.2026 </dd></dl>
 <dl class="section note"><dt>Note</dt><dd>Damit diese Funktionen genutzt werden können muss der Serial Wire Viewer (SWV) in den Debugkonfiguration und die SWV Konsole im Debug Modus aktiviert werden. In PuTTY müssen COM-Port, Baudrate und Verbindungstyp korrekt definiert werden. Baudrate = 230400, Verbindungstyp = Serial, COM gemäss Geräte Manager! </dd></dl>
 </div><a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Function Documentation</h2>
 <a id="abb092ce0abf00eb1f4a01ad263c91a26" name="abb092ce0abf00eb1f4a01ad263c91a26"></a>
@@ -178,7 +185,7 @@ Here is the call graph for this function:</div>
 <div class="center"><img src="konsole_8h_a813d8ac0d95bc02a4a8b26270c3cec6c_cgraph.png" border="0" usemap="#akonsole_8h_a813d8ac0d95bc02a4a8b26270c3cec6c_cgraph" loading="lazy" alt=""/></div>
 <map name="akonsole_8h_a813d8ac0d95bc02a4a8b26270c3cec6c_cgraph" id="akonsole_8h_a813d8ac0d95bc02a4a8b26270c3cec6c_cgraph">
 <area shape="rect" title="Ausgabe von Strings via SWV auf der Konsole." alt="" coords="5,5,97,32"/>
-<area shape="rect" href="konsole_8h.html#aa025a12d45f60c7d0eae249e61f0c7f9" title="Überschreibt die Funktion printf() womit Strings und Zahlen auf der Konsole via SWV ausgegeben werden..." alt="" coords="145,5,201,32"/>
+<area shape="rect" href="konsole_8c.html#aa025a12d45f60c7d0eae249e61f0c7f9" title="Überschreibt die Funktion printf() womit Strings und Zahlen auf der Konsole via SWV ausgegeben werden..." alt="" coords="145,5,201,32"/>
 <area shape="poly" title=" " alt="" coords="97,16,132,18,127,19,97,21"/>
 </map>
 </div>
@@ -187,11 +194,11 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="konsole_8h_a813d8ac0d95bc02a4a8b26270c3cec6c_icgraph.png" border="0" usemap="#akonsole_8h_a813d8ac0d95bc02a4a8b26270c3cec6c_icgraph" loading="lazy" alt=""/></div>
 <map name="akonsole_8h_a813d8ac0d95bc02a4a8b26270c3cec6c_icgraph" id="akonsole_8h_a813d8ac0d95bc02a4a8b26270c3cec6c_icgraph">
-<area shape="rect" title="Ausgabe von Strings via SWV auf der Konsole." alt="" coords="252,5,343,32"/>
-<area shape="rect" href="statemachine_8h.html#a56607aca98a096e0fc7bcaa5ea589ff2" title="State Machine." alt="" coords="103,5,204,32"/>
-<area shape="poly" title=" " alt="" coords="234,19,205,21,205,16,239,19"/>
-<area shape="rect" href="main_8c.html#a840291bc02cba5474a4cb46a9b9566fe" title="The application entry point." alt="" coords="5,5,55,32"/>
-<area shape="poly" title=" " alt="" coords="85,20,55,21,55,16,90,18"/>
+<area shape="rect" title="Ausgabe von Strings via SWV auf der Konsole." alt="" coords="155,31,246,57"/>
+<area shape="rect" href="main_8c.html#a840291bc02cba5474a4cb46a9b9566fe" title="The application entry point." alt="" coords="31,5,81,32"/>
+<area shape="poly" title=" " alt="" coords="137,35,81,26,81,20,142,32"/>
+<area shape="rect" href="statemachine_8h.html#a56607aca98a096e0fc7bcaa5ea589ff2" title="State Machine." alt="" coords="5,56,107,83"/>
+<area shape="poly" title=" " alt="" coords="137,55,108,63,107,58,142,54"/>
 </map>
 </div>
 
@@ -237,13 +244,13 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="konsole_8h_aa025a12d45f60c7d0eae249e61f0c7f9_icgraph.png" border="0" usemap="#akonsole_8h_aa025a12d45f60c7d0eae249e61f0c7f9_icgraph" loading="lazy" alt=""/></div>
 <map name="akonsole_8h_aa025a12d45f60c7d0eae249e61f0c7f9_icgraph" id="akonsole_8h_aa025a12d45f60c7d0eae249e61f0c7f9_icgraph">
-<area shape="rect" title="Überschreibt die Funktion printf() womit Strings und Zahlen auf der Konsole via SWV ausgegeben werden..." alt="" coords="391,5,448,32"/>
-<area shape="rect" href="konsole_8h.html#a813d8ac0d95bc02a4a8b26270c3cec6c" title="Ausgabe von Strings via SWV auf der Konsole." alt="" coords="252,5,343,32"/>
-<area shape="poly" title=" " alt="" coords="373,19,344,21,344,16,379,19"/>
-<area shape="rect" href="statemachine_8h.html#a56607aca98a096e0fc7bcaa5ea589ff2" title="State Machine." alt="" coords="103,5,204,32"/>
-<area shape="poly" title=" " alt="" coords="234,19,205,21,205,16,239,19"/>
-<area shape="rect" href="main_8c.html#a840291bc02cba5474a4cb46a9b9566fe" title="The application entry point." alt="" coords="5,5,55,32"/>
-<area shape="poly" title=" " alt="" coords="85,20,55,21,55,16,90,18"/>
+<area shape="rect" title="Überschreibt die Funktion printf() womit Strings und Zahlen auf der Konsole via SWV ausgegeben werden..." alt="" coords="294,31,350,57"/>
+<area shape="rect" href="konsole_8c.html#a813d8ac0d95bc02a4a8b26270c3cec6c" title="Ausgabe von Strings via SWV auf der Konsole." alt="" coords="155,31,246,57"/>
+<area shape="poly" title=" " alt="" coords="276,44,247,47,246,41,281,44"/>
+<area shape="rect" href="main_8c.html#a840291bc02cba5474a4cb46a9b9566fe" title="The application entry point." alt="" coords="31,5,81,32"/>
+<area shape="poly" title=" " alt="" coords="137,35,81,26,81,20,142,32"/>
+<area shape="rect" href="statemachine_8h.html#a56607aca98a096e0fc7bcaa5ea589ff2" title="State Machine." alt="" coords="5,56,107,83"/>
+<area shape="poly" title=" " alt="" coords="137,55,108,63,107,58,142,54"/>
 </map>
 </div>
 
@@ -262,7 +269,7 @@ Here is the caller graph for this function:</div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a href="dir_bc84256498dc5614be2bf6f96d0ea448.html">STM32CubeIDE</a></li><li class="navelem"><a href="dir_a7810b4f5d5d256f1ff48a574a98cf20.html">Funktionen</a></li><li class="navelem"><a href="konsole_8h.html">konsole.h</a></li>
+    <li class="navelem"><a href="dir_bc84256498dc5614be2bf6f96d0ea448.html">STM32CubeIDE</a></li><li class="navelem"><a href="dir_a7810b4f5d5d256f1ff48a574a98cf20.html">Funktionen</a></li><li class="navelem"><a href="dir_5c1fc4ac432e295bde335fb117d1cef7.html">Inc</a></li><li class="navelem"><a href="konsole_8h.html">konsole.h</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.16.1 </li>
   </ul>
 </div>

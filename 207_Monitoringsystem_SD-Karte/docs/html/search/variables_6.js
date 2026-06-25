@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['ofs_0',['ofs',['../statemachine_8h.html#aa1405694319e4fae148b18c2aeb38e39',1,'statemachine.h']]]
+  ['gain_0',['gain',['../statemachine_8h.html#abb0a798e6f2165f27cc17a8b780c3470',1,'statemachine.h']]]
 ];

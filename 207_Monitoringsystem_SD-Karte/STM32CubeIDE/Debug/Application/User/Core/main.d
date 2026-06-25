@@ -45,19 +45,23 @@ Application/User/Core/main.o: \
  ../../Core/Inc/gpdma.h ../../Core/Inc/gtzc.h ../../Core/Inc/icache.h \
  ../../Core/Inc/spi.h ../../Core/Inc/tim.h ../../Core/Inc/usart.h \
  ../../Core/Inc/gpio.h \
- C:/Users/raphael.baumeler/workspace_STM/207_Monitoringsystem_SD-Karte/STM32CubeIDE/Funktionen/statemachine.h \
+ C:/Users/raphael.baumeler/workspace_STM/207_Monitoringsystem_SD-Karte/STM32CubeIDE/Funktionen/Inc/statemachine.h \
  ../../Middlewares/ST/ARM/DSP/Inc/arm_math.h \
  ../../Drivers/CMSIS/Include/cmsis_compiler.h \
- C:/Users/raphael.baumeler/workspace_STM/207_Monitoringsystem_SD-Karte/STM32CubeIDE/Funktionen/complex.h \
- C:/Users/raphael.baumeler/workspace_STM/207_Monitoringsystem_SD-Karte/STM32CubeIDE/Funktionen/fft.h \
- C:/Users/raphael.baumeler/workspace_STM/207_Monitoringsystem_SD-Karte/STM32CubeIDE/Funktionen/konsole.h \
- C:/Users/raphael.baumeler/workspace_STM/207_Monitoringsystem_SD-Karte/STM32CubeIDE/Funktionen/analogOut.h \
+ C:/Users/raphael.baumeler/workspace_STM/207_Monitoringsystem_SD-Karte/STM32CubeIDE/Funktionen/Inc/complex.h \
+ C:/Users/raphael.baumeler/workspace_STM/207_Monitoringsystem_SD-Karte/STM32CubeIDE/Funktionen/Inc/fft.h \
+ C:/Users/raphael.baumeler/workspace_STM/207_Monitoringsystem_SD-Karte/STM32CubeIDE/Funktionen/Inc/konsole.h \
+ C:/Users/raphael.baumeler/workspace_STM/207_Monitoringsystem_SD-Karte/STM32CubeIDE/Funktionen/Inc/analogOut.h \
  C:/Users/raphael.baumeler/workspace_STM/207_Monitoringsystem_SD-Karte/STM32CubeIDE/SD-Karte/Inc/user_diskio_spi.h \
  C:/Users/raphael.baumeler/workspace_STM/207_Monitoringsystem_SD-Karte/STM32CubeIDE/SD-Karte/Inc/integer.h \
  C:/Users/raphael.baumeler/workspace_STM/207_Monitoringsystem_SD-Karte/STM32CubeIDE/SD-Karte/Inc/diskio.h \
  C:/Users/raphael.baumeler/workspace_STM/207_Monitoringsystem_SD-Karte/STM32CubeIDE/SD-Karte/Inc/ff_gen_drv.h \
  C:/Users/raphael.baumeler/workspace_STM/207_Monitoringsystem_SD-Karte/STM32CubeIDE/SD-Karte/Inc/ff.h \
- C:/Users/raphael.baumeler/workspace_STM/207_Monitoringsystem_SD-Karte/STM32CubeIDE/SD-Karte/Inc/ffconf.h
+ C:/Users/raphael.baumeler/workspace_STM/207_Monitoringsystem_SD-Karte/STM32CubeIDE/SD-Karte/Inc/ffconf.h \
+ C:/Users/raphael.baumeler/workspace_STM/207_Monitoringsystem_SD-Karte/STM32CubeIDE/SD-Karte/Inc/ff.h \
+ C:/Users/raphael.baumeler/workspace_STM/207_Monitoringsystem_SD-Karte/STM32CubeIDE/SD-Karte/Inc/ff_gen_drv.h \
+ C:/Users/raphael.baumeler/workspace_STM/207_Monitoringsystem_SD-Karte/STM32CubeIDE/SD-Karte/Inc/user_diskio.h \
+ C:/Users/raphael.baumeler/workspace_STM/207_Monitoringsystem_SD-Karte/STM32CubeIDE/SD-Karte/Inc/user_diskio_spi.h
 ../../Core/Inc/main.h:
 ../../Drivers/STM32U5xx_HAL_Driver/Inc/stm32u5xx_hal.h:
 ../../Core/Inc/stm32u5xx_hal_conf.h:
@@ -111,16 +115,20 @@ Application/User/Core/main.o: \
 ../../Core/Inc/tim.h:
 ../../Core/Inc/usart.h:
 ../../Core/Inc/gpio.h:
-C:/Users/raphael.baumeler/workspace_STM/207_Monitoringsystem_SD-Karte/STM32CubeIDE/Funktionen/statemachine.h:
+C:/Users/raphael.baumeler/workspace_STM/207_Monitoringsystem_SD-Karte/STM32CubeIDE/Funktionen/Inc/statemachine.h:
 ../../Middlewares/ST/ARM/DSP/Inc/arm_math.h:
 ../../Drivers/CMSIS/Include/cmsis_compiler.h:
-C:/Users/raphael.baumeler/workspace_STM/207_Monitoringsystem_SD-Karte/STM32CubeIDE/Funktionen/complex.h:
-C:/Users/raphael.baumeler/workspace_STM/207_Monitoringsystem_SD-Karte/STM32CubeIDE/Funktionen/fft.h:
-C:/Users/raphael.baumeler/workspace_STM/207_Monitoringsystem_SD-Karte/STM32CubeIDE/Funktionen/konsole.h:
-C:/Users/raphael.baumeler/workspace_STM/207_Monitoringsystem_SD-Karte/STM32CubeIDE/Funktionen/analogOut.h:
+C:/Users/raphael.baumeler/workspace_STM/207_Monitoringsystem_SD-Karte/STM32CubeIDE/Funktionen/Inc/complex.h:
+C:/Users/raphael.baumeler/workspace_STM/207_Monitoringsystem_SD-Karte/STM32CubeIDE/Funktionen/Inc/fft.h:
+C:/Users/raphael.baumeler/workspace_STM/207_Monitoringsystem_SD-Karte/STM32CubeIDE/Funktionen/Inc/konsole.h:
+C:/Users/raphael.baumeler/workspace_STM/207_Monitoringsystem_SD-Karte/STM32CubeIDE/Funktionen/Inc/analogOut.h:
 C:/Users/raphael.baumeler/workspace_STM/207_Monitoringsystem_SD-Karte/STM32CubeIDE/SD-Karte/Inc/user_diskio_spi.h:
 C:/Users/raphael.baumeler/workspace_STM/207_Monitoringsystem_SD-Karte/STM32CubeIDE/SD-Karte/Inc/integer.h:
 C:/Users/raphael.baumeler/workspace_STM/207_Monitoringsystem_SD-Karte/STM32CubeIDE/SD-Karte/Inc/diskio.h:
 C:/Users/raphael.baumeler/workspace_STM/207_Monitoringsystem_SD-Karte/STM32CubeIDE/SD-Karte/Inc/ff_gen_drv.h:
 C:/Users/raphael.baumeler/workspace_STM/207_Monitoringsystem_SD-Karte/STM32CubeIDE/SD-Karte/Inc/ff.h:
 C:/Users/raphael.baumeler/workspace_STM/207_Monitoringsystem_SD-Karte/STM32CubeIDE/SD-Karte/Inc/ffconf.h:
+C:/Users/raphael.baumeler/workspace_STM/207_Monitoringsystem_SD-Karte/STM32CubeIDE/SD-Karte/Inc/ff.h:
+C:/Users/raphael.baumeler/workspace_STM/207_Monitoringsystem_SD-Karte/STM32CubeIDE/SD-Karte/Inc/ff_gen_drv.h:
+C:/Users/raphael.baumeler/workspace_STM/207_Monitoringsystem_SD-Karte/STM32CubeIDE/SD-Karte/Inc/user_diskio.h:
+C:/Users/raphael.baumeler/workspace_STM/207_Monitoringsystem_SD-Karte/STM32CubeIDE/SD-Karte/Inc/user_diskio_spi.h:

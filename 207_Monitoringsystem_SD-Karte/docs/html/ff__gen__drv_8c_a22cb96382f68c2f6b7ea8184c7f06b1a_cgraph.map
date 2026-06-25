@@ -1,0 +1,5 @@
+<map id="FATFS_LinkDriver" name="FATFS_LinkDriver">
+<area shape="rect" id="Node000001" title="Links a compatible diskio driver and increments the number of active linked drivers." alt="" coords="5,5,133,32"/>
+<area shape="rect" id="Node000002" href="$ff__gen__drv_8c.html#a7295ae1eccd7de39fff7cb85120ec6a2" title="Links a compatible diskio driver/lun id and increments the number of active linked drivers." alt="" coords="181,5,324,32"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="133,16,168,18,163,19,133,21"/>
+</map>

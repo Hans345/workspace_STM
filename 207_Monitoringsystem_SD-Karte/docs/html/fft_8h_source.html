@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.16.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Monitoringsystem: STM32CubeIDE/Funktionen/fft.h Source File</title>
+<title>Monitoringsystem: STM32CubeIDE/Funktionen/Inc/fft.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -164,7 +164,7 @@ $(function(){initNavTree('fft_8h_source.html','',''); });
 </div>
 <div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span></div>
 <div class="foldopen" id="foldopen00108" data-start="{" data-end="}">
-<div class="line"><a id="l00108" name="l00108"></a><span class="lineno"><a class="line" href="fft_8h.html#a37656e0698f6e20f5c01304a84872d50">  108</a></span><a class="code hl_struct" href="structfft__max__t.html">fft_max_t</a> <a class="code hl_function" href="fft_8h.html#a37656e0698f6e20f5c01304a84872d50">get_array_max</a>(<span class="keyword">const</span> <span class="keywordtype">float</span> *arr, <span class="keywordtype">int</span> <a class="code hl_define" href="statemachine_8h.html#a0240ac851181b84ac374872dc5434ee4">N</a>, <span class="keywordtype">float</span> <a class="code hl_variable" href="statemachine_8h.html#a5914eda95c21b243915c06c08fb45e3b">fs</a>)</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno"><a class="line" href="fft_8h.html#a37656e0698f6e20f5c01304a84872d50">  108</a></span><a class="code hl_struct" href="structfft__max__t.html">fft_max_t</a> <a class="code hl_function" href="fft_8h.html#a37656e0698f6e20f5c01304a84872d50">get_array_max</a>(<span class="keyword">const</span> <span class="keywordtype">float</span> *arr, <span class="keywordtype">int</span> <a class="code hl_define" href="statemachine_8h.html#a0240ac851181b84ac374872dc5434ee4">N</a>, <span class="keywordtype">float</span> fs)</div>
 <div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>{</div>
 <div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>    <a class="code hl_struct" href="structfft__max__t.html">fft_max_t</a> result;</div>
 <div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span> </div>
@@ -180,7 +180,7 @@ $(function(){initNavTree('fft_8h_source.html','',''); });
 <div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>        }</div>
 <div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>    }</div>
 <div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span> </div>
-<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>    <span class="keywordtype">float</span> df = <a class="code hl_variable" href="statemachine_8h.html#a5914eda95c21b243915c06c08fb45e3b">fs</a> / <a class="code hl_define" href="statemachine_8h.html#a0240ac851181b84ac374872dc5434ee4">N</a>;</div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>    <span class="keywordtype">float</span> df = fs / <a class="code hl_define" href="statemachine_8h.html#a0240ac851181b84ac374872dc5434ee4">N</a>;</div>
 <div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>    result.<a class="code hl_variable" href="structfft__max__t.html#a1ffe305c2ec5acf4fbc0383c4b8df081">freq</a> = idx * df;</div>
 <div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span> </div>
 <div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>    <span class="keywordflow">return</span> result;</div>
@@ -199,7 +199,6 @@ $(function(){initNavTree('fft_8h_source.html','',''); });
 <div class="ttc" id="astatemachine_8h_html_a0240ac851181b84ac374872dc5434ee4"><div class="ttname"><a href="statemachine_8h.html#a0240ac851181b84ac374872dc5434ee4">N</a></div><div class="ttdeci">#define N</div><div class="ttdoc">Buffer Grösse in Samples.</div><div class="ttdef"><b>Definition</b> statemachine.h:45</div></div>
 <div class="ttc" id="astatemachine_8h_html_a03426a483d4a9fc3381b103c78122dc9"><div class="ttname"><a href="statemachine_8h.html#a03426a483d4a9fc3381b103c78122dc9">c</a></div><div class="ttdeci">Complex c[N]</div><div class="ttdoc">Array Komplexe Fourier Koeffizienten (df = 100kHz/N).</div><div class="ttdef"><b>Definition</b> statemachine.h:57</div></div>
 <div class="ttc" id="astatemachine_8h_html_a3a86c055295e8753e46ed30bef7a2aa6"><div class="ttname"><a href="statemachine_8h.html#a3a86c055295e8753e46ed30bef7a2aa6">z</a></div><div class="ttdeci">float z[N]</div><div class="ttdoc">Array für Zeitsignal (dt = 1/100kHz).</div><div class="ttdef"><b>Definition</b> statemachine.h:53</div></div>
-<div class="ttc" id="astatemachine_8h_html_a5914eda95c21b243915c06c08fb45e3b"><div class="ttname"><a href="statemachine_8h.html#a5914eda95c21b243915c06c08fb45e3b">fs</a></div><div class="ttdeci">const float fs</div><div class="ttdoc">Samplingfrequenz.</div><div class="ttdef"><b>Definition</b> statemachine.h:104</div></div>
 <div class="ttc" id="astatemachine_8h_html_aa1405694319e4fae148b18c2aeb38e39"><div class="ttname"><a href="statemachine_8h.html#aa1405694319e4fae148b18c2aeb38e39">ofs</a></div><div class="ttdeci">const float ofs</div><div class="ttdoc">offset Analoge Signalverarbeitung</div><div class="ttdef"><b>Definition</b> statemachine.h:77</div></div>
 <div class="ttc" id="astatemachine_8h_html_ab4208e2b3becb30f8d88bb936883ffc1"><div class="ttname"><a href="statemachine_8h.html#ab4208e2b3becb30f8d88bb936883ffc1">adc_val</a></div><div class="ttdeci">uint16_t adc_val[N]</div><div class="ttdoc">ADC Werte.</div><div class="ttdef"><b>Definition</b> statemachine.h:69</div></div>
 <div class="ttc" id="astatemachine_8h_html_abb0a798e6f2165f27cc17a8b780c3470"><div class="ttname"><a href="statemachine_8h.html#abb0a798e6f2165f27cc17a8b780c3470">gain</a></div><div class="ttdeci">const float gain</div><div class="ttdoc">gain Analoge Signalverarbeitung (Opamp Schaltung)</div><div class="ttdef"><b>Definition</b> statemachine.h:73</div></div>
@@ -213,7 +212,7 @@ $(function(){initNavTree('fft_8h_source.html','',''); });
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a href="dir_bc84256498dc5614be2bf6f96d0ea448.html">STM32CubeIDE</a></li><li class="navelem"><a href="dir_a7810b4f5d5d256f1ff48a574a98cf20.html">Funktionen</a></li><li class="navelem"><a href="fft_8h.html">fft.h</a></li>
+    <li class="navelem"><a href="dir_bc84256498dc5614be2bf6f96d0ea448.html">STM32CubeIDE</a></li><li class="navelem"><a href="dir_a7810b4f5d5d256f1ff48a574a98cf20.html">Funktionen</a></li><li class="navelem"><a href="dir_5c1fc4ac432e295bde335fb117d1cef7.html">Inc</a></li><li class="navelem"><a href="fft_8h.html">fft.h</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.16.1 </li>
   </ul>
 </div>

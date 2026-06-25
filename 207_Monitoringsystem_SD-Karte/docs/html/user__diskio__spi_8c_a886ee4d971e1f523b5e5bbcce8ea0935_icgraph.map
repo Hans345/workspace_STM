@@ -1,0 +1,9 @@
+<map id="SPI_Timer_On" name="SPI_Timer_On">
+<area shape="rect" id="Node000001" title=" " alt="" coords="357,31,464,57"/>
+<area shape="rect" id="Node000002" href="$user__diskio__spi_8c.html#ae4e6118f0907efeabc35df6af5cabe04" title=" " alt="" coords="167,31,309,57"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="339,44,310,47,309,41,344,44"/>
+<area shape="rect" id="Node000003" href="$main_8c.html#a840291bc02cba5474a4cb46a9b9566fe" title="The application entry point." alt="" coords="37,5,87,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="149,33,87,25,87,19,153,30"/>
+<area shape="rect" id="Node000004" href="$user__diskio_8c.html#a525eefa6ed9c9fd5eb6194d78e120588" title="Initializes a Drive." alt="" coords="5,56,119,83"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="149,57,119,64,118,59,154,56"/>
+</map>

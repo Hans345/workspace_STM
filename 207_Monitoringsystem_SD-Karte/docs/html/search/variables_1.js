@@ -1,7 +1,4 @@
 var searchData=
 [
-  ['c_0',['c',['../statemachine_8h.html#a03426a483d4a9fc3381b103c78122dc9',1,'statemachine.h']]],
-  ['clear_1',['clear',['../statemachine_8h.html#aad6240eb73c12145153230361668f531',1,'statemachine.h']]],
-  ['curr_5fevent_2',['curr_event',['../main_8c.html#a20ffc19f8b6de5a108f52c5c74877b27',1,'main.c']]],
-  ['curr_5fstate_3',['curr_state',['../main_8c.html#a33f82edec6ddb832a8eda8585f29d32e',1,'main.c']]]
+  ['buf_0',['buf',['../struct_f_i_l.html#ad76a1cbdd7ed7ee8f0e5dea5abb4749a',1,'FIL::buf'],['../struct_d_i_r.html#ab9100d89cf39bb4cdb6b4478659931a1',1,'DIR::buf']]]
 ];

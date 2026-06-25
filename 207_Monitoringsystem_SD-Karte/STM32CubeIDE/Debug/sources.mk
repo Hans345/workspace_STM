@@ -26,5 +26,6 @@ Application/User/Core \
 Application/User/Startup \
 Drivers/CMSIS \
 Drivers/STM32U5xx_HAL_Driver \
+Funktionen/Src \
 SD-Karte/Src \
 
