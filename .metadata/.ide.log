@@ -1,5 +1,17 @@
-2026-06-25 07:32:00,447 [INFO] Activator:176 - 
+2026-08-07 08:16:38,186 [INFO] Activator:176 - 
 
 
-2026-06-25 07:32:00,458 [INFO] Activator:177 - !SESSION log4j initialized
-2026-06-25 07:32:07,070 [INFO] LogOutputStream:77 - [STDOUT_REDIRECT] 
+2026-08-07 08:16:38,203 [INFO] Activator:177 - !SESSION log4j initialized
+2026-08-07 08:16:46,552 [INFO] LogOutputStream:77 - [STDOUT_REDIRECT] 
+2026-08-07 09:44:59,950 [ERROR] ConfigurationRetriever:142 - IOException on connection: sw-center.st.com
+2026-08-07 09:44:59,951 [ERROR] ConfigurationRetriever:142 - IOException on connection: sw-center.st.com
+2026-08-07 09:44:59,951 [ERROR] ConfigurationRetriever:142 - IOException on connection: sw-center.st.com
+2026-08-07 09:45:08,529 [ERROR] ConfigurationRetriever:142 - IOException on connection: sw-center.st.com
+2026-08-07 09:45:08,531 [ERROR] ConfigurationRetriever:142 - IOException on connection: sw-center.st.com
+2026-08-07 09:45:08,531 [ERROR] ConfigurationRetriever:142 - IOException on connection: sw-center.st.com
+2026-08-07 15:33:26,404 [INFO] Activator:176 - 
+
+
+2026-08-07 15:33:26,404 [INFO] Activator:177 - !SESSION log4j initialized
+2026-08-07 15:33:30,656 [INFO] LogOutputStream:77 - [STDOUT_REDIRECT] 
+2026-08-07 15:38:49,293 [INFO] LogOutputStream:77 - [STDOUT_REDIRECT] StartTraceHandler.execute(), success : Collect=true

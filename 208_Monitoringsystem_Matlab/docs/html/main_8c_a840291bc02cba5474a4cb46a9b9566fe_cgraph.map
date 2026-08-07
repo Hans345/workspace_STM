@@ -1,0 +1,38 @@
+<map id="main" name="main">
+<area shape="rect" id="Node000001" title="The application entry point." alt="" coords="5,333,55,360"/>
+<area shape="rect" id="Node000002" href="$statemachine_8h.html#a56607aca98a096e0fc7bcaa5ea589ff2" title="State Machine." alt="" coords="125,232,226,259"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="49,331,143,265,142,270,52,335"/>
+<area shape="rect" id="Node000017" href="$main_8c.html#a70af21c671abfcc773614a9a4f63d920" title="System Clock Configuration." alt="" coords="103,359,248,385"/>
+<area shape="poly" id="edge17_Node000001_Node000017" title=" " alt="" coords="54,348,90,355,85,358,56,353"/>
+<area shape="rect" id="Node000003" href="$konsole_8h.html#a813d8ac0d95bc02a4a8b26270c3cec6c" title="Ausgabe von Strings via SWV auf der Konsole." alt="" coords="320,5,411,32"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="179,230,193,193,217,143,251,89,271,64,294,42,308,35,304,39,298,46,275,68,255,92,221,146,198,195,184,233"/>
+<area shape="rect" id="Node000005" href="$complex_8h.html#a2340931cdf6737432d5f53596be00e09" title="Komplexe Zahl Betrag berechnen." alt="" coords="332,56,399,83"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="182,230,224,165,256,126,294,92,320,81,316,84,298,97,260,130,228,168,186,233"/>
+<area shape="rect" id="Node000006" href="$fft_8h.html#aff140c96c0f5752485ae2d7c2e72eccc" title="Rechnet ADC Werte in Spannungen um. Greift auf globale Arrays für ADC Werte und Spannungswerte zu." alt="" coords="318,107,413,133"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="188,230,233,188,295,143,308,138,304,142,297,148,236,192,192,233"/>
+<area shape="rect" id="Node000007" href="$fft_8h.html#ada05f1b0bfba3e79d44b23cadf7a5bc7" title="Fast Fourier Transformation (FFT)." alt="" coords="346,181,385,208"/>
+<area shape="poly" id="edge6_Node000002_Node000007" title=" " alt="" coords="225,229,333,202,329,205,228,234"/>
+<area shape="rect" id="Node000012" href="$fft_8h.html#a37656e0698f6e20f5c01304a84872d50" title="Berechnet den Maximalwert der FFT ohne den DC&#45;Anteil zu berücksichtigen!" alt="" coords="312,232,419,259"/>
+<area shape="poly" id="edge12_Node000002_Node000012" title=" " alt="" coords="226,243,299,244,294,247,227,248"/>
+<area shape="rect" id="Node000013" href="$complex_8h.html#aae9baeb52faf11cd7cde2a0dc6fae852" title="Komplexe Zahl aus Zeitsignal generieren." alt="" coords="311,283,420,309"/>
+<area shape="poly" id="edge13_Node000002_Node000013" title=" " alt="" coords="226,256,301,277,296,279,227,261"/>
+<area shape="rect" id="Node000014" href="$complex_8h.html#aac0d0a07f0452d0db28b7eed6ffdb43c" title="Skalierung mit 1/N." alt="" coords="340,333,392,360"/>
+<area shape="poly" id="edge14_Node000002_Node000014" title=" " alt="" coords="196,257,242,287,297,319,327,333,322,334,295,324,239,292,196,262"/>
+<area shape="rect" id="Node000015" href="$analog_out_8h.html#a18ae2e684bbc7f0e6ce1ebd1fdf25ef0" title="XTR111_SetCurrent." alt="" coords="296,384,435,411"/>
+<area shape="poly" id="edge15_Node000002_Node000015" title=" " alt="" coords="187,257,232,311,263,342,298,370,307,377,301,377,294,374,259,346,228,315,186,262"/>
+<area shape="rect" id="Node000004" href="$konsole_8h.html#aa025a12d45f60c7d0eae249e61f0c7f9" title="Überschreibt die Funktion printf() womit Strings und Zahlen auf der Konsole via SWV ausgegeben werden..." alt="" coords="524,5,580,32"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="411,16,511,17,506,20,413,21"/>
+<area shape="poly" id="edge11_Node000007_Node000007" title=" " alt="" coords="343,188,331,179,329,166,342,158,366,155,385,157,398,162,403,171,400,180,395,177,398,171,395,166,384,162,366,160,344,163,334,169,335,176,349,187"/>
+<area shape="rect" id="Node000008" href="$complex_8h.html#a374c911ba7060ebf628c82f3d9e6528c" title="Komplexe Zahlen Addieren." alt="" coords="503,105,601,132"/>
+<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="384,184,482,142,501,137,496,139,484,146,387,189"/>
+<area shape="rect" id="Node000009" href="$complex_8h.html#a114e895dbdd106185d9a2d5c02534f5e" title="Komplexe Zahl Phasenverschiebung." alt="" coords="503,156,601,183"/>
+<area shape="poly" id="edge8_Node000007_Node000009" title=" " alt="" coords="384,190,490,177,485,179,386,195"/>
+<area shape="rect" id="Node000010" href="$complex_8h.html#a3381bc8373c19a4bf17d0fe93dd6e3b2" title="Komplexe Zahlen multiplizieren." alt="" coords="503,207,601,233"/>
+<area shape="poly" id="edge9_Node000007_Node000010" title=" " alt="" coords="385,195,490,210,485,212,386,200"/>
+<area shape="rect" id="Node000011" href="$complex_8h.html#a2bda09b9200a59ed16f9d48d4d9d7364" title="Komplexe Zahlen subtrahieren." alt="" coords="503,257,601,284"/>
+<area shape="poly" id="edge10_Node000007_Node000011" title=" " alt="" coords="385,198,436,218,484,243,500,251,494,251,482,248,434,222,385,203"/>
+<area shape="rect" id="Node000016" href="$analog_out_8h.html#a5223c611234757f168f86fc3a4474e62" title="XTR111_SetCurrent." alt="" coords="483,384,621,411"/>
+<area shape="poly" id="edge16_Node000015_Node000016" title=" " alt="" coords="436,395,471,397,465,398,436,400"/>
+<area shape="rect" id="Node000018" href="$main_8c.html#a1730ffe1e560465665eb47d9264826f9" title="This function is executed in case of error occurrence." alt="" coords="315,435,416,461"/>
+<area shape="poly" id="edge18_Node000017_Node000018" title=" " alt="" coords="209,383,297,420,314,429,309,429,295,425,208,389"/>
+</map>

@@ -1,0 +1,7 @@
+<map id="STM32CubeIDE/Funktionen/analogOut.h" name="STM32CubeIDE/Funktionen/analogOut.h">
+<area shape="rect" id="Node000001" title="Analoge Outputs: 4...20mA" alt="" coords="5,5,191,48"/>
+<area shape="rect" id="Node000002" href="$statemachine_8h.html" title="Statemachine" alt="" coords="5,96,191,139"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="99,61,101,96,95,95,97,66"/>
+<area shape="rect" id="Node000003" href="$main_8c.html" title="Monitoringsystem für Medicoat" alt="" coords="40,187,156,213"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="100,153,100,187,96,185,96,156"/>
+</map>
